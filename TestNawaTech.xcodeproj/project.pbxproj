@@ -1,0 +1,853 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04779FE54230B55DD4BF70B6 /* Pods_TestNawaTech_TestNawaTechUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B2DBF23FBC7E6FEBA8F15E /* Pods_TestNawaTech_TestNawaTechUITests.framework */; };
+		5673CEF932677A64BF05F227 /* Pods_TestNawaTechTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA540FBA79E8576CC1248E1 /* Pods_TestNawaTechTests.framework */; };
+		9A8E6D1822D842B1C7CE1505 /* Pods_TestNawaTech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E83E182874043BCF961FD31 /* Pods_TestNawaTech.framework */; };
+		FCDBD9282A970DC5003CFB06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9272A970DC5003CFB06 /* AppDelegate.swift */; };
+		FCDBD92A2A970DC5003CFB06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9292A970DC5003CFB06 /* SceneDelegate.swift */; };
+		FCDBD9322A970DC5003CFB06 /* TestNawaTech.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9302A970DC5003CFB06 /* TestNawaTech.xcdatamodeld */; };
+		FCDBD9342A970DC6003CFB06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCDBD9332A970DC6003CFB06 /* Assets.xcassets */; };
+		FCDBD9372A970DC6003CFB06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDBD9352A970DC6003CFB06 /* LaunchScreen.storyboard */; };
+		FCDBD9422A970DC7003CFB06 /* TestNawaTechTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9412A970DC7003CFB06 /* TestNawaTechTests.swift */; };
+		FCDBD94C2A970DC7003CFB06 /* TestNawaTechUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD94B2A970DC7003CFB06 /* TestNawaTechUITests.swift */; };
+		FCDBD94E2A970DC7003CFB06 /* TestNawaTechUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD94D2A970DC7003CFB06 /* TestNawaTechUITestsLaunchTests.swift */; };
+		FCDBD95B2A970DE0003CFB06 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD95A2A970DE0003CFB06 /* HomeViewController.swift */; };
+		FCDBD95D2A970E00003CFB06 /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD95C2A970E00003CFB06 /* HomeProtocol.swift */; };
+		FCDBD95F2A970F66003CFB06 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD95E2A970F66003CFB06 /* NetworkManager.swift */; };
+		FCDBD9612A970F8B003CFB06 /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9602A970F8B003CFB06 /* URLManager.swift */; };
+		FCDBD9652A970FD1003CFB06 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9642A970FD1003CFB06 /* CustomError.swift */; };
+		FCDBD96F2A9718D1003CFB06 /* FirebaseCollection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD96E2A9718D1003CFB06 /* FirebaseCollection+Extension.swift */; };
+		FCDBD9712A971DFC003CFB06 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCDBD9702A971DFC003CFB06 /* GoogleService-Info.plist */; };
+		FCDBD9732A971E26003CFB06 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9722A971E26003CFB06 /* HomePresenter.swift */; };
+		FCDBD9752A971EE2003CFB06 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9742A971EE2003CFB06 /* HomeInteractor.swift */; };
+		FCDBD9772A971F3A003CFB06 /* MotorCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9762A971F3A003CFB06 /* MotorCycle.swift */; };
+		FCDBD9792A97208E003CFB06 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9782A97208E003CFB06 /* HomeRouter.swift */; };
+		FCEAC76D2A9726FC00A31AF1 /* MotorcycleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC76C2A9726FC00A31AF1 /* MotorcycleTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FCDBD93E2A970DC7003CFB06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCDBD91C2A970DC5003CFB06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCDBD9232A970DC5003CFB06;
+			remoteInfo = TestNawaTech;
+		};
+		FCDBD9482A970DC7003CFB06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCDBD91C2A970DC5003CFB06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCDBD9232A970DC5003CFB06;
+			remoteInfo = TestNawaTech;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		10745DBC92CEEBB2BBE5294B /* Pods-TestNawaTech.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestNawaTech.release.xcconfig"; path = "Target Support Files/Pods-TestNawaTech/Pods-TestNawaTech.release.xcconfig"; sourceTree = "<group>"; };
+		1FD6E64659AC5D73B939FE54 /* Pods-TestNawaTech-TestNawaTechUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestNawaTech-TestNawaTechUITests.release.xcconfig"; path = "Target Support Files/Pods-TestNawaTech-TestNawaTechUITests/Pods-TestNawaTech-TestNawaTechUITests.release.xcconfig"; sourceTree = "<group>"; };
+		30B2DBF23FBC7E6FEBA8F15E /* Pods_TestNawaTech_TestNawaTechUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestNawaTech_TestNawaTechUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C5B37E6EB405E59BFDC1E4E /* Pods-TestNawaTech.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestNawaTech.debug.xcconfig"; path = "Target Support Files/Pods-TestNawaTech/Pods-TestNawaTech.debug.xcconfig"; sourceTree = "<group>"; };
+		8E83E182874043BCF961FD31 /* Pods_TestNawaTech.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestNawaTech.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92A26537EDD0531756CEE3C0 /* Pods-TestNawaTechTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestNawaTechTests.debug.xcconfig"; path = "Target Support Files/Pods-TestNawaTechTests/Pods-TestNawaTechTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9EDE15163EB122BA5444E936 /* Pods-TestNawaTech-TestNawaTechUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestNawaTech-TestNawaTechUITests.debug.xcconfig"; path = "Target Support Files/Pods-TestNawaTech-TestNawaTechUITests/Pods-TestNawaTech-TestNawaTechUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AAA55312D52372544CD359E3 /* Pods-TestNawaTechTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestNawaTechTests.release.xcconfig"; path = "Target Support Files/Pods-TestNawaTechTests/Pods-TestNawaTechTests.release.xcconfig"; sourceTree = "<group>"; };
+		DDA540FBA79E8576CC1248E1 /* Pods_TestNawaTechTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestNawaTechTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCDBD9242A970DC5003CFB06 /* TestNawaTech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestNawaTech.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCDBD9272A970DC5003CFB06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FCDBD9292A970DC5003CFB06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FCDBD9312A970DC5003CFB06 /* TestNawaTech.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestNawaTech.xcdatamodel; sourceTree = "<group>"; };
+		FCDBD9332A970DC6003CFB06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FCDBD9362A970DC6003CFB06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FCDBD9382A970DC6003CFB06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCDBD93D2A970DC7003CFB06 /* TestNawaTechTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestNawaTechTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCDBD9412A970DC7003CFB06 /* TestNawaTechTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNawaTechTests.swift; sourceTree = "<group>"; };
+		FCDBD9472A970DC7003CFB06 /* TestNawaTechUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestNawaTechUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCDBD94B2A970DC7003CFB06 /* TestNawaTechUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNawaTechUITests.swift; sourceTree = "<group>"; };
+		FCDBD94D2A970DC7003CFB06 /* TestNawaTechUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNawaTechUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FCDBD95A2A970DE0003CFB06 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FCDBD95C2A970E00003CFB06 /* HomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
+		FCDBD95E2A970F66003CFB06 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FCDBD9602A970F8B003CFB06 /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
+		FCDBD9642A970FD1003CFB06 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		FCDBD96E2A9718D1003CFB06 /* FirebaseCollection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseCollection+Extension.swift"; sourceTree = "<group>"; };
+		FCDBD9702A971DFC003CFB06 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FCDBD9722A971E26003CFB06 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		FCDBD9742A971EE2003CFB06 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		FCDBD9762A971F3A003CFB06 /* MotorCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorCycle.swift; sourceTree = "<group>"; };
+		FCDBD9782A97208E003CFB06 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		FCEAC76C2A9726FC00A31AF1 /* MotorcycleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleTableViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FCDBD9212A970DC5003CFB06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A8E6D1822D842B1C7CE1505 /* Pods_TestNawaTech.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCDBD93A2A970DC7003CFB06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5673CEF932677A64BF05F227 /* Pods_TestNawaTechTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCDBD9442A970DC7003CFB06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04779FE54230B55DD4BF70B6 /* Pods_TestNawaTech_TestNawaTechUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4B8D32A1F22D107F1E14870C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C5B37E6EB405E59BFDC1E4E /* Pods-TestNawaTech.debug.xcconfig */,
+				10745DBC92CEEBB2BBE5294B /* Pods-TestNawaTech.release.xcconfig */,
+				9EDE15163EB122BA5444E936 /* Pods-TestNawaTech-TestNawaTechUITests.debug.xcconfig */,
+				1FD6E64659AC5D73B939FE54 /* Pods-TestNawaTech-TestNawaTechUITests.release.xcconfig */,
+				92A26537EDD0531756CEE3C0 /* Pods-TestNawaTechTests.debug.xcconfig */,
+				AAA55312D52372544CD359E3 /* Pods-TestNawaTechTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CDA3503DC66FC209C2FFC3A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8E83E182874043BCF961FD31 /* Pods_TestNawaTech.framework */,
+				30B2DBF23FBC7E6FEBA8F15E /* Pods_TestNawaTech_TestNawaTechUITests.framework */,
+				DDA540FBA79E8576CC1248E1 /* Pods_TestNawaTechTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FCDBD91B2A970DC5003CFB06 = {
+			isa = PBXGroup;
+			children = (
+				FCDBD9262A970DC5003CFB06 /* TestNawaTech */,
+				FCDBD9402A970DC7003CFB06 /* TestNawaTechTests */,
+				FCDBD94A2A970DC7003CFB06 /* TestNawaTechUITests */,
+				FCDBD9252A970DC5003CFB06 /* Products */,
+				4B8D32A1F22D107F1E14870C /* Pods */,
+				CDA3503DC66FC209C2FFC3A4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FCDBD9252A970DC5003CFB06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FCDBD9242A970DC5003CFB06 /* TestNawaTech.app */,
+				FCDBD93D2A970DC7003CFB06 /* TestNawaTechTests.xctest */,
+				FCDBD9472A970DC7003CFB06 /* TestNawaTechUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCDBD9262A970DC5003CFB06 /* TestNawaTech */ = {
+			isa = PBXGroup;
+			children = (
+				FCEAC7722A972C4200A31AF1 /* Model */,
+				FCEAC7712A972C3400A31AF1 /* Extension */,
+				FCEAC7702A972C1F00A31AF1 /* Networking */,
+				FCEAC76E2A972C0200A31AF1 /* Modules */,
+				FCDBD9272A970DC5003CFB06 /* AppDelegate.swift */,
+				FCDBD9292A970DC5003CFB06 /* SceneDelegate.swift */,
+				FCDBD9332A970DC6003CFB06 /* Assets.xcassets */,
+				FCDBD9352A970DC6003CFB06 /* LaunchScreen.storyboard */,
+				FCDBD9382A970DC6003CFB06 /* Info.plist */,
+				FCDBD9702A971DFC003CFB06 /* GoogleService-Info.plist */,
+				FCDBD9302A970DC5003CFB06 /* TestNawaTech.xcdatamodeld */,
+			);
+			path = TestNawaTech;
+			sourceTree = "<group>";
+		};
+		FCDBD9402A970DC7003CFB06 /* TestNawaTechTests */ = {
+			isa = PBXGroup;
+			children = (
+				FCDBD9412A970DC7003CFB06 /* TestNawaTechTests.swift */,
+			);
+			path = TestNawaTechTests;
+			sourceTree = "<group>";
+		};
+		FCDBD94A2A970DC7003CFB06 /* TestNawaTechUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FCDBD94B2A970DC7003CFB06 /* TestNawaTechUITests.swift */,
+				FCDBD94D2A970DC7003CFB06 /* TestNawaTechUITestsLaunchTests.swift */,
+			);
+			path = TestNawaTechUITests;
+			sourceTree = "<group>";
+		};
+		FCEAC76E2A972C0200A31AF1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				FCEAC76F2A972C1100A31AF1 /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		FCEAC76F2A972C1100A31AF1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FCDBD95A2A970DE0003CFB06 /* HomeViewController.swift */,
+				FCDBD95C2A970E00003CFB06 /* HomeProtocol.swift */,
+				FCDBD9722A971E26003CFB06 /* HomePresenter.swift */,
+				FCDBD9742A971EE2003CFB06 /* HomeInteractor.swift */,
+				FCDBD9782A97208E003CFB06 /* HomeRouter.swift */,
+				FCDBD9762A971F3A003CFB06 /* MotorCycle.swift */,
+				FCEAC76C2A9726FC00A31AF1 /* MotorcycleTableViewCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FCEAC7702A972C1F00A31AF1 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				FCDBD95E2A970F66003CFB06 /* NetworkManager.swift */,
+				FCDBD9602A970F8B003CFB06 /* URLManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		FCEAC7712A972C3400A31AF1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FCDBD96E2A9718D1003CFB06 /* FirebaseCollection+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FCEAC7722A972C4200A31AF1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FCDBD9642A970FD1003CFB06 /* CustomError.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FCDBD9232A970DC5003CFB06 /* TestNawaTech */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCDBD9512A970DC7003CFB06 /* Build configuration list for PBXNativeTarget "TestNawaTech" */;
+			buildPhases = (
+				99374430415B2C1624687FE7 /* [CP] Check Pods Manifest.lock */,
+				FCDBD9202A970DC5003CFB06 /* Sources */,
+				FCDBD9212A970DC5003CFB06 /* Frameworks */,
+				FCDBD9222A970DC5003CFB06 /* Resources */,
+				04916488957CC22E2FC8DC70 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestNawaTech;
+			productName = TestNawaTech;
+			productReference = FCDBD9242A970DC5003CFB06 /* TestNawaTech.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FCDBD93C2A970DC7003CFB06 /* TestNawaTechTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCDBD9542A970DC7003CFB06 /* Build configuration list for PBXNativeTarget "TestNawaTechTests" */;
+			buildPhases = (
+				A9B3D80D1C53106C64CB6329 /* [CP] Check Pods Manifest.lock */,
+				FCDBD9392A970DC7003CFB06 /* Sources */,
+				FCDBD93A2A970DC7003CFB06 /* Frameworks */,
+				FCDBD93B2A970DC7003CFB06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCDBD93F2A970DC7003CFB06 /* PBXTargetDependency */,
+			);
+			name = TestNawaTechTests;
+			productName = TestNawaTechTests;
+			productReference = FCDBD93D2A970DC7003CFB06 /* TestNawaTechTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FCDBD9462A970DC7003CFB06 /* TestNawaTechUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCDBD9572A970DC7003CFB06 /* Build configuration list for PBXNativeTarget "TestNawaTechUITests" */;
+			buildPhases = (
+				CBA9A8E077CB4FB8D8FE480B /* [CP] Check Pods Manifest.lock */,
+				FCDBD9432A970DC7003CFB06 /* Sources */,
+				FCDBD9442A970DC7003CFB06 /* Frameworks */,
+				FCDBD9452A970DC7003CFB06 /* Resources */,
+				7BDA1F689A128274735DCFEA /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCDBD9492A970DC7003CFB06 /* PBXTargetDependency */,
+			);
+			name = TestNawaTechUITests;
+			productName = TestNawaTechUITests;
+			productReference = FCDBD9472A970DC7003CFB06 /* TestNawaTechUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FCDBD91C2A970DC5003CFB06 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					FCDBD9232A970DC5003CFB06 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					FCDBD93C2A970DC7003CFB06 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = FCDBD9232A970DC5003CFB06;
+					};
+					FCDBD9462A970DC7003CFB06 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = FCDBD9232A970DC5003CFB06;
+					};
+				};
+			};
+			buildConfigurationList = FCDBD91F2A970DC5003CFB06 /* Build configuration list for PBXProject "TestNawaTech" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FCDBD91B2A970DC5003CFB06;
+			productRefGroup = FCDBD9252A970DC5003CFB06 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FCDBD9232A970DC5003CFB06 /* TestNawaTech */,
+				FCDBD93C2A970DC7003CFB06 /* TestNawaTechTests */,
+				FCDBD9462A970DC7003CFB06 /* TestNawaTechUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FCDBD9222A970DC5003CFB06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCDBD9372A970DC6003CFB06 /* LaunchScreen.storyboard in Resources */,
+				FCDBD9712A971DFC003CFB06 /* GoogleService-Info.plist in Resources */,
+				FCDBD9342A970DC6003CFB06 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCDBD93B2A970DC7003CFB06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCDBD9452A970DC7003CFB06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04916488957CC22E2FC8DC70 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestNawaTech/Pods-TestNawaTech-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestNawaTech/Pods-TestNawaTech-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestNawaTech/Pods-TestNawaTech-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BDA1F689A128274735DCFEA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestNawaTech-TestNawaTechUITests/Pods-TestNawaTech-TestNawaTechUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestNawaTech-TestNawaTechUITests/Pods-TestNawaTech-TestNawaTechUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestNawaTech-TestNawaTechUITests/Pods-TestNawaTech-TestNawaTechUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99374430415B2C1624687FE7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestNawaTech-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9B3D80D1C53106C64CB6329 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestNawaTechTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBA9A8E077CB4FB8D8FE480B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestNawaTech-TestNawaTechUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FCDBD9202A970DC5003CFB06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCDBD95B2A970DE0003CFB06 /* HomeViewController.swift in Sources */,
+				FCEAC76D2A9726FC00A31AF1 /* MotorcycleTableViewCell.swift in Sources */,
+				FCDBD9612A970F8B003CFB06 /* URLManager.swift in Sources */,
+				FCDBD9752A971EE2003CFB06 /* HomeInteractor.swift in Sources */,
+				FCDBD9792A97208E003CFB06 /* HomeRouter.swift in Sources */,
+				FCDBD9322A970DC5003CFB06 /* TestNawaTech.xcdatamodeld in Sources */,
+				FCDBD96F2A9718D1003CFB06 /* FirebaseCollection+Extension.swift in Sources */,
+				FCDBD9732A971E26003CFB06 /* HomePresenter.swift in Sources */,
+				FCDBD95F2A970F66003CFB06 /* NetworkManager.swift in Sources */,
+				FCDBD9652A970FD1003CFB06 /* CustomError.swift in Sources */,
+				FCDBD9282A970DC5003CFB06 /* AppDelegate.swift in Sources */,
+				FCDBD9772A971F3A003CFB06 /* MotorCycle.swift in Sources */,
+				FCDBD95D2A970E00003CFB06 /* HomeProtocol.swift in Sources */,
+				FCDBD92A2A970DC5003CFB06 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCDBD9392A970DC7003CFB06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCDBD9422A970DC7003CFB06 /* TestNawaTechTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCDBD9432A970DC7003CFB06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCDBD94C2A970DC7003CFB06 /* TestNawaTechUITests.swift in Sources */,
+				FCDBD94E2A970DC7003CFB06 /* TestNawaTechUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FCDBD93F2A970DC7003CFB06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCDBD9232A970DC5003CFB06 /* TestNawaTech */;
+			targetProxy = FCDBD93E2A970DC7003CFB06 /* PBXContainerItemProxy */;
+		};
+		FCDBD9492A970DC7003CFB06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCDBD9232A970DC5003CFB06 /* TestNawaTech */;
+			targetProxy = FCDBD9482A970DC7003CFB06 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FCDBD9352A970DC6003CFB06 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCDBD9362A970DC6003CFB06 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FCDBD94F2A970DC7003CFB06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FCDBD9502A970DC7003CFB06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FCDBD9522A970DC7003CFB06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C5B37E6EB405E59BFDC1E4E /* Pods-TestNawaTech.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J286DXAZ52;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TestNawaTech/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = test.TestNawaTech;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FCDBD9532A970DC7003CFB06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10745DBC92CEEBB2BBE5294B /* Pods-TestNawaTech.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J286DXAZ52;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TestNawaTech/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = test.TestNawaTech;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FCDBD9552A970DC7003CFB06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92A26537EDD0531756CEE3C0 /* Pods-TestNawaTechTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J286DXAZ52;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = test.TestNawaTechTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestNawaTech.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TestNawaTech";
+			};
+			name = Debug;
+		};
+		FCDBD9562A970DC7003CFB06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAA55312D52372544CD359E3 /* Pods-TestNawaTechTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J286DXAZ52;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = test.TestNawaTechTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestNawaTech.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TestNawaTech";
+			};
+			name = Release;
+		};
+		FCDBD9582A970DC7003CFB06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EDE15163EB122BA5444E936 /* Pods-TestNawaTech-TestNawaTechUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J286DXAZ52;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = test.TestNawaTechUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TestNawaTech;
+			};
+			name = Debug;
+		};
+		FCDBD9592A970DC7003CFB06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FD6E64659AC5D73B939FE54 /* Pods-TestNawaTech-TestNawaTechUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J286DXAZ52;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = test.TestNawaTechUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TestNawaTech;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FCDBD91F2A970DC5003CFB06 /* Build configuration list for PBXProject "TestNawaTech" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCDBD94F2A970DC7003CFB06 /* Debug */,
+				FCDBD9502A970DC7003CFB06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCDBD9512A970DC7003CFB06 /* Build configuration list for PBXNativeTarget "TestNawaTech" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCDBD9522A970DC7003CFB06 /* Debug */,
+				FCDBD9532A970DC7003CFB06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCDBD9542A970DC7003CFB06 /* Build configuration list for PBXNativeTarget "TestNawaTechTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCDBD9552A970DC7003CFB06 /* Debug */,
+				FCDBD9562A970DC7003CFB06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCDBD9572A970DC7003CFB06 /* Build configuration list for PBXNativeTarget "TestNawaTechUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCDBD9582A970DC7003CFB06 /* Debug */,
+				FCDBD9592A970DC7003CFB06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FCDBD9302A970DC5003CFB06 /* TestNawaTech.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FCDBD9312A970DC5003CFB06 /* TestNawaTech.xcdatamodel */,
+			);
+			currentVersion = FCDBD9312A970DC5003CFB06 /* TestNawaTech.xcdatamodel */;
+			path = TestNawaTech.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FCDBD91C2A970DC5003CFB06 /* Project object */;
+}
