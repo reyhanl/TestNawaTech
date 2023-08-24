@@ -31,6 +31,21 @@
 		FCDBD9792A97208E003CFB06 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9782A97208E003CFB06 /* HomeRouter.swift */; };
 		FCEAC76D2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC76C2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift */; };
 		FCEAC7742A9737C400A31AF1 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC7732A9737C400A31AF1 /* UIColor+Extension.swift */; };
+		FCEAC7762A973F8E00A31AF1 /* HomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC7752A973F8E00A31AF1 /* HomeUITests.swift */; };
+		FCEAC7782A973FBB00A31AF1 /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC7772A973FBB00A31AF1 /* MockDataProvider.swift */; };
+		FCEAC7792A973FE100A31AF1 /* MotorCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9762A971F3A003CFB06 /* MotorCycle.swift */; };
+		FCEAC77B2A9740F700A31AF1 /* HomePresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC77A2A9740F700A31AF1 /* HomePresenterMock.swift */; };
+		FCEAC77C2A97410500A31AF1 /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD95C2A970E00003CFB06 /* HomeProtocol.swift */; };
+		FCEAC77D2A97414D00A31AF1 /* HomePresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC77A2A9740F700A31AF1 /* HomePresenterMock.swift */; };
+		FCEAC77F2A9741E700A31AF1 /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC7772A973FBB00A31AF1 /* MockDataProvider.swift */; };
+		FCEAC7802A9746C800A31AF1 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9782A97208E003CFB06 /* HomeRouter.swift */; };
+		FCEAC7812A9746CA00A31AF1 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9742A971EE2003CFB06 /* HomeInteractor.swift */; };
+		FCEAC7822A9746CD00A31AF1 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9722A971E26003CFB06 /* HomePresenter.swift */; };
+		FCEAC7832A9746CE00A31AF1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD95A2A970DE0003CFB06 /* HomeViewController.swift */; };
+		FCEAC7842A9746D000A31AF1 /* MotorcycleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC76C2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift */; };
+		FCEAC7852A9746DB00A31AF1 /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9602A970F8B003CFB06 /* URLManager.swift */; };
+		FCEAC7862A9746DD00A31AF1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD95E2A970F66003CFB06 /* NetworkManager.swift */; };
+		FCEAC7872A97471100A31AF1 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC7732A9737C400A31AF1 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +100,9 @@
 		FCDBD9782A97208E003CFB06 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		FCEAC76C2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleCollectionViewCell.swift; sourceTree = "<group>"; };
 		FCEAC7732A9737C400A31AF1 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		FCEAC7752A973F8E00A31AF1 /* HomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUITests.swift; sourceTree = "<group>"; };
+		FCEAC7772A973FBB00A31AF1 /* MockDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataProvider.swift; sourceTree = "<group>"; };
+		FCEAC77A2A9740F700A31AF1 /* HomePresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +208,9 @@
 			isa = PBXGroup;
 			children = (
 				FCDBD94B2A970DC7003CFB06 /* TestNawaTechUITests.swift */,
+				FCEAC7752A973F8E00A31AF1 /* HomeUITests.swift */,
+				FCEAC77A2A9740F700A31AF1 /* HomePresenterMock.swift */,
+				FCEAC7772A973FBB00A31AF1 /* MockDataProvider.swift */,
 				FCDBD94D2A970DC7003CFB06 /* TestNawaTechUITestsLaunchTests.swift */,
 			);
 			path = TestNawaTechUITests;
@@ -483,6 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCDBD95B2A970DE0003CFB06 /* HomeViewController.swift in Sources */,
+				FCEAC77F2A9741E700A31AF1 /* MockDataProvider.swift in Sources */,
 				FCEAC76D2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift in Sources */,
 				FCDBD9612A970F8B003CFB06 /* URLManager.swift in Sources */,
 				FCDBD9752A971EE2003CFB06 /* HomeInteractor.swift in Sources */,
@@ -495,6 +517,7 @@
 				FCDBD9652A970FD1003CFB06 /* CustomError.swift in Sources */,
 				FCDBD9282A970DC5003CFB06 /* AppDelegate.swift in Sources */,
 				FCDBD9772A971F3A003CFB06 /* MotorCycle.swift in Sources */,
+				FCEAC77D2A97414D00A31AF1 /* HomePresenterMock.swift in Sources */,
 				FCDBD95D2A970E00003CFB06 /* HomeProtocol.swift in Sources */,
 				FCDBD92A2A970DC5003CFB06 /* SceneDelegate.swift in Sources */,
 			);
@@ -512,6 +535,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCEAC77C2A97410500A31AF1 /* HomeProtocol.swift in Sources */,
+				FCEAC7782A973FBB00A31AF1 /* MockDataProvider.swift in Sources */,
+				FCEAC7792A973FE100A31AF1 /* MotorCycle.swift in Sources */,
+				FCEAC7852A9746DB00A31AF1 /* URLManager.swift in Sources */,
+				FCEAC7822A9746CD00A31AF1 /* HomePresenter.swift in Sources */,
+				FCEAC7762A973F8E00A31AF1 /* HomeUITests.swift in Sources */,
+				FCEAC77B2A9740F700A31AF1 /* HomePresenterMock.swift in Sources */,
+				FCEAC7802A9746C800A31AF1 /* HomeRouter.swift in Sources */,
+				FCEAC7832A9746CE00A31AF1 /* HomeViewController.swift in Sources */,
+				FCEAC7872A97471100A31AF1 /* UIColor+Extension.swift in Sources */,
+				FCEAC7812A9746CA00A31AF1 /* HomeInteractor.swift in Sources */,
+				FCEAC7862A9746DD00A31AF1 /* NetworkManager.swift in Sources */,
+				FCEAC7842A9746D000A31AF1 /* MotorcycleCollectionViewCell.swift in Sources */,
 				FCDBD94C2A970DC7003CFB06 /* TestNawaTechUITests.swift in Sources */,
 				FCDBD94E2A970DC7003CFB06 /* TestNawaTechUITestsLaunchTests.swift in Sources */,
 			);

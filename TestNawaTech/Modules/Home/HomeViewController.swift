@@ -20,6 +20,7 @@ class HomeViewController: UIViewController{
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.accessibilityIdentifier = "MotorcycleCatalogCollectionView"
         return collectionView
     }()
     lazy var refreshControl: UIRefreshControl = {
@@ -97,6 +98,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MotorcycleCollectionViewCell
         cell.setupData(motorcycle: motorcycles[indexPath.row], isEditingMode: true)
+        cell.accessibilityIdentifier = "MotorcycleCatalogCollectionViewCell\(indexPath.row)"
+        print("MotorcycleCatalogCollectionViewCell\(indexPath.row)")
         return cell
     }
     
