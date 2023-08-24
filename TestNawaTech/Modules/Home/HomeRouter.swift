@@ -26,6 +26,8 @@ class HomeRouter: HomePresenterToRouterProtocol{
     
     
     func goToMotorcycleDetailPage(_ view: UIViewController, motorcycle: Motorcycle) {
-        view.navigationController?.pushViewController(UIViewController(), animated: true)
+        let vc = MotorcycleDetailRouter.makeComponent(motorcycle: motorcycle)
+
+        view.navigationController?.pushViewController(vc, animated: true)
     }
 }

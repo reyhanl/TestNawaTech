@@ -34,16 +34,20 @@ class HomeViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Motorcycle Catalog"
         navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.largeTitleDisplayMode = .always
         presenter?.viewDidLoad()
         setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        title = "Motorcycle Catalog"
     }
     
     func setupUI(){
         addCollectionView()
         view.backgroundColor = .systemBackground
-        print("hey")
     }
     
     func addCollectionView(){

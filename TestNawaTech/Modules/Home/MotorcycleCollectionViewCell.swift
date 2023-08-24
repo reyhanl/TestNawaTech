@@ -120,7 +120,7 @@ class MotorcycleCollectionViewCell: UICollectionViewCell{
         self.stackViewLeadingConstraint?.constant = CGFloat(level) * leadingGap
         setupActiveStatus()
         
-        setupImage(url: motorcycle.imageUrl)
+        setupImage(url: motorcycle.thumbImageUrl)
     }
     
     func setupImage(url string: String?){

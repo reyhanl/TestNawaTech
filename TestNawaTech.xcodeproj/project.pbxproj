@@ -46,6 +46,11 @@
 		FCEAC7852A9746DB00A31AF1 /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9602A970F8B003CFB06 /* URLManager.swift */; };
 		FCEAC7862A9746DD00A31AF1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD95E2A970F66003CFB06 /* NetworkManager.swift */; };
 		FCEAC7872A97471100A31AF1 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC7732A9737C400A31AF1 /* UIColor+Extension.swift */; };
+		FCEAC7892A97547B00A31AF1 /* MotorcycleDetailProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC7882A97547B00A31AF1 /* MotorcycleDetailProtocol.swift */; };
+		FCEAC78B2A9754C400A31AF1 /* MotorcycleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC78A2A9754C400A31AF1 /* MotorcycleDetailViewController.swift */; };
+		FCEAC78D2A9757FD00A31AF1 /* MotorcycleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC78C2A9757FD00A31AF1 /* MotorcycleRouter.swift */; };
+		FCEAC78F2A97582000A31AF1 /* MotorcycleDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC78E2A97582000A31AF1 /* MotorcycleDetailPresenter.swift */; };
+		FCEAC7912A97583600A31AF1 /* MotorcycleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC7902A97583600A31AF1 /* MotorcycleInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +108,11 @@
 		FCEAC7752A973F8E00A31AF1 /* HomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUITests.swift; sourceTree = "<group>"; };
 		FCEAC7772A973FBB00A31AF1 /* MockDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataProvider.swift; sourceTree = "<group>"; };
 		FCEAC77A2A9740F700A31AF1 /* HomePresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterMock.swift; sourceTree = "<group>"; };
+		FCEAC7882A97547B00A31AF1 /* MotorcycleDetailProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleDetailProtocol.swift; sourceTree = "<group>"; };
+		FCEAC78A2A9754C400A31AF1 /* MotorcycleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleDetailViewController.swift; sourceTree = "<group>"; };
+		FCEAC78C2A9757FD00A31AF1 /* MotorcycleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleRouter.swift; sourceTree = "<group>"; };
+		FCEAC78E2A97582000A31AF1 /* MotorcycleDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleDetailPresenter.swift; sourceTree = "<group>"; };
+		FCEAC7902A97583600A31AF1 /* MotorcycleInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +164,18 @@
 				DDA540FBA79E8576CC1248E1 /* Pods_TestNawaTechTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC18655A2A97627E00BEDD33 /* MotorcycleDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FCEAC78C2A9757FD00A31AF1 /* MotorcycleRouter.swift */,
+				FCEAC78E2A97582000A31AF1 /* MotorcycleDetailPresenter.swift */,
+				FCEAC7902A97583600A31AF1 /* MotorcycleInteractor.swift */,
+				FCEAC7882A97547B00A31AF1 /* MotorcycleDetailProtocol.swift */,
+				FCEAC78A2A9754C400A31AF1 /* MotorcycleDetailViewController.swift */,
+			);
+			path = MotorcycleDetail;
 			sourceTree = "<group>";
 		};
 		FCDBD91B2A970DC5003CFB06 = {
@@ -219,6 +241,7 @@
 		FCEAC76E2A972C0200A31AF1 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FC18655A2A97627E00BEDD33 /* MotorcycleDetail */,
 				FCEAC76F2A972C1100A31AF1 /* Home */,
 			);
 			path = Modules;
@@ -505,12 +528,16 @@
 			files = (
 				FCDBD95B2A970DE0003CFB06 /* HomeViewController.swift in Sources */,
 				FCEAC77F2A9741E700A31AF1 /* MockDataProvider.swift in Sources */,
+				FCEAC7892A97547B00A31AF1 /* MotorcycleDetailProtocol.swift in Sources */,
+				FCEAC78B2A9754C400A31AF1 /* MotorcycleDetailViewController.swift in Sources */,
 				FCEAC76D2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift in Sources */,
+				FCEAC7912A97583600A31AF1 /* MotorcycleInteractor.swift in Sources */,
 				FCDBD9612A970F8B003CFB06 /* URLManager.swift in Sources */,
 				FCDBD9752A971EE2003CFB06 /* HomeInteractor.swift in Sources */,
 				FCDBD9792A97208E003CFB06 /* HomeRouter.swift in Sources */,
 				FCDBD9322A970DC5003CFB06 /* TestNawaTech.xcdatamodeld in Sources */,
 				FCDBD96F2A9718D1003CFB06 /* FirebaseCollection+Extension.swift in Sources */,
+				FCEAC78F2A97582000A31AF1 /* MotorcycleDetailPresenter.swift in Sources */,
 				FCDBD9732A971E26003CFB06 /* HomePresenter.swift in Sources */,
 				FCDBD95F2A970F66003CFB06 /* NetworkManager.swift in Sources */,
 				FCEAC7742A9737C400A31AF1 /* UIColor+Extension.swift in Sources */,
@@ -520,6 +547,7 @@
 				FCEAC77D2A97414D00A31AF1 /* HomePresenterMock.swift in Sources */,
 				FCDBD95D2A970E00003CFB06 /* HomeProtocol.swift in Sources */,
 				FCDBD92A2A970DC5003CFB06 /* SceneDelegate.swift in Sources */,
+				FCEAC78D2A9757FD00A31AF1 /* MotorcycleRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
