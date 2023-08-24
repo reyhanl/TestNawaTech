@@ -5,7 +5,7 @@
 //  Created by reyhan muhammad on 24/08/23.
 //
 
-import Foundation
+import UIKit
 
 protocol HomePresenterToViewProtocol{
     var presenter: HomeViewToPresenterProtocol? {get set}
@@ -16,6 +16,8 @@ protocol HomeViewToPresenterProtocol{
     var view: HomePresenterToViewProtocol? {get set}
     var router: HomePresenterToRouterProtocol? {get set}
     func viewDidLoad()
+    func goToMotorcycleDetailPage(_ view: UIViewController, motorcycle: Motorcycle)
+    func refreshData()
 }
 
 protocol HomePresenterToInteractorProtocol{
@@ -31,6 +33,7 @@ protocol HomeInteractorToPresenterProtocol{
 
 protocol HomePresenterToRouterProtocol{
     static func makeComponent() -> HomeViewController
+    func goToMotorcycleDetailPage(_ view: UIViewController, motorcycle: Motorcycle)
 }
 
 enum HomeSuccessType{

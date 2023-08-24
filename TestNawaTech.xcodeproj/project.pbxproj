@@ -29,7 +29,8 @@
 		FCDBD9752A971EE2003CFB06 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9742A971EE2003CFB06 /* HomeInteractor.swift */; };
 		FCDBD9772A971F3A003CFB06 /* MotorCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9762A971F3A003CFB06 /* MotorCycle.swift */; };
 		FCDBD9792A97208E003CFB06 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9782A97208E003CFB06 /* HomeRouter.swift */; };
-		FCEAC76D2A9726FC00A31AF1 /* MotorcycleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC76C2A9726FC00A31AF1 /* MotorcycleTableViewCell.swift */; };
+		FCEAC76D2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC76C2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift */; };
+		FCEAC7742A9737C400A31AF1 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC7732A9737C400A31AF1 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +83,8 @@
 		FCDBD9742A971EE2003CFB06 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		FCDBD9762A971F3A003CFB06 /* MotorCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorCycle.swift; sourceTree = "<group>"; };
 		FCDBD9782A97208E003CFB06 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
-		FCEAC76C2A9726FC00A31AF1 /* MotorcycleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleTableViewCell.swift; sourceTree = "<group>"; };
+		FCEAC76C2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleCollectionViewCell.swift; sourceTree = "<group>"; };
+		FCEAC7732A9737C400A31AF1 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,7 +212,7 @@
 				FCDBD9742A971EE2003CFB06 /* HomeInteractor.swift */,
 				FCDBD9782A97208E003CFB06 /* HomeRouter.swift */,
 				FCDBD9762A971F3A003CFB06 /* MotorCycle.swift */,
-				FCEAC76C2A9726FC00A31AF1 /* MotorcycleTableViewCell.swift */,
+				FCEAC76C2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				FCDBD96E2A9718D1003CFB06 /* FirebaseCollection+Extension.swift */,
+				FCEAC7732A9737C400A31AF1 /* UIColor+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -480,7 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCDBD95B2A970DE0003CFB06 /* HomeViewController.swift in Sources */,
-				FCEAC76D2A9726FC00A31AF1 /* MotorcycleTableViewCell.swift in Sources */,
+				FCEAC76D2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift in Sources */,
 				FCDBD9612A970F8B003CFB06 /* URLManager.swift in Sources */,
 				FCDBD9752A971EE2003CFB06 /* HomeInteractor.swift in Sources */,
 				FCDBD9792A97208E003CFB06 /* HomeRouter.swift in Sources */,
@@ -488,6 +491,7 @@
 				FCDBD96F2A9718D1003CFB06 /* FirebaseCollection+Extension.swift in Sources */,
 				FCDBD9732A971E26003CFB06 /* HomePresenter.swift in Sources */,
 				FCDBD95F2A970F66003CFB06 /* NetworkManager.swift in Sources */,
+				FCEAC7742A9737C400A31AF1 /* UIColor+Extension.swift in Sources */,
 				FCDBD9652A970FD1003CFB06 /* CustomError.swift in Sources */,
 				FCDBD9282A970DC5003CFB06 /* AppDelegate.swift in Sources */,
 				FCDBD9772A971F3A003CFB06 /* MotorCycle.swift in Sources */,

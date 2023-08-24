@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class HomeRouter: HomePresenterToRouterProtocol{
     static func makeComponent() -> HomeViewController {
@@ -21,5 +22,10 @@ class HomeRouter: HomePresenterToRouterProtocol{
         interactor.presenter = presenter
         
         return view
+    }
+    
+    
+    func goToMotorcycleDetailPage(_ view: UIViewController, motorcycle: Motorcycle) {
+        view.navigationController?.pushViewController(UIViewController(), animated: true)
     }
 }

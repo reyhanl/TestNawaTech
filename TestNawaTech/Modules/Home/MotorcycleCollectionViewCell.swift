@@ -8,26 +8,18 @@
 import UIKit
 import Kingfisher
 
-class MotorcycleTableViewCell: UITableViewCell{
+class MotorcycleCollectionViewCell: UICollectionViewCell{
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     lazy var thumbImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         return imageView
-    }()
-    lazy var stackView: UIStackView = {
-       let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .horizontal
-        stackView.distribution = .equalSpacing
-        stackView.spacing = 10
-        stackView.alignment = .center
-        return stackView
     }()
     lazy var containerView: UIView = {
         let view = UIView()
@@ -52,13 +44,9 @@ class MotorcycleTableViewCell: UITableViewCell{
         super.awakeFromNib()
     }
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.clipsToBounds = true
-//        addContainerView()
-        selectionStyle = .none
-        addStackView()
-        addActiveView()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
         addImageView()
         addTitleLabel()
         addGestureRecognizer()
@@ -66,11 +54,6 @@ class MotorcycleTableViewCell: UITableViewCell{
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: true)
-        setupActiveStatus()
     }
     
 //    func addContainerView(){
@@ -84,47 +67,31 @@ class MotorcycleTableViewCell: UITableViewCell{
 //            bottomConstraint
 //        ])
 //    }
-    
-    func addStackView(){
-        addSubview(stackView)
-        
-        let leadingConstraint =  NSLayoutConstraint(item: stackView, attribute: .leading, relatedBy: .equal, toItem: contentView, attribute: .leading, multiplier: 1, constant: 0)
-        NSLayoutConstraint.activate([
-            NSLayoutConstraint(item: stackView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0),
-            NSLayoutConstraint(item: stackView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0),
-            leadingConstraint
-        ])
-        stackViewLeadingConstraint = leadingConstraint
+    func setupUI(){
+        clipsToBounds = true
+        backgroundColor = .secondaryBackgroundColor
+        layer.cornerRadius = 10
     }
     
     private func addTitleLabel(){
-        stackView.addArrangedSubview(titleLabel)
-//        NSLayoutConstraint.activate([
-//            NSLayoutConstraint(item: titleLabel, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 20),
-//            NSLayoutConstraint(item: titleLabel, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: 20)
-//        ])
+        addSubview(titleLabel)
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: titleLabel, attribute: .top, relatedBy: .equal, toItem: thumbImageView, attribute: .bottom, multiplier: 1, constant: 10),
+            NSLayoutConstraint(item: titleLabel, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: -10),
+            NSLayoutConstraint(item: titleLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 20),
+            NSLayoutConstraint(item: titleLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 20)
+        ])
 //
         titleLabel.text = "dwwd"
         titleLabel.numberOfLines = 0
     }
-    
-    func addActiveView(){
-        stackView.addArrangedSubview(activeView)
-        let size = 20.0
-        NSLayoutConstraint.activate([
-            NSLayoutConstraint(item: activeView, attribute: .width, relatedBy: .equal, toItem: .none, attribute: .notAnAttribute, multiplier: 1, constant: size),
-            NSLayoutConstraint(item: activeView, attribute: .height, relatedBy: .equal, toItem: .none, attribute: .notAnAttribute, multiplier: 1, constant: size),
-      ])
-        activeView.backgroundColor = .purple
-        activeView.layer.cornerRadius = size / 2
-    }
-    
+        
     func addImageView(){
-        stackView.addArrangedSubview(thumbImageView)
-        let size = 20.0
+        addSubview(thumbImageView)
         NSLayoutConstraint.activate([
-            NSLayoutConstraint(item: thumbImageView, attribute: .width, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0.8, constant: 0),
-            NSLayoutConstraint(item: thumbImageView, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0.8, constant: 0),
+            NSLayoutConstraint(item: thumbImageView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0),
+            NSLayoutConstraint(item: thumbImageView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 20),            NSLayoutConstraint(item: thumbImageView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: -20),
+            NSLayoutConstraint(item: thumbImageView, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0.8, constant: 0)
       ])
         thumbImageView.layer.cornerRadius = 5
     }
@@ -152,6 +119,15 @@ class MotorcycleTableViewCell: UITableViewCell{
         activeView.isHidden = !isEditingMode
         self.stackViewLeadingConstraint?.constant = CGFloat(level) * leadingGap
         setupActiveStatus()
+        
+        setupImage(url: motorcycle.imageUrl)
+    }
+    
+    func setupImage(url string: String?){
+        guard let urlString = string,
+              let url = URL(string: urlString)
+        else{return}
+        thumbImageView.kf.setImage(with: url)
     }
     
     @objc func didTap(){

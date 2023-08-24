@@ -6,15 +6,23 @@
 //
 
 import Foundation
+import UIKit
 
 class HomePresenter: HomeViewToPresenterProtocol{
-    
     var view: HomePresenterToViewProtocol?
     var interactor: HomePresenterToInteractorProtocol?
     var router: HomePresenterToRouterProtocol?
     
     func viewDidLoad() {
         interactor?.fetchData()
+    }
+    
+    func refreshData(){
+        interactor?.fetchData()
+    }
+    
+    func goToMotorcycleDetailPage(_ view: UIViewController, motorcycle: Motorcycle) {
+        router?.goToMotorcycleDetailPage(view, motorcycle: motorcycle)
     }
 }
 

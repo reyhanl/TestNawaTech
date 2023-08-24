@@ -12,4 +12,5 @@ struct Motorcycle: Codable{
     var company: String?
     var price: Int?
     var currency: String?
+    var imageUrl: String?
 }
