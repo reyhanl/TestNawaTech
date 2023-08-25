@@ -51,6 +51,29 @@ class NetworkManager: NetworkManagerProtocol{
             completion(.success(models))
         }
     }
+    
+    func setDocument<T: Encodable>(model: T, reference: FirestoreReferenceType, completion: @escaping(Result<T, Error>) -> Void){
+        do{
+            let data = try JSONEncoder().encode(model)
+            let tempDict = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String:Any]
+            Firestore.firestore().collection(reference.reference).addDocument(data: tempDict) { error in
+                if let error = error{
+                    completion(.failure(error))
+                    return
+                }
+                completion(.success(model))
+            }
+        }catch{
+            completion(.failure(error))
+        }
+    }
+    
+    func purchase(purchase: Purchase, completion: @escaping(Result<Purchase, Error>) -> Void){
+        //TODO: Check if user has balance
+        setDocument(model: purchase, reference: .purchase) { (result: Result<Purchase, Error>) in
+            completion(result)
+        }
+    }
 }
 
 protocol NetworkManagerProtocol{

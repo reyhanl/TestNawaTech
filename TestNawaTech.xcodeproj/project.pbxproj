@@ -10,6 +10,9 @@
 		04779FE54230B55DD4BF70B6 /* Pods_TestNawaTech_TestNawaTechUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B2DBF23FBC7E6FEBA8F15E /* Pods_TestNawaTech_TestNawaTechUITests.framework */; };
 		5673CEF932677A64BF05F227 /* Pods_TestNawaTechTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA540FBA79E8576CC1248E1 /* Pods_TestNawaTechTests.framework */; };
 		9A8E6D1822D842B1C7CE1505 /* Pods_TestNawaTech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E83E182874043BCF961FD31 /* Pods_TestNawaTech.framework */; };
+		FCCBF5B72A9821D600C89C0C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCBF5B62A9821D600C89C0C /* String+Extension.swift */; };
+		FCCBF5B92A982AC400C89C0C /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCBF5B82A982AC400C89C0C /* Purchase.swift */; };
+		FCCBF5BB2A982DC400C89C0C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCBF5BA2A982DC400C89C0C /* Date+Extension.swift */; };
 		FCDBD9282A970DC5003CFB06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9272A970DC5003CFB06 /* AppDelegate.swift */; };
 		FCDBD92A2A970DC5003CFB06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9292A970DC5003CFB06 /* SceneDelegate.swift */; };
 		FCDBD9322A970DC5003CFB06 /* TestNawaTech.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9302A970DC5003CFB06 /* TestNawaTech.xcdatamodeld */; };
@@ -80,6 +83,9 @@
 		9EDE15163EB122BA5444E936 /* Pods-TestNawaTech-TestNawaTechUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestNawaTech-TestNawaTechUITests.debug.xcconfig"; path = "Target Support Files/Pods-TestNawaTech-TestNawaTechUITests/Pods-TestNawaTech-TestNawaTechUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AAA55312D52372544CD359E3 /* Pods-TestNawaTechTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestNawaTechTests.release.xcconfig"; path = "Target Support Files/Pods-TestNawaTechTests/Pods-TestNawaTechTests.release.xcconfig"; sourceTree = "<group>"; };
 		DDA540FBA79E8576CC1248E1 /* Pods_TestNawaTechTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestNawaTechTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCCBF5B62A9821D600C89C0C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		FCCBF5B82A982AC400C89C0C /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
+		FCCBF5BA2A982DC400C89C0C /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		FCDBD9242A970DC5003CFB06 /* TestNawaTech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestNawaTech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCDBD9272A970DC5003CFB06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCDBD9292A970DC5003CFB06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -275,6 +281,8 @@
 			children = (
 				FCDBD96E2A9718D1003CFB06 /* FirebaseCollection+Extension.swift */,
 				FCEAC7732A9737C400A31AF1 /* UIColor+Extension.swift */,
+				FCCBF5B62A9821D600C89C0C /* String+Extension.swift */,
+				FCCBF5BA2A982DC400C89C0C /* Date+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -283,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				FCDBD9642A970FD1003CFB06 /* CustomError.swift */,
+				FCCBF5B82A982AC400C89C0C /* Purchase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -526,6 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCCBF5BB2A982DC400C89C0C /* Date+Extension.swift in Sources */,
 				FCDBD95B2A970DE0003CFB06 /* HomeViewController.swift in Sources */,
 				FCEAC77F2A9741E700A31AF1 /* MockDataProvider.swift in Sources */,
 				FCEAC7892A97547B00A31AF1 /* MotorcycleDetailProtocol.swift in Sources */,
@@ -538,6 +548,7 @@
 				FCDBD9322A970DC5003CFB06 /* TestNawaTech.xcdatamodeld in Sources */,
 				FCDBD96F2A9718D1003CFB06 /* FirebaseCollection+Extension.swift in Sources */,
 				FCEAC78F2A97582000A31AF1 /* MotorcycleDetailPresenter.swift in Sources */,
+				FCCBF5B72A9821D600C89C0C /* String+Extension.swift in Sources */,
 				FCDBD9732A971E26003CFB06 /* HomePresenter.swift in Sources */,
 				FCDBD95F2A970F66003CFB06 /* NetworkManager.swift in Sources */,
 				FCEAC7742A9737C400A31AF1 /* UIColor+Extension.swift in Sources */,
@@ -545,6 +556,7 @@
 				FCDBD9282A970DC5003CFB06 /* AppDelegate.swift in Sources */,
 				FCDBD9772A971F3A003CFB06 /* MotorCycle.swift in Sources */,
 				FCEAC77D2A97414D00A31AF1 /* HomePresenterMock.swift in Sources */,
+				FCCBF5B92A982AC400C89C0C /* Purchase.swift in Sources */,
 				FCDBD95D2A970E00003CFB06 /* HomeProtocol.swift in Sources */,
 				FCDBD92A2A970DC5003CFB06 /* SceneDelegate.swift in Sources */,
 				FCEAC78D2A9757FD00A31AF1 /* MotorcycleRouter.swift in Sources */,

@@ -1,0 +1,9 @@
+{
+    "aps" : {
+        "alert" : {
+            "title" : "Motorcycle Catalog",
+            "body" : "You have successfully purchased a motorcycle!"
+        },
+    },
+    "Simulator Target Bundle": "test.TestNawaTech"
+}

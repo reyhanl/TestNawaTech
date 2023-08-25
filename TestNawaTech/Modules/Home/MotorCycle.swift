@@ -15,8 +15,9 @@ struct Motorcycle: Codable{
     var imageUrl: String?
     var description: String?
     var thumbImageUrl: String?
+    var id: String?
     
-    init(name: String? = nil, company: String? = nil, price: Int? = nil, currency: String? = nil, imageUrl: String? = nil, description: String? = nil, thumbImageUrl: String? = nil) {
+    init(name: String? = nil, company: String? = nil, price: Int? = nil, currency: String? = nil, imageUrl: String? = nil, description: String? = nil, thumbImageUrl: String? = nil, id: String? = nil) {
         self.name = name
         self.company = company
         self.price = price
@@ -24,5 +25,6 @@ struct Motorcycle: Codable{
         self.imageUrl = imageUrl
         self.description = description
         self.thumbImageUrl = thumbImageUrl
+        self.id = id
     }
 }

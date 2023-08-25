@@ -17,11 +17,13 @@ protocol MotorcycleDetailViewToPresenterProtocol{
     var router: MotorcycleDetailPresenterToRouterProtocol? {get set}
     func viewDidLoad()
     func refreshData()
+    func purchase(motorcycle: Motorcycle)
 }
 
 protocol MotorcycleDetailPresenterToInteractorProtocol{
     var presenter: MotorcycleDetailInteractorToPresenterProtocol? {get set}
     func fetchData()
+    func purchase(motorcycle: Motorcycle)
 }
 
 
@@ -35,5 +37,5 @@ protocol MotorcycleDetailPresenterToRouterProtocol{
 }
 
 enum MotorcycleDetailSuccessType{
-    case fetchData([Motorcycle])
+    case purchase
 }

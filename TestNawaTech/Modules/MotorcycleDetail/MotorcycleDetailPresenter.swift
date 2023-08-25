@@ -20,6 +20,10 @@ class MotorcycleDetailPresenter: MotorcycleDetailViewToPresenterProtocol{
     func refreshData(){
         interactor?.fetchData()
     }
+    
+    func purchase(motorcycle: Motorcycle) {
+        interactor?.purchase(motorcycle: motorcycle)
+    }
 }
 
 extension MotorcycleDetailPresenter: MotorcycleDetailInteractorToPresenterProtocol{

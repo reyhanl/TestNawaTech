@@ -16,12 +16,19 @@ enum FirestoreType{
 enum FirestoreReferenceType{
     case getMotorcycles
     case getMotorcycle(String, String)
+    case purchase
+    case custom(String, FirestoreType)
+    
     var reference: String{
         switch self{
         case .getMotorcycles:
             return "Motorcycle"
         case .getMotorcycle(let company, let type):
             return "Motorcycle/\(company + type)"
+        case .purchase:
+            return "purchase/"
+        case .custom(let reference, _):
+            return reference
         }
     }
     
@@ -31,6 +38,10 @@ enum FirestoreReferenceType{
             return .collection
         case .getMotorcycle:
             return .document
+        case .purchase:
+            return .collection
+        case .custom(_, let type):
+            return type
         }
     }
     

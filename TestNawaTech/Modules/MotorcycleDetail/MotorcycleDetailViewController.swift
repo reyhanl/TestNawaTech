@@ -32,6 +32,7 @@ class MotorcycleDetailViewController: UIViewController{
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .boldSystemFont(ofSize: 24)
         return label
     }()
     
@@ -63,6 +64,7 @@ class MotorcycleDetailViewController: UIViewController{
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Purchase", for: .normal)
         button.layer.cornerRadius = 5
+        button.addTarget(self, action: #selector(purchase), for: .touchUpInside)
         return button
     }()
     
@@ -180,7 +182,7 @@ class MotorcycleDetailViewController: UIViewController{
     func setupData(motorcycle: Motorcycle){
         self.motorcycle = motorcycle
         titleLabel.text = motorcycle.name
-        descriptionTextView.text = motorcycle.description
+        descriptionTextView.attributedText = motorcycle.description?.htmlToAttributedString
         view.layoutIfNeeded()
         heightOfTextView?.constant = descriptionTextView.contentSize.height
         view.layoutIfNeeded()
@@ -194,11 +196,29 @@ class MotorcycleDetailViewController: UIViewController{
         else{return}
         imageView.kf.setImage(with: url)
     }
+    
+    @objc func purchase(){
+        guard let motorcycle = motorcycle else{return}
+        presenter?.purchase(motorcycle: motorcycle)
+    }
 }
 
 extension MotorcycleDetailViewController: MotorcycleDetailPresenterToViewProtocol{
     
     func result(result: Result<MotorcycleDetailSuccessType, Error>) {
+        switch result{
+        case .success(let success):
+            handleSuccess(type: success)
+        case .failure(let error):
+            handleError(error: error)
+        }
+    }
+    
+    func handleSuccess(type: MotorcycleDetailSuccessType){
+        print("Transaction complete")
+    }
+    
+    func handleError(error: Error){
         
     }
 }
