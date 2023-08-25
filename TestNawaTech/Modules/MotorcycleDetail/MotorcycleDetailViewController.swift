@@ -215,10 +215,10 @@ extension MotorcycleDetailViewController: MotorcycleDetailPresenterToViewProtoco
     }
     
     func handleSuccess(type: MotorcycleDetailSuccessType){
-        print("Transaction complete")
+        presentBubbleAlert(text: "Transaction Complete!", with: 0.2, floating: 1)
     }
     
     func handleError(error: Error){
-        
+        presentBubbleAlert(text: String(describing: error), with: 0.2, floating: 1)
     }
 }
