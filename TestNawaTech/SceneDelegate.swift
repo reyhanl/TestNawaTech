@@ -28,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.rootViewController = navigationController
             window?.makeKeyAndVisible()
         }else{
-            let vc = HomeRouter.makeComponent()
+            let vc = RegisterRouter.makeComponent()
             let navigationController = UINavigationController(rootViewController: vc)
             window = UIWindow(windowScene: windowScene)
             window?.rootViewController = navigationController
