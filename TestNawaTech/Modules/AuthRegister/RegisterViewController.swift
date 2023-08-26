@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RegisterViewController: UIViewController{
     
@@ -63,6 +64,18 @@ class RegisterViewController: UIViewController{
         return button
     }()
     
+    lazy var alreadyHaveAnAccountButton: CustomButton = {
+        let button = CustomButton(frame: .zero)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(goToSignIn), for: .touchUpInside)
+        button.layer.cornerRadius = 5
+        button.isEnabled = false
+        button.backgroundColor = .clear
+        button.setTitle("Already have an account?", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 14)
+        return button
+    }()
+    
     var presenter: RegisterViewToPresenterProtocol?
     
     override func viewDidLoad() {
@@ -75,7 +88,17 @@ class RegisterViewController: UIViewController{
         addStackView()
         addEmailTextField()
         addPasswordTextField()
-        addButton()
+        addRegisterButton()
+        addAlreadyButton()
+        signOut()
+    }
+    
+    func signOut(){
+        do{
+            try Auth.auth().signOut()
+        }catch{
+            
+        }
     }
     
     func addContainer(){
@@ -115,10 +138,16 @@ class RegisterViewController: UIViewController{
         passwordTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
-    func addButton(){
+    func addRegisterButton(){
         textFieldStackView.addArrangedSubview(button)
         button.widthAnchor.constraint(equalTo: emailTextField.widthAnchor, multiplier: 1).isActive = true
         button.heightAnchor.constraint(equalTo: emailTextField.heightAnchor, multiplier: 1).isActive = true
+    }
+    
+    func addAlreadyButton(){
+        textFieldStackView.addArrangedSubview(alreadyHaveAnAccountButton)
+        button.widthAnchor.constraint(equalTo: emailTextField.widthAnchor, multiplier: 1).isActive = true
+        alreadyHaveAnAccountButton.heightAnchor.constraint(equalTo: emailTextField.heightAnchor, multiplier: 1).isActive = true
     }
     
     func updateButton(){
@@ -131,6 +160,10 @@ class RegisterViewController: UIViewController{
               let password = passwordTextField.text
         else{return}
         presenter?.register(email: email, password: password)
+    }
+    
+    @objc func goToSignIn(){
+        presenter?.goToSignIn(from: self)
     }
     
     @objc func textDidChange(){

@@ -30,42 +30,10 @@
             filePath = "TestNawaTech/Modules/AuthRegister/RegisterViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "updateButton()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A2F09746-3C04-47E2-9FBB-6A37ECA459F3 - 99f18b253a2fff11"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TestNawaTech.RegisterViewController.updateButton() -&gt; ()"
-                  moduleName = "TestNawaTech"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/reyhanmuhammad/Reyhan/Project/TestNawaTech/TestNawaTech/Modules/AuthRegister/RegisterViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "125"
-                  endingLineNumber = "125"
-                  offsetFromSymbolStart = "336">
-               </Location>
-               <Location
-                  uuid = "A2F09746-3C04-47E2-9FBB-6A37ECA459F3 - 99f18b253a2fff11"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TestNawaTech.RegisterViewController.updateButton() -&gt; ()"
-                  moduleName = "TestNawaTech"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/reyhanmuhammad/Reyhan/Project/TestNawaTech/TestNawaTech/Modules/AuthRegister/RegisterViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "125"
-                  endingLineNumber = "125"
-                  offsetFromSymbolStart = "124">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -23,4 +23,9 @@ class RegisterRouter: RegisterPresenterToRouterProtocol{
         
         return view
     }
+    
+    func goToSignIn(from vc: UIViewController) {
+        let signInVC = RegisterRouter.makeComponent()
+        vc.navigationController?.pushViewController(signInVC, animated: true)
+    }
 }
