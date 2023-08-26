@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RegexBuilder
 
 class CustomTextField: UIView{
     
@@ -21,6 +22,8 @@ class CustomTextField: UIView{
     private lazy var textField: UITextField = {
         let textField = UITextField()
 //        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.addTarget(self, action: #selector(textDidChange(_:)), for: .editingChanged)
+        textField.addTarget(self, action: #selector(textFieldDidEndEditing), for: .editingDidEnd)
         textField.backgroundColor = .clear
         return textField
     }()
@@ -50,8 +53,11 @@ class CustomTextField: UIView{
         }
     }
     var delegate: UITextFieldDelegate?{
-        didSet{
-            textField.delegate = delegate
+        get{
+            textField.delegate
+        }
+        set{
+            textField.delegate = newValue
         }
     }
     var text: String?{
@@ -71,6 +77,16 @@ class CustomTextField: UIView{
             textField.placeholder = newValue
         }
     }
+    var status: textFieldStatus = .inactive{
+        didSet{
+            if oldValue != status && shouldValidate{
+                setupStatus()
+            }
+        }
+    }
+    private var firstTime: Bool = true
+    var shouldValidate: Bool = false
+    var validation: [Requirement] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -129,4 +145,128 @@ class CustomTextField: UIView{
     @objc private func toggleIsSecureTextEntry(){
         isSecureTextEntry.toggle()
     }
+    
+    func validate(){
+        
+    }
+    
+    @objc func textDidChange(_ sender: UITextField){
+        checkTextFieldStatus()
+    }
+    
+    @objc func textFieldDidEndEditing(){
+        firstTime = false
+        checkTextFieldStatus()
+    }
+    
+    func checkTextFieldStatus(){
+        guard let text = textField.text else{
+            status = .inactive
+            firstTime = true
+            return
+        }
+        
+        var invalid = false
+        if shouldValidate{
+            var pattern = ""
+        requirementLoop: for requirement in validation {
+            switch requirement{
+            case .shouldContainsWord:
+                let regex = Regex{
+                    OneOrMore(.word)
+                }
+                let status = text.firstMatch(of: regex)!
+                print(status.output)
+            case .minimumNumberOfLetter(let count):
+                pattern = "^[a-zA-Z0-9]{\(count),}$"
+            case .isAValidEmailAddress:
+                pattern = "^[a-zA-Z0-9._%+-]+@+[a-zA-Z0-9.-]+\\.+[a-zA-Z]{2,}$"
+            case .shouldContainUppercase:
+                pattern = ".*[A-Z].*"
+            case .custom(let temp):
+                pattern = temp
+            }
+            do{
+                let regex = try NSRegularExpression(pattern: pattern)
+                let range = NSRange(location: 0, length: text.utf16.count)
+                let matches = regex.matches(in: text, range: range)
+                if matches.isEmpty {
+                    invalid = true
+                    break requirementLoop
+                }
+            }catch{
+                
+            }
+            
+        }
+        }else{
+            print(textField.isFirstResponder)
+            status = textField.isFirstResponder ? .active:.inactive
+            return
+        }
+        
+        
+        if firstTime && invalid{
+            status = .active
+            return
+        }else if firstTime && !invalid {
+            status = .valid
+            firstTime = false
+            return
+        }
+        
+        status = invalid ? .invalid:.valid
+    }
+    
+    func setupStatus(){
+        switch status{
+        case .active:
+            self.layer.borderColor = UIColor.primaryForegroundColor.cgColor
+            self.layer.borderWidth = 2
+        case .inactive:
+            self.layer.borderColor = UIColor.primaryForegroundColor.cgColor
+            self.layer.borderWidth = 0
+        case .valid:
+            self.layer.borderColor = UIColor.validColor.cgColor
+            self.layer.borderWidth = 2
+        case .invalid:
+            self.layer.borderColor = UIColor.invalidColor.cgColor
+            self.layer.borderWidth = 2
+        }
+    }
+    
+    func addTarget(target: Any?, selector: Selector, for event: UIControl.Event){
+        textField.addTarget(target, action: selector, for: event)
+    }
+}
+
+
+enum Requirement{
+    case shouldContainsWord
+    case minimumNumberOfLetter(Int)
+    case isAValidEmailAddress
+    case shouldContainUppercase
+    case custom(String)
+    
+    var regexString: String{
+        switch self{
+        case .shouldContainsWord:
+            return "^.*[a-zA-Z0-9]+.*$"
+        case .minimumNumberOfLetter(let count):
+            return "^[a-zA-Z0-9]{\(count),}$"
+        case .isAValidEmailAddress:
+            return "^[a-zA-Z0-9._%+-]+@+[a-zA-Z0-9.-]+\\.+[a-zA-Z]{2,}$"
+        case .shouldContainUppercase:
+            return ".*[A-Z].*"
+        case .custom(let regex):
+            return regex
+        }
+    }
+}
+
+enum textFieldStatus{
+    case active
+    case inactive
+    case valid
+    case invalid
 }

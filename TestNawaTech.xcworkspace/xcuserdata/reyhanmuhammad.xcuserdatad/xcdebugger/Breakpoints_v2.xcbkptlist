@@ -3,4 +3,70 @@
    uuid = "715DC77A-32B2-438D-AE65-B5C0C090C6B3"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "778CFCF8-6556-4940-8A5F-D7815F0E4811"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestNawaTech/Views/CustomButton.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "init(frame:backgroundColor:pressedColor:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A2F09746-3C04-47E2-9FBB-6A37ECA459F3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestNawaTech/Modules/AuthRegister/RegisterViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "updateButton()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A2F09746-3C04-47E2-9FBB-6A37ECA459F3 - 99f18b253a2fff11"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TestNawaTech.RegisterViewController.updateButton() -&gt; ()"
+                  moduleName = "TestNawaTech"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/reyhanmuhammad/Reyhan/Project/TestNawaTech/TestNawaTech/Modules/AuthRegister/RegisterViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "336">
+               </Location>
+               <Location
+                  uuid = "A2F09746-3C04-47E2-9FBB-6A37ECA459F3 - 99f18b253a2fff11"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TestNawaTech.RegisterViewController.updateButton() -&gt; ()"
+                  moduleName = "TestNawaTech"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/reyhanmuhammad/Reyhan/Project/TestNawaTech/TestNawaTech/Modules/AuthRegister/RegisterViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

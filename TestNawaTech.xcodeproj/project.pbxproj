@@ -11,6 +11,7 @@
 		5673CEF932677A64BF05F227 /* Pods_TestNawaTechTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA540FBA79E8576CC1248E1 /* Pods_TestNawaTechTests.framework */; };
 		9A8E6D1822D842B1C7CE1505 /* Pods_TestNawaTech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E83E182874043BCF961FD31 /* Pods_TestNawaTech.framework */; };
 		FC073CB22A98467200E8F9E9 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC073CB12A98467200E8F9E9 /* CustomTextView.swift */; };
+		FC1638A72A99B58B00E7C238 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1638A62A99B58B00E7C238 /* CustomButton.swift */; };
 		FCCBF5B72A9821D600C89C0C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCBF5B62A9821D600C89C0C /* String+Extension.swift */; };
 		FCCBF5B92A982AC400C89C0C /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCBF5B82A982AC400C89C0C /* Purchase.swift */; };
 		FCCBF5BB2A982DC400C89C0C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCBF5BA2A982DC400C89C0C /* Date+Extension.swift */; };
@@ -91,6 +92,7 @@
 		AAA55312D52372544CD359E3 /* Pods-TestNawaTechTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestNawaTechTests.release.xcconfig"; path = "Target Support Files/Pods-TestNawaTechTests/Pods-TestNawaTechTests.release.xcconfig"; sourceTree = "<group>"; };
 		DDA540FBA79E8576CC1248E1 /* Pods_TestNawaTechTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestNawaTechTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC073CB12A98467200E8F9E9 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
+		FC1638A62A99B58B00E7C238 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		FCCBF5B62A9821D600C89C0C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		FCCBF5B82A982AC400C89C0C /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
 		FCCBF5BA2A982DC400C89C0C /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				FC073CB12A98467200E8F9E9 /* CustomTextView.swift */,
+				FC1638A62A99B58B00E7C238 /* CustomButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -601,6 +604,7 @@
 				FCCBF5C52A9837C800C89C0C /* RegisterPresenter.swift in Sources */,
 				FCCBF5B92A982AC400C89C0C /* Purchase.swift in Sources */,
 				FCDBD95D2A970E00003CFB06 /* HomeProtocol.swift in Sources */,
+				FC1638A72A99B58B00E7C238 /* CustomButton.swift in Sources */,
 				FCCBF5C12A98377A00C89C0C /* RegisterProtocol.swift in Sources */,
 				FCDBD92A2A970DC5003CFB06 /* SceneDelegate.swift in Sources */,
 				FCEAC78D2A9757FD00A31AF1 /* MotorcycleRouter.swift in Sources */,

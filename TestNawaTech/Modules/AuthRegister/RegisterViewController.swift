@@ -31,6 +31,10 @@ class RegisterViewController: UIViewController{
         textField.placeholder = "Input your email"
         textField.layer.cornerRadius = 5
         textField.backgroundColor = .systemFill
+        textField.shouldValidate = true
+        textField.delegate = self
+        textField.validation = [.isAValidEmailAddress]
+        textField.addTarget(target: self, selector: #selector(textDidChange), for: .editingChanged)
         return textField
     }()
     
@@ -41,15 +45,21 @@ class RegisterViewController: UIViewController{
         textField.layer.cornerRadius = 5
         textField.isSecureTextEntry = true
         textField.backgroundColor = .systemFill
+        textField.shouldValidate = true
+        textField.delegate = self
+        textField.validation = [.minimumNumberOfLetter(6)]
+        textField.addTarget(target: self, selector: #selector(textDidChange), for: .editingChanged)
         return textField
     }()
     
-    lazy var button: UIButton = {
-        let button = UIButton()
+    lazy var button: CustomButton = {
+        let button = CustomButton(frame: .zero, backgroundColor: .primaryButton, pressedColor: .primaryButtonPressed)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(signUp), for: .touchUpInside)
-        button.backgroundColor = .blue
-        
+        button.layer.cornerRadius = 5
+        button.isEnabled = false
+        button.setTitle("Sign up", for: .normal)
+        button.titleLabel?.font = .boldSystemFont(ofSize: 18)
         return button
     }()
     
@@ -111,6 +121,11 @@ class RegisterViewController: UIViewController{
         button.heightAnchor.constraint(equalTo: emailTextField.heightAnchor, multiplier: 1).isActive = true
     }
     
+    func updateButton(){
+        let enabled = emailTextField.status == .valid && passwordTextField.status == .valid
+        button.isEnabled = enabled
+    }
+    
     @objc func signUp(){
         guard let email = emailTextField.text,
               let password = passwordTextField.text
@@ -118,12 +133,8 @@ class RegisterViewController: UIViewController{
         presenter?.register(email: email, password: password)
     }
     
-    @objc func textDidChange(_ sender: UITextField){
-        updateButtonState()
-    }
-    
-    func updateButtonState(){
-        if emailTextField.text
+    @objc func textDidChange(){
+        updateButton()
     }
 }
 
@@ -146,5 +157,16 @@ extension RegisterViewController: RegisterPresenterToViewProtocol{
     
     func handleError(_ error: Error){
         print(String(describing: error))
+    }
+}
+
+extension RegisterViewController: UITextFieldDelegate{
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        updateButton()
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        updateButton()
     }
 }
