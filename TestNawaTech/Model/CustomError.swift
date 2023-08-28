@@ -16,6 +16,7 @@ enum CustomError: Error{
     case dataAlreadyExist
     case failedToSignIn(String)
     case failedToSignUp(String)
+    case pathShouldBeCollection
 }
 
 extension CustomError: LocalizedError {

@@ -95,4 +95,14 @@ extension UIViewController{
     func presentCustomModel(){
         
     }
+    
+    func addTapAnywhereToDismissKeyboard(){
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.isUserInteractionEnabled = true
+        view.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
+    }
 }

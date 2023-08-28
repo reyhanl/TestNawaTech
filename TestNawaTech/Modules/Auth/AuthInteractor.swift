@@ -10,7 +10,15 @@ import FirebaseAuth
 class AuthInteractor: AuthPresenterToInteractorProtocol{
     var presenter: AuthInteractorToPresenterProtocol?
     
-    func fetchData() {
+    func updateUserData(email: String, id: String) {
+        NetworkManager.shared.setDocument(with: id, model: Profile(name: email.getEmailName(), id: id, profilePictureUrl: ""), reference: .user(id)) { result in
+            switch result {
+            case .success(let success):
+                break
+            case .failure(let failure):
+                print(failure.localizedDescription)
+            }
+        }
     }
     
     func register(email: String, password: String) {
@@ -19,8 +27,10 @@ class AuthInteractor: AuthPresenterToInteractorProtocol{
             if let error = error{
                 let customError: CustomError = .failedToSignUp(error.localizedDescription)
                 presenter?.result(result: .failure(customError))
+                
                 return
             }
+            self.updateUserData(email: email, id: auth?.user.uid ?? "")
             let token = auth?.user.refreshToken ?? ""
             presenter?.result(result: .success(.successfullyRegister(token)))
         }

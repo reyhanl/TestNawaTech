@@ -67,6 +67,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func addAuthStateListener(scene: UIScene){
+        print("\(Auth.auth().currentUser?.uid)")
         Auth.auth().addStateDidChangeListener { [weak self] auth, user in
             guard let self = self else{return}
             if let user = user{
@@ -91,7 +92,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         vc.tabBarItem = tabBarItem
         tabBarController.addChild(homeNavigationController)
         
-        let profileVC = UIViewController()
+        let profileVC = ProfileRouter.makeComponent()
         let profileNavigationController = UINavigationController(rootViewController: profileVC)
         let profileTabBarItem = UITabBarItem(title: "Profile", image: UIImage.init(systemName: "person"), selectedImage: UIImage.init(systemName: "person.fill"))
         profileVC.tabBarItem = profileTabBarItem

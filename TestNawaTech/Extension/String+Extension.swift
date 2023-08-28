@@ -9,6 +9,11 @@ import Foundation
 import UIKit
 
 extension String {
+    func getEmailName() -> String{
+        guard let indexForAddress = self.enumerated().first(where: {$0.element == "@"})?.offset else{return ""}
+        let name = NSString(string: self).substring(with: .init(location: 0, length: indexForAddress))
+        return name
+    }
     var htmlToAttributedString: NSAttributedString? {
         guard let data = data(using: .utf8) else { return nil }
         do {

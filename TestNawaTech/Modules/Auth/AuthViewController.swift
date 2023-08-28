@@ -104,6 +104,7 @@ class AuthViewController: UIViewController{
         addRegisterButton()
         addAlreadyButton()
         updateUI()
+        addTapAnywhereToDismissKeyboard()
     }
     
     func signOut(){
@@ -129,6 +130,7 @@ class AuthViewController: UIViewController{
         passwordTextField.shouldValidate = false
         button.isEnabled = true
         alreadyHaveAnAccountButton.setTitle("Do not have an account? Register", for: .normal)
+        button.setTitle("Sign in", for: .normal)
     }
     
     private func setupForSignUp(){
@@ -137,6 +139,7 @@ class AuthViewController: UIViewController{
         passwordTextField.shouldValidate = true
         confirmationPasswordTextField.shouldValidate = true
         alreadyHaveAnAccountButton.setTitle("Already have an account? Sign in", for: .normal)
+        button.setTitle("Sign up", for: .normal)
     }
     
     func addContainer(){

@@ -52,8 +52,17 @@ class NetworkManager: NetworkManagerProtocol{
         }
     }
     
+    ///
+    /// - Parameters:
+    ///   - model: An encodable object
+    ///   - reference: It should be path to Collection because it uses auto ID, if you want to determine your own document id you should use setDocument(with id: String..)
+    ///   - completion: it will simply return the model that you put back if successful, or error.
     func setDocument<T: Encodable>(model: T, reference: FirestoreReferenceType, completion: @escaping(Result<T, Error>) -> Void){
         do{
+            guard reference.type == .collection else{
+                completion(.failure(CustomError.pathShouldBeCollection))
+                return
+            }
             let data = try JSONEncoder().encode(model)
             let tempDict = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String:Any]
             Firestore.firestore().collection(reference.reference).addDocument(data: tempDict) { error in
@@ -67,6 +76,32 @@ class NetworkManager: NetworkManagerProtocol{
             completion(.failure(error))
         }
     }
+    
+    ///
+    /// - Parameters:
+    ///   - model: An encodable object
+    ///   - reference: It should be path to Document with an ID as the document ID (duh). If you do not want to determine the ID on your own and want to use collection path, use setDocument(model: T...)
+    ///   - completion: it will simply return the model that you put back if successful, or error.
+    func setDocument<T: Encodable>(with id: String,  model: T, reference: FirestoreReferenceType, completion: @escaping(Result<T, Error>) -> Void){
+        do{
+            guard reference.type == .document else{
+                completion(.failure(CustomError.pathShouldBeCollection))
+                return
+            }
+            let data = try JSONEncoder().encode(model)
+            let tempDict = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String:Any]
+            Firestore.firestore().document(reference.reference).setData(tempDict) { error in
+                if let error = error{
+                    completion(.failure(error))
+                    return
+                }
+                completion(.success(model))
+            }
+        }catch{
+            completion(.failure(error))
+        }
+    }
+
     
     func purchase(purchase: Purchase, completion: @escaping(Result<Purchase, Error>) -> Void){
         //TODO: Check if user has balance
