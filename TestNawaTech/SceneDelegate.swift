@@ -11,6 +11,7 @@ import FirebaseAuth
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
+    var firstOpen: Bool = true
     
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -29,9 +30,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.rootViewController = navigationController
             window?.makeKeyAndVisible()
         }else{
-            goToRegister(scene: scene)
+            addAuthStateListener(scene: scene)
         }
-        addAuthStateListener(scene: scene)
         guard let _ = (scene as? UIWindowScene) else { return }
     }
     
@@ -71,26 +71,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             guard let self = self else{return}
             if let user = user{
                 let vc = HomeRouter.makeComponent()
-                self.goTo(vc: vc)
+                self.goTo(scene: scene, vc: vc)
             }else{
-                guard let windowScene = (scene as? UIWindowScene),
-                      let navCon = windowScene.keyWindow?.rootViewController as? UINavigationController,
-                      let vc = navCon.visibleViewController,
-                      !(vc is RegisterViewController)
-                else { return }
-                let alertVC = CustomAlertViewController(isCancelAble: false, title: "session is invalid", description: "You need to sign in again", actionText: "OK", cancelText: "")
-                alertVC.modalPresentationStyle = .fullScreen
-                alertVC.modalTransitionStyle = .crossDissolve
-                alertVC.delegate = self
-                vc.present(alertVC, animated: true)
+                if firstOpen{
+                    goToRegister(scene: scene)
+                }else{
+                    presentSignInInvalid()
+                }
             }
+            self.firstOpen = false
         }
     }
     
-    func goTo(vc: UIViewController){
-        guard let scene = window?.windowScene?.session.scene,
-              let windowScene = (scene as? UIWindowScene)
-        else { return }
+    func goTo(scene: UIScene, vc: UIViewController){
+        guard let windowScene = (scene as? UIWindowScene) else{return}
         let navigationController = UINavigationController(rootViewController: vc)
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = navigationController
@@ -98,12 +92,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func goToRegister(scene: UIScene){
-        guard let windowScene = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene)
+        else { return }
         let vc = RegisterRouter.makeComponent(for: .signIn)
         let navigationController = UINavigationController(rootViewController: vc)
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+    }
+    
+    func presentSignInInvalid(){
+        guard let scene = window?.windowScene?.session.scene,
+              let windowScene = (scene as? UIWindowScene),
+              let navCon = windowScene.keyWindow?.rootViewController as? UINavigationController,
+              let vc = navCon.visibleViewController
+        else { return }
+        let alertVC = CustomAlertViewController(isCancelAble: false, title: "session is invalid", description: "You need to sign in again", actionText: "OK", cancelText: "")
+        alertVC.modalPresentationStyle = .fullScreen
+        alertVC.modalTransitionStyle = .crossDissolve
+        alertVC.delegate = self
+        vc.present(alertVC, animated: true)
     }
 }
 
@@ -113,11 +121,15 @@ extension SceneDelegate: CustomAlertDelegate{
               let vc = windowScene.keyWindow?.rootViewController
         else { return }
         vc.dismiss(animated: true) { [weak self] in
-            self?.goToRegister(scene: scene)
+            guard let self = self else{return}
+            self.goToRegister(scene: scene)
         }
     }
     
     func userTapOnCancel() {
-        
+        guard let scene = window?.windowScene?.session.scene, let windowScene = (scene as? UIWindowScene),
+              let vc = windowScene.keyWindow?.rootViewController
+        else { return }
+        vc.dismiss(animated: true)
     }
 }

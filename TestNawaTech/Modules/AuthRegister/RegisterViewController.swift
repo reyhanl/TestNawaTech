@@ -103,7 +103,6 @@ class RegisterViewController: UIViewController{
         addConfirmationPasswordTextField()
         addRegisterButton()
         addAlreadyButton()
-        signOut()
         updateUI()
     }
     
@@ -246,6 +245,7 @@ extension RegisterViewController: RegisterPresenterToViewProtocol{
         case .successfullySignIn(let refreshToken):
             UserDefaults.standard.setValue(refreshToken, forKey: "refreshToken")
         }
+        //Scene delegate / AuthListener will automatically get user to HomeVC
     }
     
     func handleError(_ error: Error){
