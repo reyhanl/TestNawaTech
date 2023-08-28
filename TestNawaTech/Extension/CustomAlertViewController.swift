@@ -21,6 +21,7 @@ class CustomAlertViewController: UIViewController{
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .secondaryBackgroundColor
+        view.layer.cornerRadius = 10
         return view
     }()
     
@@ -47,7 +48,6 @@ class CustomAlertViewController: UIViewController{
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 5
-        stackView.backgroundColor = .blue
         stackView.alignment = .center
         return stackView
     }()
@@ -57,6 +57,7 @@ class CustomAlertViewController: UIViewController{
         okeButton.translatesAutoresizingMaskIntoConstraints = false
         okeButton.backgroundColor = .primaryButton
         okeButton.addTarget(self, action: #selector(oke), for: .touchUpInside)
+        okeButton.layer.cornerRadius = 5
         return okeButton
     }()
     
@@ -201,7 +202,7 @@ class CustomAlertViewController: UIViewController{
             NSLayoutConstraint(item: buttonStackView, attribute: .top, relatedBy: .equal, toItem: descriptionLabel, attribute: .bottom, multiplier: 1, constant: 50),
             NSLayoutConstraint(item: buttonStackView, attribute: .leading, relatedBy: .equal, toItem: containerView, attribute: .leading, multiplier: 1, constant: 0),
             NSLayoutConstraint(item: buttonStackView, attribute: .trailing, relatedBy: .equal, toItem: containerView, attribute: .trailing, multiplier: 1, constant: 0),
-            NSLayoutConstraint(item: buttonStackView, attribute: .bottom, relatedBy: .equal, toItem: containerView, attribute: .bottom, multiplier: 1, constant: 20)
+            NSLayoutConstraint(item: buttonStackView, attribute: .bottom, relatedBy: .equal, toItem: containerView, attribute: .bottom, multiplier: 1, constant: -20    )
         ])
     }
     

@@ -94,6 +94,7 @@ class CustomTextField: UIView{
         addStackView()
         addTextField()
         addIsSecureTextEntryButton()
+        addGestureRecognizer()
     }
     
     required init?(coder: NSCoder) {
@@ -101,6 +102,7 @@ class CustomTextField: UIView{
         addStackView()
         addTextField()
         addIsSecureTextEntryButton()
+        addGestureRecognizer()
     }
     
     private func addStackView(){
@@ -237,6 +239,16 @@ class CustomTextField: UIView{
     
     func addTarget(target: Any?, selector: Selector, for event: UIControl.Event){
         textField.addTarget(target, action: selector, for: event)
+    }
+    
+    func addGestureRecognizer() {
+        self.isUserInteractionEnabled = true
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(userDidTapTextField))
+        addGestureRecognizer(gestureRecognizer)
+    }
+    
+    @objc func userDidTapTextField(){
+        textField.becomeFirstResponder()
     }
 }
 

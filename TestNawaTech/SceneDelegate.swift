@@ -70,8 +70,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         Auth.auth().addStateDidChangeListener { [weak self] auth, user in
             guard let self = self else{return}
             if let user = user{
-                let vc = HomeRouter.makeComponent()
-                self.goTo(scene: scene, vc: vc)
+                self.goToHome(scene: scene)
             }else{
                 if firstOpen{
                     goToRegister(scene: scene)
@@ -81,6 +80,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }
             self.firstOpen = false
         }
+    }
+    
+    func goToHome(scene: UIScene){
+        guard let windowScene = (scene as? UIWindowScene) else{return}
+        let vc = HomeRouter.makeComponent()
+        let tabBarController = UITabBarController()
+        let homeNavigationController = UINavigationController(rootViewController: vc)
+        let tabBarItem = UITabBarItem(title: "Catalog", image: UIImage.init(systemName: ""), selectedImage: UIImage.init(systemName: ""))
+        vc.tabBarItem = tabBarItem
+        tabBarController.addChild(homeNavigationController)
+        
+        let profileVC = UIViewController()
+        let profileNavigationController = UINavigationController(rootViewController: profileVC)
+        let profileTabBarItem = UITabBarItem(title: "Profile", image: UIImage.init(systemName: "person"), selectedImage: UIImage.init(systemName: "person.fill"))
+        profileVC.tabBarItem = profileTabBarItem
+        tabBarController.addChild(profileNavigationController)
+        
+        window = UIWindow(windowScene: windowScene)
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
     }
     
     func goTo(scene: UIScene, vc: UIViewController){
