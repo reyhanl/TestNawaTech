@@ -8,7 +8,7 @@
 import UIKit
 import FirebaseAuth
 
-class RegisterViewController: UIViewController{
+class AuthViewController: UIViewController{
     
     lazy var containerView: UIView = {
         let view = UIView()
@@ -86,7 +86,7 @@ class RegisterViewController: UIViewController{
         return button
     }()
     
-    var presenter: RegisterViewToPresenterProtocol?
+    var presenter: AuthViewToPresenterProtocol?
     var auth: AuthType = .signIn
     
     override func viewDidLoad() {
@@ -228,8 +228,8 @@ class RegisterViewController: UIViewController{
     }
 }
 
-extension RegisterViewController: RegisterPresenterToViewProtocol{
-    func result(result: Result<RegisterDetailSuccessType, Error>) {
+extension AuthViewController: AuthPresenterToViewProtocol{
+    func result(result: Result<AuthSuccessType, Error>) {
         switch result{
         case .success(let type):
             handleSuccess(type: type)
@@ -238,7 +238,7 @@ extension RegisterViewController: RegisterPresenterToViewProtocol{
         }
     }
     
-    func handleSuccess(type: RegisterDetailSuccessType){
+    func handleSuccess(type: AuthSuccessType){
         switch type {
         case .successfullyRegister(let refreshToken):
             UserDefaults.standard.setValue(refreshToken, forKey: "refreshToken")
@@ -264,7 +264,7 @@ extension RegisterViewController: RegisterPresenterToViewProtocol{
     }
 }
 
-extension RegisterViewController: UITextFieldDelegate{
+extension AuthViewController: UITextFieldDelegate{
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         updateButton()
         return true

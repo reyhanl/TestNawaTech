@@ -7,8 +7,8 @@
 
 import FirebaseAuth
 
-class RegisterInteractor: RegisterPresenterToInteractorProtocol{
-    var presenter: RegisterInteractorToPresenterProtocol?
+class AuthInteractor: AuthPresenterToInteractorProtocol{
+    var presenter: AuthInteractorToPresenterProtocol?
     
     func fetchData() {
     }

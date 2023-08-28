@@ -8,10 +8,10 @@
 import Foundation
 import UIKit
 
-class RegisterPresenter: RegisterViewToPresenterProtocol{
-    var view: RegisterPresenterToViewProtocol?
-    var interactor: RegisterPresenterToInteractorProtocol?
-    var router: RegisterPresenterToRouterProtocol?
+class AuthPresenter: AuthViewToPresenterProtocol{
+    var view: AuthPresenterToViewProtocol?
+    var interactor: AuthPresenterToInteractorProtocol?
+    var router: AuthPresenterToRouterProtocol?
     
     func register(email: String, password: String) {
         interactor?.register(email: email, password: password)
@@ -30,9 +30,9 @@ class RegisterPresenter: RegisterViewToPresenterProtocol{
     }
 }
 
-extension RegisterPresenter: RegisterInteractorToPresenterProtocol{
+extension AuthPresenter: AuthInteractorToPresenterProtocol{
     
-    func result(result: Result<RegisterDetailSuccessType, Error>) {
+    func result(result: Result<AuthSuccessType, Error>) {
         view?.result(result: result)
     }
 }

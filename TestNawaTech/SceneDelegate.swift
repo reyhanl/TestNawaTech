@@ -113,7 +113,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func goToRegister(scene: UIScene){
         guard let windowScene = (scene as? UIWindowScene)
         else { return }
-        let vc = RegisterRouter.makeComponent(for: .signIn)
+        let vc = AuthRouter.makeComponent(for: .signIn)
         let navigationController = UINavigationController(rootViewController: vc)
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = navigationController
