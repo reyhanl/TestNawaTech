@@ -7,7 +7,25 @@
 
 import Foundation
 
-struct Setting{
-    var name: String?
-    var imgName: String?
+enum Setting{
+    case signOut
+    case statistic
+    
+    var name: String{
+        switch self{
+        case .signOut:
+            return "Sign out"
+        case .statistic:
+            return "Your chart"
+        }
+    }
+    
+    var imageName: String{
+        switch self{
+        case .signOut:
+            return "door.left.hand.open"
+        case .statistic:
+            return "chart.bar"
+        }
+    }
 }

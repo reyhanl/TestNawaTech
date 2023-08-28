@@ -22,6 +22,7 @@
 		FC1638BB2A9C5C5700E7C238 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1638BA2A9C5C5700E7C238 /* ProfileHeaderView.swift */; };
 		FC2194792A9C7EA0002B5F8F /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2194782A9C7EA0002B5F8F /* ProfileTableViewCell.swift */; };
 		FC9E980E2A9C92100056A17E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9E980D2A9C92100056A17E /* Setting.swift */; };
+		FC9E98102A9CC93A0056A17E /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9E980F2A9CC93A0056A17E /* BarChart.swift */; };
 		FCCBF5B72A9821D600C89C0C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCBF5B62A9821D600C89C0C /* String+Extension.swift */; };
 		FCCBF5B92A982AC400C89C0C /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCBF5B82A982AC400C89C0C /* Purchase.swift */; };
 		FCCBF5BB2A982DC400C89C0C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCBF5BA2A982DC400C89C0C /* Date+Extension.swift */; };
@@ -113,6 +114,7 @@
 		FC1638BA2A9C5C5700E7C238 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		FC2194782A9C7EA0002B5F8F /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		FC9E980D2A9C92100056A17E /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		FC9E980F2A9CC93A0056A17E /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
 		FCCBF5B62A9821D600C89C0C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		FCCBF5B82A982AC400C89C0C /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
 		FCCBF5BA2A982DC400C89C0C /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			children = (
 				FC073CB12A98467200E8F9E9 /* CustomTextView.swift */,
 				FC1638A62A99B58B00E7C238 /* CustomButton.swift */,
+				FC9E980F2A9CC93A0056A17E /* BarChart.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				FCEAC7892A97547B00A31AF1 /* MotorcycleDetailProtocol.swift in Sources */,
 				FCEAC78B2A9754C400A31AF1 /* MotorcycleDetailViewController.swift in Sources */,
 				FCCBF5C32A9837B100C89C0C /* AuthRouter.swift in Sources */,
+				FC9E98102A9CC93A0056A17E /* BarChart.swift in Sources */,
 				FCEAC76D2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift in Sources */,
 				FCEAC7912A97583600A31AF1 /* MotorcycleInteractor.swift in Sources */,
 				FC1638BB2A9C5C5700E7C238 /* ProfileHeaderView.swift in Sources */,

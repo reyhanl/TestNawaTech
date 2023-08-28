@@ -67,7 +67,7 @@ class AuthViewController: UIViewController{
     lazy var button: CustomButton = {
         let button = CustomButton(frame: .zero, backgroundColor: .primaryButton, pressedColor: .primaryButtonPressed)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(signUp), for: .touchUpInside)
+        button.addTarget(self, action: #selector(signInOrSignUp), for: .touchUpInside)
         button.layer.cornerRadius = 5
         button.isEnabled = false
         button.setTitle("Sign up", for: .normal)
@@ -203,7 +203,8 @@ class AuthViewController: UIViewController{
         button.isEnabled = enabled
     }
     
-    @objc func signUp(){
+    @objc func signInOrSignUp(){
+        view.endEditing(true)
         guard let email = emailTextField.text,
               let password = passwordTextField.text
         else{return}

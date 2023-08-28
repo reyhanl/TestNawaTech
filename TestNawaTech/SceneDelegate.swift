@@ -12,6 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     var firstOpen: Bool = true
+    var listener: AuthStateDidChangeListenerHandle?
     
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -30,6 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.rootViewController = navigationController
             window?.makeKeyAndVisible()
         }else{
+            redirectUser(scene: scene)
             addAuthStateListener(scene: scene)
         }
         guard let _ = (scene as? UIWindowScene) else { return }
@@ -67,19 +69,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func addAuthStateListener(scene: UIScene){
-        print("\(Auth.auth().currentUser?.uid)")
-        Auth.auth().addStateDidChangeListener { [weak self] auth, user in
-            guard let self = self else{return}
-            if let user = user{
-                self.goToHome(scene: scene)
-            }else{
-                if firstOpen{
-                    goToRegister(scene: scene)
-                }else{
-                    presentSignInInvalid()
-                }
-            }
-            self.firstOpen = false
+        print("user: \(Auth.auth().currentUser)")
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.AuthStateDidChange, object: Auth.auth(), queue: nil) { _ in
+            print("state")
+            self.redirectUser(scene: scene)
         }
     }
     
@@ -121,10 +114,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
     }
     
-    func presentSignInInvalid(){
-        guard let scene = window?.windowScene?.session.scene,
-              let windowScene = (scene as? UIWindowScene),
-              let navCon = windowScene.keyWindow?.rootViewController as? UINavigationController,
+    func redirectUser(scene: UIScene){
+        if let user = Auth.auth().currentUser{
+            self.goToHome(scene: scene)
+        }else{
+            if self.firstOpen{
+                self.goToRegister(scene: scene)
+            }else{
+                self.presentSignInInvalid(scene: scene)
+            }
+        }
+        self.firstOpen = false
+    }
+    
+    func presentSignInInvalid(scene: UIScene){
+        guard let windowScene = (scene as? UIWindowScene),
+              let tabBar = windowScene.keyWindow?.rootViewController as? UITabBarController,
+              let navCon = tabBar.viewControllers?[tabBar.selectedIndex] as? UINavigationController,
               let vc = navCon.visibleViewController
         else { return }
         let alertVC = CustomAlertViewController(isCancelAble: false, title: "session is invalid", description: "You need to sign in again", actionText: "OK", cancelText: "")

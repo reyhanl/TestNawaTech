@@ -16,6 +16,14 @@ class ProfilePresenter: ProfileViewToPresenterProtocol{
     func viewDidLoad() {
         interactor?.fetchProfile()
     }
+    
+    func signOut() {
+        interactor?.signOut()
+    }
+    
+    func goToStatisticVC(from vc: UIViewController) {
+        router?.goToStatisticVC(from: vc)
+    }
 }
 
 extension ProfilePresenter: ProfileInteractorToPresenterProtocol{

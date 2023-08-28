@@ -23,4 +23,8 @@ class ProfileRouter: ProfilePresenterToRouterProtocol{
                 
         return view
     }
+    
+    func goToStatisticVC(from vc: UIViewController) {
+        
+    }
 }

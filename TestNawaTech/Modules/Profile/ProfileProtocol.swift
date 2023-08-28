@@ -16,11 +16,14 @@ protocol ProfileViewToPresenterProtocol{
     var view: ProfilePresenterToViewProtocol? {get set}
     var router: ProfilePresenterToRouterProtocol? {get set}
     func viewDidLoad()
+    func signOut()
+    func goToStatisticVC(from vc: UIViewController)
 }
 
 protocol ProfilePresenterToInteractorProtocol{
     var presenter: ProfileInteractorToPresenterProtocol? {get set}
     func fetchProfile()
+    func signOut()
 }
 
 
@@ -31,6 +34,7 @@ protocol ProfileInteractorToPresenterProtocol{
 
 protocol ProfilePresenterToRouterProtocol{
     static func makeComponent() -> ProfileViewController
+    func goToStatisticVC(from vc: UIViewController)
 }
 
 enum ProfileSuccessType{

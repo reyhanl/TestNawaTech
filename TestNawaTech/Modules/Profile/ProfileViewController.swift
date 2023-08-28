@@ -21,8 +21,7 @@ class ProfileViewController: UIViewController{
     
     var presenter: ProfileViewToPresenterProtocol?
     var settings: [Setting] = [
-        Setting(name: "Statistic", imgName: "chart.bar"),
-        Setting(name: "Sign out", imgName: "door.left.hand.open")
+        .statistic, .signOut
     ]
     var profile: Profile?
     
@@ -100,5 +99,14 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch settings[indexPath.row]{
+        case .signOut:
+            presenter?.signOut()
+        case .statistic:
+            presenter?.goToStatisticVC(from: self)
+        }
     }
 }

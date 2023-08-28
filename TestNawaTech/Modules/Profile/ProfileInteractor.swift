@@ -26,4 +26,12 @@ class ProfileInteractor: ProfilePresenterToInteractorProtocol{
             }
         }
     }
+    
+    func signOut() {
+        do{
+            try Auth.auth().signOut()
+        }catch{
+            presenter?.result(result: .failure(CustomError.failedToSignOut))
+        }
+    }
 }
