@@ -205,6 +205,10 @@ class MotorcycleDetailViewController: UIViewController{
 
 extension MotorcycleDetailViewController: MotorcycleDetailPresenterToViewProtocol{
     
+    func signOut(){
+        //TODO: Present model to let user know that they are no longer sign in
+    }
+    
     func result(result: Result<MotorcycleDetailSuccessType, Error>) {
         switch result{
         case .success(let success):

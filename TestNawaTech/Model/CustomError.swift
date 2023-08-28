@@ -7,13 +7,15 @@
 
 import Foundation
 
-enum CustomError: String, Error{
+enum CustomError: Error{
     case callApiFailBecauseURLNotFound
     case apiReturnNoData
     case somethingWentWrong
     case fetchFromCoreDataError
     case failedToLoadJson
     case dataAlreadyExist
+    case failedToSignIn(String)
+    case failedToSignUp(String)
 }
 
 extension CustomError: LocalizedError {
@@ -21,6 +23,8 @@ extension CustomError: LocalizedError {
         switch self {
         case .dataAlreadyExist:
             return NSLocalizedString("Data already exist", comment: "Display this eror when user already have saved that category previously")
+        case .failedToSignUp(localizedDescription):
+            return localizedDescription
         default:
             return NSLocalizedString("Something went wrong", comment: "Something unexpected occured")
 

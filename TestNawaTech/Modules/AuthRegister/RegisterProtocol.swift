@@ -16,13 +16,16 @@ protocol RegisterViewToPresenterProtocol{
     var view: RegisterPresenterToViewProtocol? {get set}
     var router: RegisterPresenterToRouterProtocol? {get set}
     func register(email: String, password: String)
+    func signIn(email: String, password: String)
     func goToSignIn(from vc: UIViewController)
+    func goToSignUp(from vc: UIViewController)
 //    func purchase(motorcycle: Register)
 }
 
 protocol RegisterPresenterToInteractorProtocol{
     var presenter: RegisterInteractorToPresenterProtocol? {get set}
     func register(email: String, password: String)
+    func signIn(email: String, password: String)
 //    func purchase(motorcycle: Register)
 }
 
@@ -33,10 +36,17 @@ protocol RegisterInteractorToPresenterProtocol{
 }
 
 protocol RegisterPresenterToRouterProtocol{
-    static func makeComponent() -> RegisterViewController
+    static func makeComponent(for type: AuthType) -> RegisterViewController
     func goToSignIn(from vc: UIViewController)
+    func goToSignUp(from vc: UIViewController)
 }
 
 enum RegisterDetailSuccessType{
     case successfullyRegister(String)
+    case successfullySignIn(String)
+}
+
+enum AuthType{
+    case signIn
+    case signUp
 }

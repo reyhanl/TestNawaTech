@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -18,8 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         if CommandLine.arguments.contains("HomeUITests") {
-            var vc = HomeRouter.makeComponent()
-            var homePresenter = HomePresenterMock()
+            let vc = HomeRouter.makeComponent()
+            let homePresenter = HomePresenterMock()
             homePresenter.router = vc.presenter?.router
             homePresenter.view = vc
             vc.presenter = homePresenter
@@ -28,12 +29,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.rootViewController = navigationController
             window?.makeKeyAndVisible()
         }else{
-            let vc = RegisterRouter.makeComponent()
-            let navigationController = UINavigationController(rootViewController: vc)
-            window = UIWindow(windowScene: windowScene)
-            window?.rootViewController = navigationController
-            window?.makeKeyAndVisible()
+            goToRegister(scene: scene)
         }
+        addAuthStateListener(scene: scene)
         guard let _ = (scene as? UIWindowScene) else { return }
     }
     
@@ -68,6 +66,58 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
     
+    func addAuthStateListener(scene: UIScene){
+        Auth.auth().addStateDidChangeListener { [weak self] auth, user in
+            guard let self = self else{return}
+            if let user = user{
+                let vc = HomeRouter.makeComponent()
+                self.goTo(vc: vc)
+            }else{
+                guard let windowScene = (scene as? UIWindowScene),
+                      let navCon = windowScene.keyWindow?.rootViewController as? UINavigationController,
+                      let vc = navCon.visibleViewController,
+                      !(vc is RegisterViewController)
+                else { return }
+                let alertVC = CustomAlertViewController(isCancelAble: false, title: "session is invalid", description: "You need to sign in again", actionText: "OK", cancelText: "")
+                alertVC.modalPresentationStyle = .fullScreen
+                alertVC.modalTransitionStyle = .crossDissolve
+                alertVC.delegate = self
+                vc.present(alertVC, animated: true)
+            }
+        }
+    }
     
+    func goTo(vc: UIViewController){
+        guard let scene = window?.windowScene?.session.scene,
+              let windowScene = (scene as? UIWindowScene)
+        else { return }
+        let navigationController = UINavigationController(rootViewController: vc)
+        window = UIWindow(windowScene: windowScene)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+    }
+    
+    func goToRegister(scene: UIScene){
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let vc = RegisterRouter.makeComponent(for: .signIn)
+        let navigationController = UINavigationController(rootViewController: vc)
+        window = UIWindow(windowScene: windowScene)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+    }
 }
 
+extension SceneDelegate: CustomAlertDelegate{
+    func userTapOk() {
+        guard let scene = window?.windowScene?.session.scene, let windowScene = (scene as? UIWindowScene),
+              let vc = windowScene.keyWindow?.rootViewController
+        else { return }
+        vc.dismiss(animated: true) { [weak self] in
+            self?.goToRegister(scene: scene)
+        }
+    }
+    
+    func userTapOnCancel() {
+        
+    }
+}

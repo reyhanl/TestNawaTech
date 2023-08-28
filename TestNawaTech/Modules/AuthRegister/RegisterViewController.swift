@@ -32,10 +32,9 @@ class RegisterViewController: UIViewController{
         textField.placeholder = "Input your email"
         textField.layer.cornerRadius = 5
         textField.backgroundColor = .systemFill
-        textField.shouldValidate = true
         textField.delegate = self
         textField.validation = [.isAValidEmailAddress]
-        textField.addTarget(target: self, selector: #selector(textDidChange), for: .editingChanged)
+        textField.addTarget(target: self, selector: #selector(textDidChange(_:)), for: .editingChanged)
         return textField
     }()
     
@@ -46,10 +45,22 @@ class RegisterViewController: UIViewController{
         textField.layer.cornerRadius = 5
         textField.isSecureTextEntry = true
         textField.backgroundColor = .systemFill
-        textField.shouldValidate = true
         textField.delegate = self
         textField.validation = [.minimumNumberOfLetter(6)]
-        textField.addTarget(target: self, selector: #selector(textDidChange), for: .editingChanged)
+        textField.addTarget(target: self, selector: #selector(textDidChange(_:)), for: .editingChanged)
+        return textField
+    }()
+    
+    lazy var confirmationPasswordTextField: CustomTextField = {
+        let textField = CustomTextField(frame: .zero)
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.placeholder = "re-input your password"
+        textField.layer.cornerRadius = 5
+        textField.isSecureTextEntry = true
+        textField.backgroundColor = .systemFill
+        textField.delegate = self
+        textField.validation = [.minimumNumberOfLetter(6)]
+        textField.addTarget(target: self, selector: #selector(textDidChange(_:)), for: .editingChanged)
         return textField
     }()
     
@@ -69,7 +80,6 @@ class RegisterViewController: UIViewController{
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(goToSignIn), for: .touchUpInside)
         button.layer.cornerRadius = 5
-        button.isEnabled = false
         button.backgroundColor = .clear
         button.setTitle("Already have an account?", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 14)
@@ -77,6 +87,7 @@ class RegisterViewController: UIViewController{
     }()
     
     var presenter: RegisterViewToPresenterProtocol?
+    var auth: AuthType = .signIn
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,13 +95,16 @@ class RegisterViewController: UIViewController{
     }
     
     func setupUI(){
+        view.backgroundColor = .systemBackground
         addContainer()
         addStackView()
         addEmailTextField()
         addPasswordTextField()
+        addConfirmationPasswordTextField()
         addRegisterButton()
         addAlreadyButton()
         signOut()
+        updateUI()
     }
     
     func signOut(){
@@ -99,6 +113,31 @@ class RegisterViewController: UIViewController{
         }catch{
             
         }
+    }
+    
+    func updateUI(){
+        switch auth {
+        case .signIn:
+            setupForSignIn()
+        case .signUp:
+            setupForSignUp()
+        }
+    }
+    
+    private func setupForSignIn(){
+        confirmationPasswordTextField.isHidden = true
+        emailTextField.shouldValidate = false
+        passwordTextField.shouldValidate = false
+        button.isEnabled = true
+        alreadyHaveAnAccountButton.setTitle("Do not have an account? Register", for: .normal)
+    }
+    
+    private func setupForSignUp(){
+        confirmationPasswordTextField.isHidden = false
+        emailTextField.shouldValidate = true
+        passwordTextField.shouldValidate = true
+        confirmationPasswordTextField.shouldValidate = true
+        alreadyHaveAnAccountButton.setTitle("Already have an account? Sign in", for: .normal)
     }
     
     func addContainer(){
@@ -138,6 +177,12 @@ class RegisterViewController: UIViewController{
         passwordTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
+    func addConfirmationPasswordTextField(){
+        textFieldStackView.addArrangedSubview(confirmationPasswordTextField)
+        confirmationPasswordTextField.widthAnchor.constraint(equalTo: emailTextField.widthAnchor, multiplier: 1).isActive = true
+        confirmationPasswordTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
+    
     func addRegisterButton(){
         textFieldStackView.addArrangedSubview(button)
         button.widthAnchor.constraint(equalTo: emailTextField.widthAnchor, multiplier: 1).isActive = true
@@ -151,7 +196,8 @@ class RegisterViewController: UIViewController{
     }
     
     func updateButton(){
-        let enabled = emailTextField.status == .valid && passwordTextField.status == .valid
+        guard auth == .signUp else{return}
+        let enabled = emailTextField.status == .valid && passwordTextField.status == .valid && confirmationPasswordTextField.status  == .valid
         button.isEnabled = enabled
     }
     
@@ -159,14 +205,26 @@ class RegisterViewController: UIViewController{
         guard let email = emailTextField.text,
               let password = passwordTextField.text
         else{return}
-        presenter?.register(email: email, password: password)
+        if auth == .signIn{
+            presenter?.signIn(email: email, password: password)
+        }else{
+            presenter?.register(email: email, password: password)
+        }
     }
     
     @objc func goToSignIn(){
-        presenter?.goToSignIn(from: self)
+        if auth == .signIn{
+            presenter?.goToSignUp(from: self)
+        }else{
+            presenter?.goToSignIn(from: self)
+        }
     }
     
-    @objc func textDidChange(){
+    @objc func textDidChange(_ sender: UITextField){
+        if sender === passwordTextField, let text = passwordTextField.text{
+            let pattern = "^" + NSRegularExpression.escapedPattern(for: text) + "$"
+            confirmationPasswordTextField.validation = [.minimumNumberOfLetter(6), .custom(pattern)]
+        }
         updateButton()
     }
 }
@@ -185,11 +243,24 @@ extension RegisterViewController: RegisterPresenterToViewProtocol{
         switch type {
         case .successfullyRegister(let refreshToken):
             UserDefaults.standard.setValue(refreshToken, forKey: "refreshToken")
+        case .successfullySignIn(let refreshToken):
+            UserDefaults.standard.setValue(refreshToken, forKey: "refreshToken")
         }
     }
     
     func handleError(_ error: Error){
-        print(String(describing: error))
+        if let error = error as? CustomError{
+            switch error{
+            case .failedToSignIn(let localizedDescription):
+                presentBubbleAlert(text: localizedDescription, with: 0.5, floating: 1)
+                break
+            case .failedToSignUp(let localizedDescription):
+                presentBubbleAlert(text: localizedDescription, with: 0.5, floating: 1)
+                break
+            default:
+                break
+            }
+        }
     }
 }
 

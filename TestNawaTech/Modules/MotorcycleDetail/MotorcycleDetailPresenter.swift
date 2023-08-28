@@ -31,4 +31,8 @@ extension MotorcycleDetailPresenter: MotorcycleDetailInteractorToPresenterProtoc
     func result(result: Result<MotorcycleDetailSuccessType, Error>) {
         view?.result(result: result)
     }
+    
+    func signOut(){
+        view?.signOut()
+    }
 }

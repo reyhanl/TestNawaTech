@@ -10,6 +10,10 @@ import Foundation
 class MotorcycleDetailInteractor: MotorcycleDetailPresenterToInteractorProtocol{
     var presenter: MotorcycleDetailInteractorToPresenterProtocol?
     
+    init(presenter: MotorcycleDetailInteractorToPresenterProtocol? = nil) {
+        self.presenter = presenter
+    }
+    
     func fetchData() {
     }
     
@@ -19,5 +23,8 @@ class MotorcycleDetailInteractor: MotorcycleDetailPresenterToInteractorProtocol{
             guard let self = self else{return}
             self.presenter?.result(result: .success(.purchase))
         }
+    }
+    
+    @objc func logOut(){
     }
 }

@@ -17,8 +17,16 @@ class RegisterPresenter: RegisterViewToPresenterProtocol{
         interactor?.register(email: email, password: password)
     }
     
+    func signIn(email: String, password: String) {
+        interactor?.signIn(email: email, password: password)
+    }
+    
     func goToSignIn(from vc: UIViewController) {
-        router?.goToSignIn(from: self)
+        router?.goToSignIn(from: vc)
+    }
+    
+    func goToSignUp(from vc: UIViewController) {
+        router?.goToSignUp(from: vc)
     }
 }
 

@@ -10,6 +10,7 @@ import UIKit
 protocol MotorcycleDetailPresenterToViewProtocol{
     var presenter: MotorcycleDetailViewToPresenterProtocol? {get set}
     func result(result: Result<MotorcycleDetailSuccessType, Error>)
+    func signOut()
 }
 
 protocol MotorcycleDetailViewToPresenterProtocol{
@@ -30,6 +31,7 @@ protocol MotorcycleDetailPresenterToInteractorProtocol{
 protocol MotorcycleDetailInteractorToPresenterProtocol{
     var interactor: MotorcycleDetailPresenterToInteractorProtocol? {get set}
     func result(result: Result<MotorcycleDetailSuccessType, Error>)
+    func signOut()
 }
 
 protocol MotorcycleDetailPresenterToRouterProtocol{

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class RegisterRouter: RegisterPresenterToRouterProtocol{
-    static func makeComponent() -> RegisterViewController {
+    static func makeComponent(for type: AuthType) -> RegisterViewController {
         var presenter: RegisterViewToPresenterProtocol & RegisterInteractorToPresenterProtocol = RegisterPresenter()
         let view = RegisterViewController()
         var interactor: RegisterPresenterToInteractorProtocol = RegisterInteractor()
@@ -21,11 +21,18 @@ class RegisterRouter: RegisterPresenterToRouterProtocol{
         view.presenter = presenter
         interactor.presenter = presenter
         
+        view.auth = type
+        
         return view
     }
     
     func goToSignIn(from vc: UIViewController) {
-        let signInVC = RegisterRouter.makeComponent()
+        let signInVC = RegisterRouter.makeComponent(for: .signIn)
+        vc.navigationController?.pushViewController(signInVC, animated: true)
+    }
+    
+    func goToSignUp(from vc: UIViewController){
+        let signInVC = RegisterRouter.makeComponent(for: .signUp)
         vc.navigationController?.pushViewController(signInVC, animated: true)
     }
 }

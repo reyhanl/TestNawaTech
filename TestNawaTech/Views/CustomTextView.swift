@@ -50,6 +50,7 @@ class CustomTextField: UIView{
             if shouldShowSecureTextEntryToggle{
                 isSecureTextEntry = true
             }
+            textField.textContentType = .oneTimeCode
         }
     }
     var delegate: UITextFieldDelegate?{
@@ -200,7 +201,6 @@ class CustomTextField: UIView{
             
         }
         }else{
-            print(textField.isFirstResponder)
             status = textField.isFirstResponder ? .active:.inactive
             return
         }

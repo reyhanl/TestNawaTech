@@ -13,6 +13,7 @@
 		FC073CB22A98467200E8F9E9 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC073CB12A98467200E8F9E9 /* CustomTextView.swift */; };
 		FC1638A72A99B58B00E7C238 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1638A62A99B58B00E7C238 /* CustomButton.swift */; };
 		FC1638AA2A9A0A3800E7C238 /* SignInProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1638A92A9A0A3800E7C238 /* SignInProtocol.swift */; };
+		FC1638AC2A9B56B900E7C238 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1638AB2A9B56B900E7C238 /* CustomAlertViewController.swift */; };
 		FCCBF5B72A9821D600C89C0C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCBF5B62A9821D600C89C0C /* String+Extension.swift */; };
 		FCCBF5B92A982AC400C89C0C /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCBF5B82A982AC400C89C0C /* Purchase.swift */; };
 		FCCBF5BB2A982DC400C89C0C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCBF5BA2A982DC400C89C0C /* Date+Extension.swift */; };
@@ -95,6 +96,7 @@
 		FC073CB12A98467200E8F9E9 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		FC1638A62A99B58B00E7C238 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		FC1638A92A9A0A3800E7C238 /* SignInProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInProtocol.swift; sourceTree = "<group>"; };
+		FC1638AB2A9B56B900E7C238 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		FCCBF5B62A9821D600C89C0C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		FCCBF5B82A982AC400C89C0C /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
 		FCCBF5BA2A982DC400C89C0C /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 				FCCBF5B62A9821D600C89C0C /* String+Extension.swift */,
 				FCCBF5BA2A982DC400C89C0C /* Date+Extension.swift */,
 				FCCBF5BC2A982F3400C89C0C /* UIViewController+Extension.swift */,
+				FC1638AB2A9B56B900E7C238 /* CustomAlertViewController.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				FCCBF5C92A9837FF00C89C0C /* RegisterViewController.swift in Sources */,
 				FCCBF5C72A9837E700C89C0C /* RegisterInteractor.swift in Sources */,
 				FCDBD9772A971F3A003CFB06 /* MotorCycle.swift in Sources */,
+				FC1638AC2A9B56B900E7C238 /* CustomAlertViewController.swift in Sources */,
 				FCEAC77D2A97414D00A31AF1 /* HomePresenterMock.swift in Sources */,
 				FCCBF5C52A9837C800C89C0C /* RegisterPresenter.swift in Sources */,
 				FCCBF5B92A982AC400C89C0C /* Purchase.swift in Sources */,

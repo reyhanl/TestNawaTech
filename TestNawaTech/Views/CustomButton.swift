@@ -36,6 +36,7 @@ class CustomButton: UIButton{
     }
     
     func addGestureRecognizer(){
+        
         self.addTarget(self, action: #selector(hover), for: .touchDown)
         self.addTarget(self, action: #selector(cancelHover), for: .touchCancel)
         self.addTarget(self, action: #selector(cancelHover), for: .touchDragExit)
