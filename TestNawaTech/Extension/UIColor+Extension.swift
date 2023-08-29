@@ -88,4 +88,14 @@ extension UIColor{
         let color = isDarkMode ? UIColor(hex: "EAD1F2"):UIColor(hex: "EAD1F2")
         return color
     }
+    
+    static var customGreen: UIColor{
+        let color = isDarkMode ? UIColor(hex: "61D65E"):UIColor(hex: "61D65E")
+        return color
+    }
+    
+    static var customYellow: UIColor{
+        let color = isDarkMode ? UIColor(hex: "D6CA5E"):UIColor(hex: "D6CA5E")
+        return color
+    }
 }

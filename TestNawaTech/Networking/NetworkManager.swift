@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseAuth
 
 class NetworkManager: NetworkManagerProtocol{
     
@@ -110,12 +111,71 @@ class NetworkManager: NetworkManagerProtocol{
             completion(.failure(error))
         }
     }
-
+    
+    func updateUserData(profile: Profile, completion: @escaping(Error?) -> Void) {
+        guard let id = profile.id else{return}
+        NetworkManager.shared.setDocument(model: profile, document: .user(id)) { result in
+            switch result {
+            case .success(_):
+                completion(nil)
+            case .failure(let failure):
+                completion(failure)
+            }
+        }
+    }
     
     func purchase(purchase: Purchase, completion: @escaping(Result<Purchase, Error>) -> Void){
-        //TODO: Check if user has balance
-        setDocument(model: purchase, collection: .purchases) { (result: Result<Purchase, Error>) in
-            completion(result)
+        fetchProfile { result in
+            switch result{
+            case .success(let profile):
+                checkBalance(profile: profile)
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+        
+        func checkBalance(profile: Profile){
+            guard var balance = profile.balance, let total = purchase.total else{return}
+            if balance > total{
+                balance -= total
+                profile.balance = balance
+                self.updateUserData(profile: profile, completion: { error in
+                    if let error = error{
+                        completion(.failure(error))
+                    }else{
+                        NotificationCenter.default.post(name: .userDataHasBeenUpdated, object: profile)
+                        addToPurchasedMotorcycle()
+                    }
+                })
+            }else{
+                completion(.failure(CustomError.notEnoughBalance))
+            }
+        }
+        
+        func addToPurchasedMotorcycle(){
+            setDocument(model: purchase, document: .purchase(purchase.transactionId ?? "")) { result in
+                switch result {
+                case .success(let purchase):
+                    completion(.success(purchase))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
+    
+    func fetchProfile(completion: @escaping(Result<Profile, Error>) -> Void) {
+        guard let id = Auth.auth().currentUser?.uid else{return}
+        NetworkManager.shared.fetchDocument(reference: .user(id)) { [weak self] (result: Result<Profile, Error>) in
+            guard let self = self else{
+                return
+            }
+            switch result{
+            case .success(let profile):
+                completion(.success(profile))
+            case .failure(let error):
+                completion(.failure(CustomError.somethingWentWrong))
+            }
         }
     }
 }

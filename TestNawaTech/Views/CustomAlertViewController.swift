@@ -199,7 +199,7 @@ class CustomAlertViewController: UIViewController{
         containerView.addSubview(buttonStackView)
         
         NSLayoutConstraint.activate([
-            NSLayoutConstraint(item: buttonStackView, attribute: .top, relatedBy: .equal, toItem: descriptionLabel, attribute: .bottom, multiplier: 1, constant: 50),
+            NSLayoutConstraint(item: buttonStackView, attribute: .top, relatedBy: .greaterThanOrEqual, toItem: descriptionLabel, attribute: .bottom, multiplier: 1, constant: 50),
             NSLayoutConstraint(item: buttonStackView, attribute: .leading, relatedBy: .equal, toItem: containerView, attribute: .leading, multiplier: 1, constant: 0),
             NSLayoutConstraint(item: buttonStackView, attribute: .trailing, relatedBy: .equal, toItem: containerView, attribute: .trailing, multiplier: 1, constant: 0),
             NSLayoutConstraint(item: buttonStackView, attribute: .bottom, relatedBy: .equal, toItem: containerView, attribute: .bottom, multiplier: 1, constant: -20    )

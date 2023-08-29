@@ -10,14 +10,14 @@ import Foundation
 struct Motorcycle: Codable{
     var name: String?
     var company: String?
-    var price: Int?
+    var price: Double?
     var currency: String?
     var imageUrl: String?
     var description: String?
     var thumbImageUrl: String?
     var id: String?
     
-    init(name: String? = nil, company: String? = nil, price: Int? = nil, currency: String? = nil, imageUrl: String? = nil, description: String? = nil, thumbImageUrl: String? = nil, id: String? = nil) {
+    init(name: String? = nil, company: String? = nil, price: Double? = nil, currency: String? = nil, imageUrl: String? = nil, description: String? = nil, thumbImageUrl: String? = nil, id: String? = nil) {
         self.name = name
         self.company = company
         self.price = price

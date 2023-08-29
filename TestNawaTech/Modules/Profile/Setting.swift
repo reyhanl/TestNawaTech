@@ -16,7 +16,7 @@ enum Setting{
         case .signOut:
             return "Sign out"
         case .statistic:
-            return "My spending"
+            return "Order history"
         }
     }
     

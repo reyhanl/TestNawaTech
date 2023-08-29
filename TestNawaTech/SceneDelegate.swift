@@ -79,7 +79,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let vc = HomeRouter.makeComponent()
         let tabBarController = UITabBarController()
         let homeNavigationController = CustomNavigationController(rootViewController: vc)
-        let tabBarItem = UITabBarItem(title: "Catalog", image: UIImage.init(systemName: ""), selectedImage: UIImage.init(systemName: ""))
+        let tabBarItem = UITabBarItem(title: "Catalog", image: UIImage.init(systemName: "rectangle.on.rectangle"), selectedImage: UIImage.init(systemName: "rectangle.fill.on.rectangle.fill"))
         vc.tabBarItem = tabBarItem
         tabBarController.addChild(homeNavigationController)
         

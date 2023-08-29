@@ -19,6 +19,7 @@ enum CustomError: Error{
     case pathShouldBeCollection
     case failedToSignOut
     case failedToUploadToStorage
+    case notEnoughBalance
 }
 
 extension CustomError: LocalizedError {
@@ -28,6 +29,8 @@ extension CustomError: LocalizedError {
             return NSLocalizedString("Data already exist", comment: "Display this eror when user already have saved that category previously")
         case .failedToSignUp(localizedDescription):
             return localizedDescription
+        case .notEnoughBalance:
+            return NSLocalizedString("You do not have enough balance", comment: "User does not have enough balance")
         case .failedToUploadToStorage:
             return NSLocalizedString("Failed to upload", comment: "Failed to upload to the server")
         default:

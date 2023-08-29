@@ -22,10 +22,16 @@ class MotorcycleDetailInteractor: MotorcycleDetailPresenterToInteractorProtocol{
             presenter?.result(result: .failure(CustomError.somethingWentWrong))
             return
         }
-        let purchase: Purchase = .init(buyerId: id, motorcycleId: motorcycle.id ?? "", date: Date().getString(format: Date.defaultDateFormat), total: motorcycle.price)
+        let uuid = UUID().uuidString
+        let purchase: Purchase = .init(buyerId: id, motorcycleId: motorcycle.id ?? "", date: Date().getString(format: Date.defaultDateFormat), total: motorcycle.price, status: PurchaseStatus.waitingForConfirmation.rawValue, transactionId: uuid)
         NetworkManager.shared.purchase(purchase: purchase) { [weak self] result in
             guard let self = self else{return}
-            self.presenter?.result(result: .success(.purchase))
+            switch result{
+            case .success(_):
+                presenter?.result(result: .success(.purchase))
+            case .failure(let error):
+                presenter?.result(result: .failure(error))
+            }
         }
     }
     

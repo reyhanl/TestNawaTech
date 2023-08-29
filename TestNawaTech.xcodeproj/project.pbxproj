@@ -32,9 +32,12 @@
 		FC2194792A9C7EA0002B5F8F /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2194782A9C7EA0002B5F8F /* ProfileTableViewCell.swift */; };
 		FC9E980E2A9C92100056A17E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9E980D2A9C92100056A17E /* Setting.swift */; };
 		FC9E98102A9CC93A0056A17E /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9E980F2A9CC93A0056A17E /* BarChart.swift */; };
+		FCA5A6FB2A9E40BD00D8D346 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA5A6FA2A9E40BD00D8D346 /* Double+Extension.swift */; };
+		FCA5A6FD2A9E472D00D8D346 /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA5A6FC2A9E472D00D8D346 /* NSNotificationName.swift */; };
 		FCA6B8302A9D96B000381014 /* StatisticTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA6B82F2A9D96B000381014 /* StatisticTableViewHeader.swift */; };
 		FCA6B8322A9DBDC000381014 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA6B8312A9DBDC000381014 /* Int+Extension.swift */; };
 		FCA6B8352A9DC09800381014 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA6B8342A9DC09800381014 /* CGFloat+Extension.swift */; };
+		FCA6B8372A9DC8BB00381014 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA6B8362A9DC8BB00381014 /* HistoryTableViewCell.swift */; };
 		FCCBF5B72A9821D600C89C0C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCBF5B62A9821D600C89C0C /* String+Extension.swift */; };
 		FCCBF5B92A982AC400C89C0C /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCBF5B82A982AC400C89C0C /* Purchase.swift */; };
 		FCCBF5BB2A982DC400C89C0C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCBF5BA2A982DC400C89C0C /* Date+Extension.swift */; };
@@ -136,9 +139,12 @@
 		FC2194782A9C7EA0002B5F8F /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		FC9E980D2A9C92100056A17E /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		FC9E980F2A9CC93A0056A17E /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
+		FCA5A6FA2A9E40BD00D8D346 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		FCA5A6FC2A9E472D00D8D346 /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
 		FCA6B82F2A9D96B000381014 /* StatisticTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableViewHeader.swift; sourceTree = "<group>"; };
 		FCA6B8312A9DBDC000381014 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		FCA6B8342A9DC09800381014 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
+		FCA6B8362A9DC8BB00381014 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		FCCBF5B62A9821D600C89C0C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		FCCBF5B82A982AC400C89C0C /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
 		FCCBF5BA2A982DC400C89C0C /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
@@ -271,6 +277,7 @@
 				FC1699192A9D765400AC6F6C /* HistoryRouter.swift */,
 				FC16991B2A9D766900AC6F6C /* HistoryViewController.swift */,
 				FCA6B82F2A9D96B000381014 /* StatisticTableViewHeader.swift */,
+				FCA6B8362A9DC8BB00381014 /* HistoryTableViewCell.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -391,6 +398,7 @@
 			children = (
 				FCDBD95E2A970F66003CFB06 /* NetworkManager.swift */,
 				FC08C1BD2A9CE46800A60B9C /* FirebaseStorageManager.swift */,
+				FCA5A6FC2A9E472D00D8D346 /* NSNotificationName.swift */,
 				FC16990F2A9D6ADA00AC6F6C /* UserDefaultHelper.swift */,
 				FCDBD9602A970F8B003CFB06 /* URLManager.swift */,
 			);
@@ -408,6 +416,7 @@
 				FC08C1BF2A9CE5D000A60B9C /* UIView+Extension.swift */,
 				FCA6B8312A9DBDC000381014 /* Int+Extension.swift */,
 				FCA6B8342A9DC09800381014 /* CGFloat+Extension.swift */,
+				FCA5A6FA2A9E40BD00D8D346 /* Double+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -675,14 +684,17 @@
 				FC16991A2A9D765400AC6F6C /* HistoryRouter.swift in Sources */,
 				FCEAC76D2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift in Sources */,
 				FC08C1C02A9CE5D000A60B9C /* UIView+Extension.swift in Sources */,
+				FCA6B8372A9DC8BB00381014 /* HistoryTableViewCell.swift in Sources */,
 				FCEAC7912A97583600A31AF1 /* MotorcycleInteractor.swift in Sources */,
 				FC1638BB2A9C5C5700E7C238 /* ProfileHeaderView.swift in Sources */,
 				FC9E980E2A9C92100056A17E /* Setting.swift in Sources */,
 				FCDBD9612A970F8B003CFB06 /* URLManager.swift in Sources */,
 				FCDBD9752A971EE2003CFB06 /* HomeInteractor.swift in Sources */,
+				FCA5A6FD2A9E472D00D8D346 /* NSNotificationName.swift in Sources */,
 				FC1699182A9D763400AC6F6C /* HistoryInteractor.swift in Sources */,
 				FC073CB22A98467200E8F9E9 /* CustomTextView.swift in Sources */,
 				FC1638B32A9C584C00E7C238 /* ProfileInteractor.swift in Sources */,
+				FCA5A6FB2A9E40BD00D8D346 /* Double+Extension.swift in Sources */,
 				FC2194792A9C7EA0002B5F8F /* ProfileTableViewCell.swift in Sources */,
 				FCA6B8302A9D96B000381014 /* StatisticTableViewHeader.swift in Sources */,
 				FCDBD9792A97208E003CFB06 /* HomeRouter.swift in Sources */,

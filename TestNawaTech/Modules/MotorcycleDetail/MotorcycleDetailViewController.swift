@@ -25,7 +25,7 @@ class MotorcycleDetailViewController: UIViewController{
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        imageView.backgroundColor = .white
+        imageView.backgroundColor = .secondaryBackgroundColor
         return imageView
     }()
     
@@ -54,13 +54,20 @@ class MotorcycleDetailViewController: UIViewController{
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
-        stackView.distribution = .fill
+        stackView.distribution = .fillProportionally
         return stackView
+    }()
+    
+    lazy var priceLabel: UILabel = {
+       let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .boldSystemFont(ofSize: 18)
+        return label
     }()
     
     lazy var purchaseButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .blue
+        button.backgroundColor = .primaryButton
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Purchase", for: .normal)
         button.layer.cornerRadius = 5
@@ -82,6 +89,7 @@ class MotorcycleDetailViewController: UIViewController{
         addDescriptionTextView()
         addButtonContainer()
         addButtonStackView()
+        addPriceLabel()
         addPurchaseButton()
         guard let motorcycle = motorcycle else{return}
         setupData(motorcycle: motorcycle)
@@ -175,6 +183,10 @@ class MotorcycleDetailViewController: UIViewController{
         ])
     }
     
+    func addPriceLabel(){
+        buttonStackView.addArrangedSubview(priceLabel)
+    }
+    
     func addPurchaseButton(){
         buttonStackView.addArrangedSubview(purchaseButton)
     }
@@ -186,12 +198,13 @@ class MotorcycleDetailViewController: UIViewController{
         view.layoutIfNeeded()
         heightOfTextView?.constant = descriptionTextView.contentSize.height
         view.layoutIfNeeded()
+        priceLabel.text = "IDR \(motorcycle.price?.giveAutoFinanceAbbreviations() ?? "")"
         title = motorcycle.name
         setupImage()
     }
     
     func setupImage(){
-        guard let urlString = motorcycle?.imageUrl,
+        guard let urlString = motorcycle?.thumbImageUrl,
               let url = URL(string: urlString)
         else{return}
         imageView.kf.setImage(with: url)
@@ -219,7 +232,7 @@ extension MotorcycleDetailViewController: MotorcycleDetailPresenterToViewProtoco
     }
     
     func handleSuccess(type: MotorcycleDetailSuccessType){
-        presentBubbleAlert(text: "Transaction Complete!", with: 0.2, floating: 1)
+        presentBubbleAlert(text: "Order has been sent to the seller", with: 0.2, floating: 1)
     }
     
     func handleError(error: Error){

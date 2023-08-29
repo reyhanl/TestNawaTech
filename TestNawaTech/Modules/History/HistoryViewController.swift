@@ -23,7 +23,7 @@ class HistoryViewController: UIViewController{
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(StatisticTableViewHeader.self, forHeaderFooterViewReuseIdentifier: "headerView")
-        tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(HistoryTableViewCell.self, forCellReuseIdentifier: "cell")
         return tableView
     }()
     
@@ -73,6 +73,10 @@ extension HistoryViewController: HistoryPresenterToViewProtocol{
         case .successfullyFetchedChartData(let chartData):
             self.chartData = chartData
             tableView.reloadData()
+        case .successfullyCancelOrder(let purchase):
+            guard let index = purchases.firstIndex(where: {$0.transactionId == purchase.transactionId}) else{return}
+            self.purchases.replaceSubrange(index...index, with: [purchase])
+            presenter?.getChartData(purchases: purchases)
         }
     }
     
@@ -90,8 +94,8 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProfileTableViewCell
-        cell.titleLabel.text = purchases[indexPath.row].motorcycleId
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HistoryTableViewCell
+        cell.setupData(purchase: purchases[indexPath.row])
         return cell
     }
     
@@ -104,10 +108,14 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return purchases.count > 0 ? 1:0
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 200
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.presentTableViewOptions(vc: self, purchase: purchases[indexPath.row])
     }
 }

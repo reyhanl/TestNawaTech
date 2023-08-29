@@ -23,9 +23,46 @@ class HistoryInteractor: HistoryPresenterToInteractorProtocol{
             guard let self = self else{return}
             switch result{
             case .success(let purchases):
-                self.presenter?.result(result: .success(.successfullyFetchedHistory(purchases)))
+                fetchMotorcycles(purchases: purchases)
             case .failure(let error):
                 self.presenter?.result(result: .failure(error))
+            }
+        }
+    }
+    
+    func fetchMotorcycles(purchases: [Purchase]){
+        let group = DispatchGroup()
+        for purchase in purchases{
+            group.enter()
+            self.fetchMotorcycle(purchase: purchase, completion: { (motorcycle) in
+                purchase.motorCycle = motorcycle
+                group.leave()
+            })
+        }
+        group.notify(queue: .main) { [weak self] in
+            guard let self = self else{return}
+            self.presenter?.result(result: .success(.successfullyFetchedHistory(purchases)))
+        }
+    }
+    
+    func fetchMotorcycle(purchase: Purchase, completion: @escaping(Motorcycle?) -> Void){
+        guard let id = purchase.motorcycleId else{
+            completion(nil)
+            return
+        }
+        let predicate = NSPredicate(format: "id == %@", id)
+        NetworkManager.shared.fetchCollection(reference: .motorcycles, where: predicate) { (result: Result<[Motorcycle], Error>) in
+            switch result{
+            case .success(let motorcycles):
+                print(motorcycles)
+                guard let motorcycle = motorcycles.first else{
+                    completion(nil)
+                    return
+                }
+                completion(motorcycle)
+            case .failure(let error):
+                print(error.localizedDescription)
+                completion(nil)
             }
         }
     }
@@ -43,6 +80,18 @@ class HistoryInteractor: HistoryPresenterToInteractorProtocol{
             numbers.append(CGFloat(totalSpending))
         }
         presenter?.result(result: .success(.successfullyFetchedChartData((monthNames, numbers))))
+    }
+    
+    func cancelOrder(purchase: Purchase) {
+        purchase.status = PurchaseStatus.cancelled.rawValue
+        NetworkManager.shared.setDocument(model: purchase, document: .purchase(purchase.transactionId ?? "")) { [weak self] (result: Result<Purchase, Error>) in
+            switch result{
+            case .success(let purchase):
+                self?.presenter?.result(result: .success(.successfullyCancelOrder(purchase)))
+            case .failure(let error):
+                self?.presenter?.result(result: .failure(error))
+            }
+        }
     }
     
     func getThisMonthPurchases(purchases: [Purchase], currentMonth: Int) -> [Purchase]{

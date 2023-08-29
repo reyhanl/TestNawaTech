@@ -17,12 +17,14 @@ protocol HistoryViewToPresenterProtocol{
     var router: HistoryPresenterToRouterProtocol? {get set}
     func viewDidLoad()
     func getChartData(purchases: [Purchase])
+    func presentTableViewOptions(vc: UIViewController, purchase: Purchase)
 }
 
 protocol HistoryPresenterToInteractorProtocol{
     var presenter: HistoryInteractorToPresenterProtocol? {get set}
     func fetchHistory()
     func getChartData(purchases: [Purchase])
+    func cancelOrder(purchase: Purchase)
 }
 
 
@@ -38,4 +40,5 @@ protocol HistoryPresenterToRouterProtocol{
 enum HistorySuccessType{
     case successfullyFetchedHistory([Purchase])
     case successfullyFetchedChartData(([String], [CGFloat]))
+    case successfullyCancelOrder(Purchase)
 }
