@@ -18,6 +18,7 @@ enum CustomError: Error{
     case failedToSignUp(String)
     case pathShouldBeCollection
     case failedToSignOut
+    case failedToUploadToStorage
 }
 
 extension CustomError: LocalizedError {
@@ -27,6 +28,8 @@ extension CustomError: LocalizedError {
             return NSLocalizedString("Data already exist", comment: "Display this eror when user already have saved that category previously")
         case .failedToSignUp(localizedDescription):
             return localizedDescription
+        case .failedToUploadToStorage:
+            return NSLocalizedString("Failed to upload", comment: "Failed to upload to the server")
         default:
             return NSLocalizedString("Something went wrong", comment: "Something unexpected occured")
 

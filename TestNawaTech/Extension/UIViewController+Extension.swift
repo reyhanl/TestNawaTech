@@ -9,11 +9,17 @@
 import UIKit
 
 extension UIViewController{
-    func presentBubbleAlert(text: String, with duration: Double, floating interval: Double){
-        enum AnimationType{
-            case animateIn
-            case animateOut
+    enum AnimationType{
+        case animateIn
+        case animateOut
+    }
+    
+    func presentBubbleAlert(text: String, with duration: Double, floating interval: Double? = 0.1){
+
+        if let view = view.subviews.first(where: {$0.tag == 999}){
+            view.removeFromSuperview()
         }
+        
         let view = UIView()
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -43,33 +49,17 @@ extension UIViewController{
         
         addLabel()
         
-        animate(animationType: .animateIn) {
-            Timer.scheduledTimer(withTimeInterval: interval, repeats: false) { timer in
-                animate(animationType: .animateOut) {
-                    view.removeFromSuperview()
-                }
-                timer.invalidate()
-            }
-        }
+        view.tag = 999
         
-        func animate(animationType: AnimationType, completion: @escaping() -> ()){
-            switch animationType {
-            case .animateIn:
-                self.view.layoutIfNeeded()
-                UIView.animate(withDuration: duration) {
-                    view.frame.origin.y -= view.frame.height + 20
-                } completion: { bool in
-                    completion()
+        animate(animationType: .animateIn, duration: duration) {
+            if let interval = interval{
+                Timer.scheduledTimer(withTimeInterval: interval, repeats: false) { [weak self] timer in
+                    guard let self = self else{return}
+                    self.animate(animationType: .animateOut, duration: duration) {
+                        view.removeFromSuperview()
+                    }
+                    timer.invalidate()
                 }
-
-            case .animateOut:
-                self.view.layoutIfNeeded()
-                UIView.animate(withDuration: duration) {
-                    view.frame.origin.y += view.frame.height + 20
-                } completion: { bool in
-                    completion()
-                }
-
             }
         }
         
@@ -89,6 +79,35 @@ extension UIViewController{
             label.textAlignment = .center
             label.textColor = .primaryForegroundColor
             label.numberOfLines = 0
+        }
+    }
+    
+    func hideBubbleAlert(duration: Double){
+        guard let view = view.subviews.first(where: {$0.tag == 999}) else{return}
+        animate(animationType: .animateOut, duration: duration) {
+            view.removeFromSuperview()
+        }
+    }
+    
+    func animate(animationType: AnimationType, duration: Double, completion: @escaping() -> ()){
+        guard let view = view.subviews.first(where: {$0.tag == 999}) else{return}
+        switch animationType {
+        case .animateIn:
+            self.view.layoutIfNeeded()
+            UIView.animate(withDuration: duration) {
+                view.frame.origin.y -= view.frame.height + 20
+            } completion: { bool in
+                completion()
+            }
+
+        case .animateOut:
+            self.view.layoutIfNeeded()
+            UIView.animate(withDuration: duration) {
+                view.frame.origin.y += view.frame.height + 20
+            } completion: { bool in
+                completion()
+            }
+
         }
     }
     

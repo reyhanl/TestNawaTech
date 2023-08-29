@@ -17,12 +17,15 @@ protocol ProfileViewToPresenterProtocol{
     var router: ProfilePresenterToRouterProtocol? {get set}
     func viewDidLoad()
     func signOut()
+    func uploadProfilePicture(user id: String, image: UIImage)
     func goToStatisticVC(from vc: UIViewController)
+    func presentImagePicker(from vc: UIViewController)
 }
 
 protocol ProfilePresenterToInteractorProtocol{
     var presenter: ProfileInteractorToPresenterProtocol? {get set}
     func fetchProfile()
+    func uploadProfilePicture(user id: String, image: UIImage)
     func signOut()
 }
 
@@ -35,8 +38,10 @@ protocol ProfileInteractorToPresenterProtocol{
 protocol ProfilePresenterToRouterProtocol{
     static func makeComponent() -> ProfileViewController
     func goToStatisticVC(from vc: UIViewController)
+    func presentImagePicker(from vc: UIViewController)
 }
 
 enum ProfileSuccessType{
     case successfullyFetchedProfile(Profile)
+    case successfullyUploadProfilePicture(URL)
 }

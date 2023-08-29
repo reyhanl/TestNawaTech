@@ -68,6 +68,10 @@ extension ProfileViewController: ProfilePresenterToViewProtocol{
         case .successfullyFetchedProfile(let profile):
             self.profile = profile
             updateUI()
+        case .successfullyUploadProfilePicture(let url):
+            self.profile?.profilePictureUrl = url.absoluteString
+            hideBubbleAlert(duration: 0.5)
+            updateUI()
         }
     }
     
@@ -83,6 +87,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate{
         if let profile = profile{
             headerView.setupData(profile: profile)
         }
+        headerView.delegate = self
         headerView.accessibilityIdentifier = "profileHeader"
         return headerView
     }
@@ -107,6 +112,25 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate{
             presenter?.signOut()
         case .statistic:
             presenter?.goToStatisticVC(from: self)
+        }
+    }
+}
+
+extension ProfileViewController: ProfileHeaderProtocol{
+    func userTapProfilePicture() {
+        presenter?.presentImagePicker(from: self)
+    }
+}
+
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[.originalImage] as? UIImage,
+                let id = profile?.id
+        else{return}
+        picker.dismiss(animated: true) { [weak self] in
+            guard let self = self else{return}
+            self.presenter?.uploadProfilePicture(user: id, image: image)
+            self.presentBubbleAlert(text: "Uploading Image", with: 0.5, floating: nil)
         }
     }
 }

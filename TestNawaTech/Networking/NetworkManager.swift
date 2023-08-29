@@ -57,7 +57,7 @@ class NetworkManager: NetworkManagerProtocol{
     ///   - model: An encodable object
     ///   - reference: It should be path to Collection because it uses auto ID, if you want to determine your own document id you should use setDocument(with id: String..)
     ///   - completion: it will simply return the model that you put back if successful, or error.
-    func setDocument<T: Encodable>(model: T, reference: FirestoreReferenceType, completion: @escaping(Result<T, Error>) -> Void){
+    func setDocument<T: Encodable>(model: T,collection reference: FirestoreReferenceType, completion: @escaping(Result<T, Error>) -> Void){
         do{
             guard reference.type == .collection else{
                 completion(.failure(CustomError.pathShouldBeCollection))
@@ -82,7 +82,7 @@ class NetworkManager: NetworkManagerProtocol{
     ///   - model: An encodable object
     ///   - reference: It should be path to Document with an ID as the document ID (duh). If you do not want to determine the ID on your own and want to use collection path, use setDocument(model: T...)
     ///   - completion: it will simply return the model that you put back if successful, or error.
-    func setDocument<T: Encodable>(with id: String,  model: T, reference: FirestoreReferenceType, completion: @escaping(Result<T, Error>) -> Void){
+    func setDocument<T: Encodable>(model: T,document reference: FirestoreReferenceType, completion: @escaping(Result<T, Error>) -> Void){
         do{
             guard reference.type == .document else{
                 completion(.failure(CustomError.pathShouldBeCollection))
@@ -105,7 +105,7 @@ class NetworkManager: NetworkManagerProtocol{
     
     func purchase(purchase: Purchase, completion: @escaping(Result<Purchase, Error>) -> Void){
         //TODO: Check if user has balance
-        setDocument(model: purchase, reference: .purchase) { (result: Result<Purchase, Error>) in
+        setDocument(model: purchase, collection: .purchases) { (result: Result<Purchase, Error>) in
             completion(result)
         }
     }

@@ -69,9 +69,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func addAuthStateListener(scene: UIScene){
-        print("user: \(Auth.auth().currentUser)")
         NotificationCenter.default.addObserver(forName: NSNotification.Name.AuthStateDidChange, object: Auth.auth(), queue: nil) { _ in
-            print("state")
             self.redirectUser(scene: scene)
         }
     }
@@ -96,14 +94,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
     }
     
-    func goTo(scene: UIScene, vc: UIViewController){
-        guard let windowScene = (scene as? UIWindowScene) else{return}
-        let navigationController = UINavigationController(rootViewController: vc)
-        window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = navigationController
-        window?.makeKeyAndVisible()
-    }
-    
     func goToRegister(scene: UIScene){
         guard let windowScene = (scene as? UIWindowScene)
         else { return }
@@ -116,7 +106,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func redirectUser(scene: UIScene){
         if let user = Auth.auth().currentUser{
-            self.goToHome(scene: scene)
+            NetworkManager.shared.fetchDocument(reference: .user(user.uid)) { (result: Result<Profile, Error>) in
+                switch result{
+                case .success(let user):
+                    UserDefaultHelper.shared.storeProfile(user)
+                case .failure(let error):
+                    break
+                }
+                self.goToHome(scene: scene)
+            }
         }else{
             if self.firstOpen{
                 self.goToRegister(scene: scene)

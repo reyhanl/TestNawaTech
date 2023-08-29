@@ -19,6 +19,13 @@ class ProfileHeaderView: UITableViewHeaderFooterView{
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.addTapGestureRecognizer(target: self, selector: #selector(changeProfilePicture))
+        return imageView
+    }()
+    lazy var editImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.addTapGestureRecognizer(target: self, selector: #selector(changeProfilePicture))
         return imageView
     }()
     lazy var containerView: UIView = {
@@ -28,6 +35,7 @@ class ProfileHeaderView: UITableViewHeaderFooterView{
     }()
         
     var profile: Profile?
+    var delegate: ProfileHeaderProtocol?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,6 +46,7 @@ class ProfileHeaderView: UITableViewHeaderFooterView{
         self.clipsToBounds = true
         addContainerView()
         addImageView()
+        addEditImageView()
         addNameLabel()
         addGestureRecognizer()
     }
@@ -67,7 +76,21 @@ class ProfileHeaderView: UITableViewHeaderFooterView{
             NSLayoutConstraint(item: imageView, attribute: .centerX, relatedBy: .equal, toItem: containerView, attribute: .centerX, multiplier: 1, constant: 0),
             NSLayoutConstraint(item: imageView, attribute: .top, relatedBy: .equal, toItem: containerView, attribute: .top, multiplier: 1, constant: 20),
         ])
-        imageView.layer.cornerRadius = containerView.frame.width * 0.3
+        imageView.layer.cornerRadius = 10
+        imageView.clipsToBounds = true
+    }
+    
+    func addEditImageView(){
+        containerView.addSubview(editImageView)
+        
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: editImageView, attribute: .width, relatedBy: .equal, toItem: imageView, attribute: .width, multiplier: 0.3, constant: 0),
+            NSLayoutConstraint(item: editImageView, attribute: .height, relatedBy: .equal, toItem: imageView, attribute: .width, multiplier: 0.3, constant: 0),
+            NSLayoutConstraint(item: editImageView, attribute: .trailing, relatedBy: .equal, toItem: imageView, attribute: .trailing, multiplier: 1, constant: 5),
+            NSLayoutConstraint(item: editImageView, attribute: .bottom, relatedBy: .equal, toItem: imageView, attribute: .bottom, multiplier: 1, constant: 5),
+        ])
+        editImageView.clipsToBounds = true
+        editImageView.image = UIImage(systemName: "pencil.circle.fill")
     }
     
     private func addNameLabel(){
@@ -84,8 +107,6 @@ class ProfileHeaderView: UITableViewHeaderFooterView{
     
     func addGestureRecognizer(){
         containerView.isUserInteractionEnabled = true
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
-        containerView.addGestureRecognizer(gestureRecognizer)
     }
     
     func setupData(profile: Profile){
@@ -101,10 +122,11 @@ class ProfileHeaderView: UITableViewHeaderFooterView{
         imageView.kf.setImage(with: imageUrl)
     }
     
-    @objc func didTap(){
-//        guard let category = category else{return}
-//        print("height of: \(collectionView.frame.height)")
-//        category.isExpanded = !category.isExpanded
-//        delegate?.userSelectParentCategory(category: category)
+    @objc func changeProfilePicture(){
+        delegate?.userTapProfilePicture()
     }
+}
+
+protocol ProfileHeaderProtocol{
+    func userTapProfilePicture()
 }

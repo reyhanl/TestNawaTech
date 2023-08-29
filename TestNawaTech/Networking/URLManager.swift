@@ -14,21 +14,21 @@ enum FirestoreType{
 }
 
 enum FirestoreReferenceType{
-    case getMotorcycles
-    case getMotorcycle(String, String)
+    case motorcycles
+    case motorcycle(String, String)
     case users
     case user(String)
-    case purchase
+    case purchases
     case custom(String, FirestoreType)
     
     var reference: String{
         switch self{
-        case .getMotorcycles:
-            return "Motorcycle"
-        case .getMotorcycle(let company, let type):
-            return "Motorcycle/\(company + type)"
-        case .purchase:
-            return "purchase/"
+        case .motorcycles:
+            return "motorcycles"
+        case .motorcycle(let company, let type):
+            return "motorcycles/\(company + type)"
+        case .purchases:
+            return "purchases/"
         case .custom(let reference, _):
             return reference
         case .users:
@@ -40,11 +40,11 @@ enum FirestoreReferenceType{
     
     var type: FirestoreType{
         switch self {
-        case .getMotorcycles:
+        case .motorcycles:
             return .collection
-        case .getMotorcycle:
+        case .motorcycle:
             return .document
-        case .purchase:
+        case .purchases:
             return .collection
         case .custom(_, let type):
             return type
@@ -55,4 +55,18 @@ enum FirestoreReferenceType{
         }
     }
     
+}
+
+enum FirebaseStorageType{
+    case profile(String)
+    case motorcycle(String)
+    
+    var reference: String{
+        switch self{
+        case .profile(let id):
+            return "profile/\(id)"
+        case .motorcycle(let id):
+            return "motorcycle/\(id)"
+        }
+    }
 }

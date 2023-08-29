@@ -11,6 +11,8 @@
 		5673CEF932677A64BF05F227 /* Pods_TestNawaTechTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDA540FBA79E8576CC1248E1 /* Pods_TestNawaTechTests.framework */; };
 		9A8E6D1822D842B1C7CE1505 /* Pods_TestNawaTech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E83E182874043BCF961FD31 /* Pods_TestNawaTech.framework */; };
 		FC073CB22A98467200E8F9E9 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC073CB12A98467200E8F9E9 /* CustomTextView.swift */; };
+		FC08C1BE2A9CE46800A60B9C /* FirebaseStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC08C1BD2A9CE46800A60B9C /* FirebaseStorageManager.swift */; };
+		FC08C1C02A9CE5D000A60B9C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC08C1BF2A9CE5D000A60B9C /* UIView+Extension.swift */; };
 		FC1638A72A99B58B00E7C238 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1638A62A99B58B00E7C238 /* CustomButton.swift */; };
 		FC1638AC2A9B56B900E7C238 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1638AB2A9B56B900E7C238 /* CustomAlertViewController.swift */; };
 		FC1638AF2A9C57F000E7C238 /* ProfileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1638AE2A9C57F000E7C238 /* ProfileProtocol.swift */; };
@@ -20,6 +22,7 @@
 		FC1638B72A9C588900E7C238 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1638B62A9C588900E7C238 /* ProfileViewController.swift */; };
 		FC1638B92A9C5B3800E7C238 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1638B82A9C5B3800E7C238 /* Profile.swift */; };
 		FC1638BB2A9C5C5700E7C238 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1638BA2A9C5C5700E7C238 /* ProfileHeaderView.swift */; };
+		FC1699102A9D6ADA00AC6F6C /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC16990F2A9D6ADA00AC6F6C /* UserDefaultHelper.swift */; };
 		FC2194792A9C7EA0002B5F8F /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2194782A9C7EA0002B5F8F /* ProfileTableViewCell.swift */; };
 		FC9E980E2A9C92100056A17E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9E980D2A9C92100056A17E /* Setting.swift */; };
 		FC9E98102A9CC93A0056A17E /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9E980F2A9CC93A0056A17E /* BarChart.swift */; };
@@ -103,6 +106,8 @@
 		AAA55312D52372544CD359E3 /* Pods-TestNawaTechTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestNawaTechTests.release.xcconfig"; path = "Target Support Files/Pods-TestNawaTechTests/Pods-TestNawaTechTests.release.xcconfig"; sourceTree = "<group>"; };
 		DDA540FBA79E8576CC1248E1 /* Pods_TestNawaTechTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestNawaTechTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC073CB12A98467200E8F9E9 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
+		FC08C1BD2A9CE46800A60B9C /* FirebaseStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageManager.swift; sourceTree = "<group>"; };
+		FC08C1BF2A9CE5D000A60B9C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		FC1638A62A99B58B00E7C238 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		FC1638AB2A9B56B900E7C238 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
 		FC1638AE2A9C57F000E7C238 /* ProfileProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocol.swift; sourceTree = "<group>"; };
@@ -112,6 +117,7 @@
 		FC1638B62A9C588900E7C238 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FC1638B82A9C5B3800E7C238 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		FC1638BA2A9C5C5700E7C238 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		FC16990F2A9D6ADA00AC6F6C /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
 		FC2194782A9C7EA0002B5F8F /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		FC9E980D2A9C92100056A17E /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		FC9E980F2A9CC93A0056A17E /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
@@ -350,6 +356,8 @@
 			isa = PBXGroup;
 			children = (
 				FCDBD95E2A970F66003CFB06 /* NetworkManager.swift */,
+				FC08C1BD2A9CE46800A60B9C /* FirebaseStorageManager.swift */,
+				FC16990F2A9D6ADA00AC6F6C /* UserDefaultHelper.swift */,
 				FCDBD9602A970F8B003CFB06 /* URLManager.swift */,
 			);
 			path = Networking;
@@ -363,6 +371,7 @@
 				FCCBF5B62A9821D600C89C0C /* String+Extension.swift */,
 				FCCBF5BA2A982DC400C89C0C /* Date+Extension.swift */,
 				FCCBF5BC2A982F3400C89C0C /* UIViewController+Extension.swift */,
+				FC08C1BF2A9CE5D000A60B9C /* UIView+Extension.swift */,
 				FC1638AB2A9B56B900E7C238 /* CustomAlertViewController.swift */,
 			);
 			path = Extension;
@@ -626,6 +635,7 @@
 				FCCBF5C32A9837B100C89C0C /* AuthRouter.swift in Sources */,
 				FC9E98102A9CC93A0056A17E /* BarChart.swift in Sources */,
 				FCEAC76D2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift in Sources */,
+				FC08C1C02A9CE5D000A60B9C /* UIView+Extension.swift in Sources */,
 				FCEAC7912A97583600A31AF1 /* MotorcycleInteractor.swift in Sources */,
 				FC1638BB2A9C5C5700E7C238 /* ProfileHeaderView.swift in Sources */,
 				FC9E980E2A9C92100056A17E /* Setting.swift in Sources */,
@@ -638,6 +648,7 @@
 				FCDBD9322A970DC5003CFB06 /* TestNawaTech.xcdatamodeld in Sources */,
 				FCDBD96F2A9718D1003CFB06 /* FirebaseCollection+Extension.swift in Sources */,
 				FC1638B12A9C583100E7C238 /* ProfilePresenter.swift in Sources */,
+				FC08C1BE2A9CE46800A60B9C /* FirebaseStorageManager.swift in Sources */,
 				FCEAC78F2A97582000A31AF1 /* MotorcycleDetailPresenter.swift in Sources */,
 				FCCBF5B72A9821D600C89C0C /* String+Extension.swift in Sources */,
 				FCCBF5BD2A982F3400C89C0C /* UIViewController+Extension.swift in Sources */,
@@ -653,6 +664,7 @@
 				FC1638AC2A9B56B900E7C238 /* CustomAlertViewController.swift in Sources */,
 				FCEAC77D2A97414D00A31AF1 /* HomePresenterMock.swift in Sources */,
 				FCCBF5C52A9837C800C89C0C /* AuthPresenter.swift in Sources */,
+				FC1699102A9D6ADA00AC6F6C /* UserDefaultHelper.swift in Sources */,
 				FCCBF5B92A982AC400C89C0C /* Purchase.swift in Sources */,
 				FCDBD95D2A970E00003CFB06 /* HomeProtocol.swift in Sources */,
 				FC1638A72A99B58B00E7C238 /* CustomButton.swift in Sources */,

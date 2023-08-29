@@ -11,7 +11,7 @@ class HomeInteractor: HomePresenterToInteractorProtocol{
     var presenter: HomeInteractorToPresenterProtocol?
     
     func fetchData() {
-        NetworkManager.shared.fetchCollection(reference: .getMotorcycles) { [weak self] (result: Result<[Motorcycle], Error>) in
+        NetworkManager.shared.fetchCollection(reference: .motorcycles) { [weak self] (result: Result<[Motorcycle], Error>) in
             guard let self = self else{return}
             switch result {
             case .success(let motorcycles):

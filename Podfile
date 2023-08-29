@@ -9,6 +9,7 @@ target 'TestNawaTech' do
 pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
 pod 'Kingfisher'
+pod 'FirebaseStorage'
 
   target 'TestNawaTechTests' do
     inherit! :search_paths

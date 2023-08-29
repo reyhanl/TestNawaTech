@@ -609,10 +609,13 @@ PODS:
     - GoogleUtilities/AppDelegateSwizzler (~> 7.8)
     - GoogleUtilities/Environment (~> 7.8)
     - GTMSessionFetcher/Core (< 4.0, >= 2.1)
+  - FirebaseAuthInterop (10.14.0)
   - FirebaseCore (10.9.0):
     - FirebaseCoreInternal (~> 10.0)
     - GoogleUtilities/Environment (~> 7.8)
     - GoogleUtilities/Logger (~> 7.8)
+  - FirebaseCoreExtension (10.14.0):
+    - FirebaseCore (~> 10.0)
   - FirebaseCoreInternal (10.9.0):
     - "GoogleUtilities/NSData+zlib (~> 7.8)"
   - FirebaseFirestore (10.9.0):
@@ -628,6 +631,12 @@ PODS:
     - "gRPC-C++ (~> 1.44.0)"
     - leveldb-library (~> 1.22)
     - nanopb (< 2.30910.0, >= 2.30908.0)
+  - FirebaseStorage (10.14.0):
+    - FirebaseAppCheckInterop (~> 10.0)
+    - FirebaseAuthInterop (~> 10.0)
+    - FirebaseCore (~> 10.0)
+    - FirebaseCoreExtension (~> 10.0)
+    - GTMSessionFetcher/Core (< 4.0, >= 2.1)
   - GoogleUtilities/AppDelegateSwizzler (7.11.1):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -713,6 +722,7 @@ PODS:
 DEPENDENCIES:
   - FirebaseAuth
   - FirebaseFirestore
+  - FirebaseStorage
   - Kingfisher
 
 SPEC REPOS:
@@ -721,9 +731,12 @@ SPEC REPOS:
     - BoringSSL-GRPC
     - FirebaseAppCheckInterop
     - FirebaseAuth
+    - FirebaseAuthInterop
     - FirebaseCore
+    - FirebaseCoreExtension
     - FirebaseCoreInternal
     - FirebaseFirestore
+    - FirebaseStorage
     - GoogleUtilities
     - "gRPC-C++"
     - gRPC-Core
@@ -739,9 +752,12 @@ SPEC CHECKSUMS:
   BoringSSL-GRPC: 3175b25143e648463a56daeaaa499c6cb86dad33
   FirebaseAppCheckInterop: e69dde5cd51b88ee1b4339d6766b691272256f9b
   FirebaseAuth: 21d5e902fcea44d0d961540fc4742966ae6118cc
+  FirebaseAuthInterop: 23be77be1ca68e4bd15214f403f807a6ca70d7e0
   FirebaseCore: b68d3616526ec02e4d155166bbafb8eca64af557
+  FirebaseCoreExtension: 976638051b1a46b503afce7ec80277f9161f2040
   FirebaseCoreInternal: d2b4acb827908e72eca47a9fd896767c3053921e
   FirebaseFirestore: 584d0e1b0f7f1666c516c5157ff06e785bd8836f
+  FirebaseStorage: e97b4bdd84b21ec060d5737a9c4f8f8fc6a0d041
   GoogleUtilities: 9aa0ad5a7bc171f8bae016300bfcfa3fb8425749
   "gRPC-C++": 9675f953ace2b3de7c506039d77be1f2e77a8db2
   gRPC-Core: 943e491cb0d45598b0b0eb9e910c88080369290b
@@ -752,6 +768,6 @@ SPEC CHECKSUMS:
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
 
-PODFILE CHECKSUM: 06fbbdb3389cf0cc3e8929b0fca74c96c1d703a9
+PODFILE CHECKSUM: 8af9ac98908883c25d3a4c29e7fed85f40bba861
 
 COCOAPODS: 1.12.1

@@ -21,8 +21,16 @@ class ProfilePresenter: ProfileViewToPresenterProtocol{
         interactor?.signOut()
     }
     
+    func uploadProfilePicture(user id: String, image: UIImage) {
+        interactor?.uploadProfilePicture(user: id, image: image)
+    }
+    
     func goToStatisticVC(from vc: UIViewController) {
         router?.goToStatisticVC(from: vc)
+    }
+    
+    func presentImagePicker(from vc: UIViewController){
+        router?.presentImagePicker(from: vc)
     }
 }
 
