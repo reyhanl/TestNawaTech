@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             homePresenter.router = vc.presenter?.router
             homePresenter.view = vc
             vc.presenter = homePresenter
-            let navigationController = UINavigationController(rootViewController: vc)
+            let navigationController = CustomNavigationController(rootViewController: vc)
             window = UIWindow(windowScene: windowScene)
             window?.rootViewController = navigationController
             window?.makeKeyAndVisible()
@@ -78,13 +78,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else{return}
         let vc = HomeRouter.makeComponent()
         let tabBarController = UITabBarController()
-        let homeNavigationController = UINavigationController(rootViewController: vc)
+        let homeNavigationController = CustomNavigationController(rootViewController: vc)
         let tabBarItem = UITabBarItem(title: "Catalog", image: UIImage.init(systemName: ""), selectedImage: UIImage.init(systemName: ""))
         vc.tabBarItem = tabBarItem
         tabBarController.addChild(homeNavigationController)
         
         let profileVC = ProfileRouter.makeComponent()
-        let profileNavigationController = UINavigationController(rootViewController: profileVC)
+        let profileNavigationController = CustomNavigationController(rootViewController: profileVC)
         let profileTabBarItem = UITabBarItem(title: "Profile", image: UIImage.init(systemName: "person"), selectedImage: UIImage.init(systemName: "person.fill"))
         profileVC.tabBarItem = profileTabBarItem
         tabBarController.addChild(profileNavigationController)
@@ -98,7 +98,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene)
         else { return }
         let vc = AuthRouter.makeComponent(for: .signIn)
-        let navigationController = UINavigationController(rootViewController: vc)
+        let navigationController = CustomNavigationController(rootViewController: vc)
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
