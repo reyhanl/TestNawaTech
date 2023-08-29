@@ -32,6 +32,7 @@ class ProfileViewController: UIViewController{
     }
     
     func setupUI(){
+        title = "Profile"
         view.backgroundColor = .systemBackground
         addTableView()
     }

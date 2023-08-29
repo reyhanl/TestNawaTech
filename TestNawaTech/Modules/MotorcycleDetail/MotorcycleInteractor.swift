@@ -18,7 +18,11 @@ class MotorcycleDetailInteractor: MotorcycleDetailPresenterToInteractorProtocol{
     }
     
     func purchase(motorcycle: Motorcycle) {
-        let purchase: Purchase = .init(buyerId: "random", motorcycleId: motorcycle.id ?? "", date: Date().getString(format: "dd/MM/YYYY"), total: motorcycle.price)
+        guard let id = UserDefaultHelper.shared.getProfile()?.id else{
+            presenter?.result(result: .failure(CustomError.somethingWentWrong))
+            return
+        }
+        let purchase: Purchase = .init(buyerId: id, motorcycleId: motorcycle.id ?? "", date: Date().getString(format: Date.defaultDateFormat), total: motorcycle.price)
         NetworkManager.shared.purchase(purchase: purchase) { [weak self] result in
             guard let self = self else{return}
             self.presenter?.result(result: .success(.purchase))

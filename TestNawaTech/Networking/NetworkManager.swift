@@ -30,8 +30,17 @@ class NetworkManager: NetworkManagerProtocol{
         }
     }
     
-    func fetchCollection<T:Decodable>(reference: FirestoreReferenceType, completion: @escaping(Result<[T], Error>) -> Void){
-        Firestore.firestore().collection(reference.reference).getDocuments { collection, error in
+    func fetchCollection<T:Decodable>(reference: FirestoreReferenceType,where predicate: NSPredicate? = nil, completion: @escaping(Result<[T], Error>) -> Void){
+        var query: Query?
+        var ref = Firestore.firestore().collection(reference.reference)
+        
+        if let predicate = predicate{
+            query = Firestore.firestore().collection(reference.reference).filter(using: predicate).limit(to: 100)
+        }else{
+            query = Firestore.firestore().collection(reference.reference).limit(to: 100)
+        }
+        
+        query?.getDocuments { collection, error in
             if let error = error{
                 completion(.failure(error))
                 return
@@ -113,5 +122,5 @@ class NetworkManager: NetworkManagerProtocol{
 
 protocol NetworkManagerProtocol{
     func fetchDocument<T:Decodable>(reference: FirestoreReferenceType, completion: @escaping((Result<T, Error>) -> Void))
-    func fetchCollection<T:Decodable>(reference: FirestoreReferenceType, completion: @escaping(Result<[T], Error>) -> Void)
+    func fetchCollection<T:Decodable>(reference: FirestoreReferenceType, where predicate: NSPredicate?, completion: @escaping(Result<[T], Error>) -> Void)
 }

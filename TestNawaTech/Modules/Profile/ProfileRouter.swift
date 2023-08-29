@@ -26,7 +26,8 @@ class ProfileRouter: ProfilePresenterToRouterProtocol{
     }
     
     func goToStatisticVC(from vc: UIViewController) {
-        
+        let historyVC = HistoryRouter.makeComponent()
+        vc.navigationController?.pushViewController(historyVC, animated: true)
     }
     
     func presentImagePicker(from vc: UIViewController) {

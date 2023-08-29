@@ -6,3 +6,22 @@
 //
 
 import Foundation
+import UIKit
+
+class HistoryRouter: HistoryPresenterToRouterProtocol{
+    
+    static func makeComponent() -> HistoryViewController {
+        var presenter: HistoryViewToPresenterProtocol & HistoryInteractorToPresenterProtocol = HistoryPresenter()
+        let view = HistoryViewController()
+        var interactor: HistoryPresenterToInteractorProtocol = HistoryInteractor()
+        let router: HistoryPresenterToRouterProtocol = HistoryRouter()
+        
+        presenter.router = router
+        presenter.view = view
+        presenter.interactor = interactor
+        view.presenter = presenter
+        interactor.presenter = presenter
+                
+        return view
+    }
+}

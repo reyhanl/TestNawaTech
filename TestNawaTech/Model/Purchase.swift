@@ -12,11 +12,22 @@ class Purchase: Codable{
     var motorcycleId: String?
     var date: String?
     var total: Int?
+    var status: String?
+    var enumStatus: PurchaseStatus?{
+        return PurchaseStatus(rawValue: status ?? "")
+    }
     
-    init(buyerId: String? = nil, motorcycleId: String? = nil, date: String? = nil, total: Int? = nil) {
+    init(buyerId: String? = nil, motorcycleId: String? = nil, date: String? = nil, total: Int? = nil, status: String? = nil) {
         self.buyerId = buyerId
         self.motorcycleId = motorcycleId
         self.date = date
         self.total = total
+        self.status = status
     }
+}
+
+enum PurchaseStatus: String{
+    case waitingForConfirmation = "waitingForConfirmation"
+    case cancelled = "cancelled"
+    case finished = "finished"
 }
