@@ -11,7 +11,7 @@ class AuthInteractor: AuthPresenterToInteractorProtocol{
     var presenter: AuthInteractorToPresenterProtocol?
     
     func updateUserData(token: String, email: String, id: String, balance: Double = 0) {
-        NetworkManager.shared.setDocument(model: Profile(name: email.getEmailName(), id: id, profilePictureUrl: "", balance: balance), document: .user(id)) { [weak self] result in
+        NetworkManager.shared.setDocument(model: UserProfileModel(name: email.getEmailName(), id: id, profilePictureUrl: "", balance: balance), document: .user(id)) { [weak self] result in
             switch result {
             case .success(_):
                 self?.presenter?.result(result: .success(.successfullyRegister(token)))

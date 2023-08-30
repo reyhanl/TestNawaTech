@@ -71,5 +71,7 @@ class ProfileTableViewCell: UITableViewCell{
     func setupData(setting: Setting){
         titleLabel.text = setting.name
         thumbImageView.image = UIImage(systemName: setting.imageName)
+        titleLabel.textColor = setting.tintColor
+        thumbImageView.tintColor = setting.tintColor
     }
 }

@@ -5,7 +5,7 @@
 //  Created by reyhan muhammad on 28/08/23.
 //
 
-import Foundation
+import UIKit
 
 enum Setting{
     case signOut
@@ -31,6 +31,15 @@ enum Setting{
             return "chart.bar"
         case .topUp:
             return "creditcard"
+        }
+    }
+    
+    var tintColor: UIColor{
+        switch self{
+        case .signOut:
+            return .red
+        default:
+            return .white
         }
     }
 }

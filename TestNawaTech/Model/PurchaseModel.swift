@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Purchase: Codable{
+class PurchaseModel: Codable{
     var buyerId: String?
     var motorcycleId: String?
     var date: String?
@@ -17,7 +17,7 @@ class Purchase: Codable{
     var enumStatus: PurchaseStatus?{
         return PurchaseStatus(rawValue: status ?? "")
     }
-    var motorCycle: Motorcycle?
+    var motorCycle: MotorcycleModel?
     
     init(buyerId: String? = nil, motorcycleId: String? = nil, date: String? = nil, total: Double? = nil, status: String? = nil, transactionId: String? = nil) {
         self.buyerId = buyerId

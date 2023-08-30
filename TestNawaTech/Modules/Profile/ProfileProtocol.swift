@@ -15,7 +15,7 @@ protocol ProfilePresenterToViewProtocol{
 protocol ProfileViewToPresenterProtocol{
     var view: ProfilePresenterToViewProtocol? {get set}
     var router: ProfilePresenterToRouterProtocol? {get set}
-    func viewDidLoad()
+    func viewWillAppear()
     func signOut()
     func uploadProfilePicture(user id: String, image: UIImage)
     func goToStatisticVC(from vc: UIViewController)
@@ -44,6 +44,6 @@ protocol ProfilePresenterToRouterProtocol{
 }
 
 enum ProfileSuccessType{
-    case successfullyFetchedProfile(Profile)
+    case successfullyFetchedProfile(UserProfileModel)
     case successfullyUploadProfilePicture(URL)
 }

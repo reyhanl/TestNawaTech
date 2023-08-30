@@ -17,6 +17,7 @@ enum CustomError: Error{
     case failedToSignIn(String)
     case failedToSignUp(String)
     case pathShouldBeCollection
+    case pathShouldBeDocument
     case failedToSignOut
     case failedToUploadToStorage
     case notEnoughBalance

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Motorcycle: Codable{
+struct MotorcycleModel: Codable{
     var name: String?
     var company: String?
     var price: Double?

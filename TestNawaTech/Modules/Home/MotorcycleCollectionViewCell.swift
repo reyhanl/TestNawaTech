@@ -79,7 +79,7 @@ class MotorcycleCollectionViewCell: UICollectionViewCell{
             NSLayoutConstraint(item: titleLabel, attribute: .top, relatedBy: .equal, toItem: thumbImageView, attribute: .bottom, multiplier: 1, constant: 10),
             NSLayoutConstraint(item: titleLabel, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: -10),
             NSLayoutConstraint(item: titleLabel, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 20),
-            NSLayoutConstraint(item: titleLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 20)
+            NSLayoutConstraint(item: titleLabel, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: -20)
         ])
 //
         titleLabel.text = "dwwd"
@@ -114,13 +114,26 @@ class MotorcycleCollectionViewCell: UICollectionViewCell{
 //        containerView.addGestureRecognizer(gestureRecognizer)
     }
     
-    func setupData(motorcycle: Motorcycle, isEditingMode: Bool){
+    func setupData(motorcycle: MotorcycleModel, isEditingMode: Bool){
         titleLabel.text = motorcycle.name
         activeView.isHidden = !isEditingMode
         self.stackViewLeadingConstraint?.constant = CGFloat(level) * leadingGap
         setupActiveStatus()
         
         setupImage(url: motorcycle.thumbImageUrl)
+    }
+    
+    func setupData(topUp: TopUpModel, isEditingMode: Bool){
+        titleLabel.text = "IDR \(topUp.amount?.giveAutoFinanceAbbreviations() ?? "")"
+        titleLabel.textAlignment = .center
+        let amount = topUp.amount ?? 0
+        if amount < 1000000{
+            thumbImageView.image = UIImage(named: "minimumMoney")
+        }else if amount < 100000000{
+            thumbImageView.image = UIImage(named: "someMoney")
+        }else{
+            thumbImageView.image = UIImage(named: "aLotOfMoney")
+        }
     }
     
     func setupImage(url string: String?){

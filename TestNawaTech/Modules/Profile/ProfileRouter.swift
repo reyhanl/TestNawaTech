@@ -39,7 +39,8 @@ class ProfileRouter: ProfilePresenterToRouterProtocol{
     
     
     func goToTopUpVC(vc: UIViewController) {
-        vc.navigationController?.pushViewController(UIViewController(), animated: true)
+        let destinationVC = TopUpRouter.makeComponent()
+        vc.navigationController?.pushViewController(destinationVC, animated: true)
     }
     
 }

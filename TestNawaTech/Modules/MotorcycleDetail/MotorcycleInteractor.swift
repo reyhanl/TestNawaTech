@@ -17,13 +17,13 @@ class MotorcycleDetailInteractor: MotorcycleDetailPresenterToInteractorProtocol{
     func fetchData() {
     }
     
-    func purchase(motorcycle: Motorcycle) {
+    func purchase(motorcycle: MotorcycleModel) {
         guard let id = UserDefaultHelper.shared.getProfile()?.id else{
             presenter?.result(result: .failure(CustomError.somethingWentWrong))
             return
         }
         let uuid = UUID().uuidString
-        let purchase: Purchase = .init(buyerId: id, motorcycleId: motorcycle.id ?? "", date: Date().getString(format: Date.defaultDateFormat), total: motorcycle.price, status: PurchaseStatus.waitingForConfirmation.rawValue, transactionId: uuid)
+        let purchase: PurchaseModel = .init(buyerId: id, motorcycleId: motorcycle.id ?? "", date: Date().getString(format: Date.defaultDateFormat), total: motorcycle.price, status: PurchaseStatus.waitingForConfirmation.rawValue, transactionId: uuid)
         NetworkManager.shared.purchase(purchase: purchase) { [weak self] result in
             guard let self = self else{return}
             switch result{

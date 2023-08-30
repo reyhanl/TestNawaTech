@@ -23,12 +23,21 @@ class ProfileViewController: UIViewController{
     var settings: [Setting] = [
         .topUp, .statistic, .signOut
     ]
-    var profile: Profile?
+    var profile: UserProfileModel?
+    var isUpdatingProfilePicture: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        presenter?.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter?.viewWillAppear()
+    }
+    
+    deinit{
+        
     }
     
     func setupUI(){

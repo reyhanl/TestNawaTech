@@ -39,7 +39,8 @@ class MotorcycleDetailViewController: UIViewController{
     lazy var descriptionTextView: UITextView = {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.isEditable = true
+        textView.isScrollEnabled = false
+        textView.isEditable = false
         return textView
     }()
     
@@ -75,7 +76,7 @@ class MotorcycleDetailViewController: UIViewController{
         return button
     }()
     
-    var motorcycle: Motorcycle?
+    var motorcycle: MotorcycleModel?
     var presenter: MotorcycleDetailViewToPresenterProtocol?
     var heightOfTextView: NSLayoutConstraint?
     
@@ -191,7 +192,7 @@ class MotorcycleDetailViewController: UIViewController{
         buttonStackView.addArrangedSubview(purchaseButton)
     }
     
-    func setupData(motorcycle: Motorcycle){
+    func setupData(motorcycle: MotorcycleModel){
         self.motorcycle = motorcycle
         titleLabel.text = motorcycle.name
         descriptionTextView.attributedText = motorcycle.description?.htmlToAttributedString

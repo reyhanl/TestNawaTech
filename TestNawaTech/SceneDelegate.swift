@@ -70,8 +70,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func addUserDataListener(){
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.AuthStateDidChange, object: Auth.auth(), queue: nil) { notification in
-            guard let profile = notification.object as? Profile else{return}
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.userDataHasBeenUpdated, object: nil, queue: nil) { notification in
+            guard let profile = notification.object as? UserProfileModel else{return}
             UserDefaultHelper.shared.storeProfile(profile)
         }
 
@@ -95,6 +95,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let profileVC = ProfileRouter.makeComponent()
         let profileNavigationController = CustomNavigationController(rootViewController: profileVC)
         let profileTabBarItem = UITabBarItem(title: "Profile", image: UIImage.init(systemName: "person"), selectedImage: UIImage.init(systemName: "person.fill"))
+        tabBarController.tabBar.tintColor = .primaryButton
         profileVC.tabBarItem = profileTabBarItem
         tabBarController.addChild(profileNavigationController)
         
@@ -115,7 +116,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func redirectUser(scene: UIScene){
         if let user = Auth.auth().currentUser{
-            NetworkManager.shared.fetchDocument(reference: .user(user.uid)) { (result: Result<Profile, Error>) in
+            NetworkManager.shared.fetchDocument(reference: .user(user.uid)) { (result: Result<UserProfileModel, Error>) in
                 switch result{
                 case .success(let user):
                     UserDefaultHelper.shared.storeProfile(user)

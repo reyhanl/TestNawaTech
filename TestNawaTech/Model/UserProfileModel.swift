@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Profile: Codable{
+class UserProfileModel: Codable{
     var name: String?
     var id: String?
     var profilePictureUrl: String?
@@ -18,5 +18,12 @@ class Profile: Codable{
         self.id = id
         self.profilePictureUrl = profilePictureUrl
         self.balance = balance
+    }
+    
+    enum CodingKeys: String, CodingKey{
+        case name
+        case id
+        case profilePictureUrl
+        case balance
     }
 }

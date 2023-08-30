@@ -19,11 +19,11 @@ class UserDefaultHelper{
         UserDefaults.standard.setValue(value, forKey: userDefaultKey.key)
     }
     
-    func getProfile() -> Profile?{
+    func getProfile() -> UserProfileModel?{
         if let data: Data = self.retrieve(userDefaultKey: .userProfile){
             do{
                 let decoder = JSONDecoder()
-                let model = try decoder.decode(Profile.self, from: data)
+                let model = try decoder.decode(UserProfileModel.self, from: data)
                 return model
             }catch{
                 return nil
@@ -32,7 +32,7 @@ class UserDefaultHelper{
         return nil
     }
     
-    func storeProfile(_ user: Profile){
+    func storeProfile(_ user: UserProfileModel){
         do{
             let encoder = JSONEncoder()
             let data = try encoder.encode(user)

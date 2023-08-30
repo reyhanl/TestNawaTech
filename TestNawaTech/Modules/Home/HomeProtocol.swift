@@ -16,7 +16,7 @@ protocol HomeViewToPresenterProtocol{
     var view: HomePresenterToViewProtocol? {get set}
     var router: HomePresenterToRouterProtocol? {get set}
     func viewDidLoad()
-    func goToMotorcycleDetailPage(_ view: UIViewController, motorcycle: Motorcycle)
+    func goToMotorcycleDetailPage(_ view: UIViewController, motorcycle: MotorcycleModel)
     func refreshData()
 }
 
@@ -33,9 +33,9 @@ protocol HomeInteractorToPresenterProtocol{
 
 protocol HomePresenterToRouterProtocol{
     static func makeComponent() -> HomeViewController
-    func goToMotorcycleDetailPage(_ view: UIViewController, motorcycle: Motorcycle)
+    func goToMotorcycleDetailPage(_ view: UIViewController, motorcycle: MotorcycleModel)
 }
 
 enum HomeSuccessType{
-    case fetchData([Motorcycle])
+    case fetchData([MotorcycleModel])
 }

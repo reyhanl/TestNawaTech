@@ -1,14 +1,13 @@
 //
-//  HomeViewController.swift
+//  TopUpViewController.swift
 //  TestNawaTech
 //
-//  Created by reyhan muhammad on 24/08/23.
+//  Created by reyhan muhammad on 30/08/23.
 //
 
 import UIKit
-import FirebaseAuth
 
-class HomeViewController: UIViewController{
+class TopUpViewController: UIViewController{
     
     lazy var collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -24,32 +23,26 @@ class HomeViewController: UIViewController{
         collectionView.accessibilityIdentifier = "MotorcycleCatalogCollectionView"
         return collectionView
     }()
+    
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         return refreshControl
     }()
+
     
+    var presenter: TopUpViewToPresenterProtocol?
     let collectionViewInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-    var presenter: HomeViewToPresenterProtocol?
-    var motorcycles: [MotorcycleModel] = []
+    var topUps: [TopUpModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.largeTitleDisplayMode = .always
-        presenter?.viewDidLoad()
         setupUI()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        title = "Motorcycle Catalog"
+        presenter?.viewDidLoad()
     }
     
     func setupUI(){
         addCollectionView()
-        view.backgroundColor = .systemBackground
     }
     
     func addCollectionView(){
@@ -70,40 +63,42 @@ class HomeViewController: UIViewController{
     }
 }
 
-extension HomeViewController: HomePresenterToViewProtocol{
+extension TopUpViewController: TopUpPresenterToViewProtocol{
     
-    func result(result: Result<HomeSuccessType, Error>) {
+    func result(result: Result<TopUpSuccessType, Error>) {
         switch result{
         case .success(let type):
-            handleSuccess(type)
+            handleSuccess(type: type)
         case .failure(let error):
-            handleFailure(error)
+            handleError(error: error)
         }
     }
     
-    func handleSuccess(_ type: HomeSuccessType){
-        switch type {
-        case .fetchData(let array):
-            self.motorcycles = array
+    func handleSuccess(type: TopUpSuccessType){
+        switch type{
+        case .successfullyFetchedTopUp(let topUps):
+            self.topUps = topUps
             collectionView.reloadData()
             refreshControl.endRefreshing()
+        case .successfullyTopUp(_):
+            presentBubbleAlert(text: "You have successfully top up!", with: 0.2, floating: 1)
         }
     }
     
-    func handleFailure(_ error: Error){
-        print(error.localizedDescription)
+    func handleError(error: Error){
+        presentBubbleAlert(text: String(describing: error), with: 0.2, floating: 1)
     }
-    
 }
 
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
+
+extension TopUpViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return motorcycles.count
+        return topUps.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MotorcycleCollectionViewCell
-        cell.setupData(motorcycle: motorcycles[indexPath.row], isEditingMode: true)
+        cell.setupData(topUp: topUps[indexPath.row], isEditingMode: true)
         cell.accessibilityIdentifier = "MotorcycleCatalogCollectionViewCell\(indexPath.row)"
         print("MotorcycleCatalogCollectionViewCell\(indexPath.row)")
         return cell
@@ -115,7 +110,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter?.goToMotorcycleDetailPage(self, motorcycle: motorcycles[indexPath.row])
-    }
+        presenter?.topUp(topUp: topUps[indexPath.row])
+    }   
     
 }

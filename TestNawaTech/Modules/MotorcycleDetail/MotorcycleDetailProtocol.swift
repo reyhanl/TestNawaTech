@@ -18,13 +18,13 @@ protocol MotorcycleDetailViewToPresenterProtocol{
     var router: MotorcycleDetailPresenterToRouterProtocol? {get set}
     func viewDidLoad()
     func refreshData()
-    func purchase(motorcycle: Motorcycle)
+    func purchase(motorcycle: MotorcycleModel)
 }
 
 protocol MotorcycleDetailPresenterToInteractorProtocol{
     var presenter: MotorcycleDetailInteractorToPresenterProtocol? {get set}
     func fetchData()
-    func purchase(motorcycle: Motorcycle)
+    func purchase(motorcycle: MotorcycleModel)
 }
 
 
@@ -35,7 +35,7 @@ protocol MotorcycleDetailInteractorToPresenterProtocol{
 }
 
 protocol MotorcycleDetailPresenterToRouterProtocol{
-    static func makeComponent(motorcycle: Motorcycle) -> MotorcycleDetailViewController
+    static func makeComponent(motorcycle: MotorcycleModel) -> MotorcycleDetailViewController
 }
 
 enum MotorcycleDetailSuccessType{

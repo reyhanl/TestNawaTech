@@ -27,7 +27,7 @@ class HistoryViewController: UIViewController{
         return tableView
     }()
     
-    var purchases: [Purchase] = []
+    var purchases: [PurchaseModel] = []
     var chartData: ([String], [CGFloat]) = ([], [])
     
     override func viewDidLoad() {

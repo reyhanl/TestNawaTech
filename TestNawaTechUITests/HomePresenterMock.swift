@@ -18,7 +18,7 @@ class HomePresenterMock: HomeViewToPresenterProtocol{
         view?.result(result: .success(.fetchData(motorcycles)))
     }
     
-    func goToMotorcycleDetailPage(_ view: UIViewController, motorcycle: Motorcycle) {
+    func goToMotorcycleDetailPage(_ view: UIViewController, motorcycle: MotorcycleModel) {
         router?.goToMotorcycleDetailPage(view, motorcycle: motorcycle)
     }
     

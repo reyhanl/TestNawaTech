@@ -20,7 +20,7 @@
 		FC1638B32A9C584C00E7C238 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1638B22A9C584C00E7C238 /* ProfileInteractor.swift */; };
 		FC1638B52A9C587400E7C238 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1638B42A9C587400E7C238 /* ProfileRouter.swift */; };
 		FC1638B72A9C588900E7C238 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1638B62A9C588900E7C238 /* ProfileViewController.swift */; };
-		FC1638B92A9C5B3800E7C238 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1638B82A9C5B3800E7C238 /* Profile.swift */; };
+		FC1638B92A9C5B3800E7C238 /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1638B82A9C5B3800E7C238 /* UserProfileModel.swift */; };
 		FC1638BB2A9C5C5700E7C238 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1638BA2A9C5C5700E7C238 /* ProfileHeaderView.swift */; };
 		FC1699102A9D6ADA00AC6F6C /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC16990F2A9D6ADA00AC6F6C /* UserDefaultHelper.swift */; };
 		FC1699142A9D75F800AC6F6C /* HistoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC1699132A9D75F800AC6F6C /* HistoryProtocol.swift */; };
@@ -30,8 +30,10 @@
 		FC16991C2A9D766900AC6F6C /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC16991B2A9D766900AC6F6C /* HistoryViewController.swift */; };
 		FC16991E2A9D887300AC6F6C /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC16991D2A9D887300AC6F6C /* CustomNavigationController.swift */; };
 		FC2194792A9C7EA0002B5F8F /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2194782A9C7EA0002B5F8F /* ProfileTableViewCell.swift */; };
+		FC2745E92A9EE36D006B63DD /* TopUpHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2745E82A9EE36D006B63DD /* TopUpHistory.swift */; };
+		FC2745EB2A9F1210006B63DD /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2745EA2A9F1210006B63DD /* UIImage+Extension.swift */; };
 		FC9E980E2A9C92100056A17E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9E980D2A9C92100056A17E /* Setting.swift */; };
-		FC9E98102A9CC93A0056A17E /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9E980F2A9CC93A0056A17E /* BarChart.swift */; };
+		FC9E98102A9CC93A0056A17E /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9E980F2A9CC93A0056A17E /* BarChartView.swift */; };
 		FCA5A6FB2A9E40BD00D8D346 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA5A6FA2A9E40BD00D8D346 /* Double+Extension.swift */; };
 		FCA5A6FD2A9E472D00D8D346 /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA5A6FC2A9E472D00D8D346 /* NSNotificationName.swift */; };
 		FCA6B8302A9D96B000381014 /* StatisticTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA6B82F2A9D96B000381014 /* StatisticTableViewHeader.swift */; };
@@ -39,7 +41,7 @@
 		FCA6B8352A9DC09800381014 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA6B8342A9DC09800381014 /* CGFloat+Extension.swift */; };
 		FCA6B8372A9DC8BB00381014 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA6B8362A9DC8BB00381014 /* HistoryTableViewCell.swift */; };
 		FCCBF5B72A9821D600C89C0C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCBF5B62A9821D600C89C0C /* String+Extension.swift */; };
-		FCCBF5B92A982AC400C89C0C /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCBF5B82A982AC400C89C0C /* Purchase.swift */; };
+		FCCBF5B92A982AC400C89C0C /* PurchaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCBF5B82A982AC400C89C0C /* PurchaseModel.swift */; };
 		FCCBF5BB2A982DC400C89C0C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCBF5BA2A982DC400C89C0C /* Date+Extension.swift */; };
 		FCCBF5BD2A982F3400C89C0C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCBF5BC2A982F3400C89C0C /* UIViewController+Extension.swift */; };
 		FCCBF5C12A98377A00C89C0C /* AuthProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCBF5C02A98377A00C89C0C /* AuthProtocol.swift */; };
@@ -66,11 +68,16 @@
 		FCDBD9752A971EE2003CFB06 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9742A971EE2003CFB06 /* HomeInteractor.swift */; };
 		FCDBD9772A971F3A003CFB06 /* MotorCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9762A971F3A003CFB06 /* MotorCycle.swift */; };
 		FCDBD9792A97208E003CFB06 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9782A97208E003CFB06 /* HomeRouter.swift */; };
+		FCDD04FC2A9EDE8B00F47F0F /* TopUpProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDD04FB2A9EDE8B00F47F0F /* TopUpProtocol.swift */; };
+		FCDD04FE2A9EDEAC00F47F0F /* TopUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDD04FD2A9EDEAC00F47F0F /* TopUpPresenter.swift */; };
+		FCDD05002A9EDEC400F47F0F /* TopUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDD04FF2A9EDEC400F47F0F /* TopUpInteractor.swift */; };
+		FCDD05022A9EDEDF00F47F0F /* TopUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDD05012A9EDEDF00F47F0F /* TopUpRouter.swift */; };
+		FCDD05042A9EDEF000F47F0F /* TopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDD05032A9EDEF000F47F0F /* TopUpViewController.swift */; };
+		FCDD05062A9EE02E00F47F0F /* TopUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDD05052A9EE02E00F47F0F /* TopUpModel.swift */; };
 		FCEAC76D2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC76C2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift */; };
 		FCEAC7742A9737C400A31AF1 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC7732A9737C400A31AF1 /* UIColor+Extension.swift */; };
 		FCEAC7762A973F8E00A31AF1 /* HomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC7752A973F8E00A31AF1 /* HomeUITests.swift */; };
 		FCEAC7782A973FBB00A31AF1 /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC7772A973FBB00A31AF1 /* MockDataProvider.swift */; };
-		FCEAC7792A973FE100A31AF1 /* MotorCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9762A971F3A003CFB06 /* MotorCycle.swift */; };
 		FCEAC77B2A9740F700A31AF1 /* HomePresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC77A2A9740F700A31AF1 /* HomePresenterMock.swift */; };
 		FCEAC77C2A97410500A31AF1 /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD95C2A970E00003CFB06 /* HomeProtocol.swift */; };
 		FCEAC77D2A97414D00A31AF1 /* HomePresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC77A2A9740F700A31AF1 /* HomePresenterMock.swift */; };
@@ -127,7 +134,7 @@
 		FC1638B22A9C584C00E7C238 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
 		FC1638B42A9C587400E7C238 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 		FC1638B62A9C588900E7C238 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		FC1638B82A9C5B3800E7C238 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		FC1638B82A9C5B3800E7C238 /* UserProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
 		FC1638BA2A9C5C5700E7C238 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		FC16990F2A9D6ADA00AC6F6C /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
 		FC1699132A9D75F800AC6F6C /* HistoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryProtocol.swift; sourceTree = "<group>"; };
@@ -137,8 +144,10 @@
 		FC16991B2A9D766900AC6F6C /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		FC16991D2A9D887300AC6F6C /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		FC2194782A9C7EA0002B5F8F /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		FC2745E82A9EE36D006B63DD /* TopUpHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUpHistory.swift; sourceTree = "<group>"; };
+		FC2745EA2A9F1210006B63DD /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		FC9E980D2A9C92100056A17E /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
-		FC9E980F2A9CC93A0056A17E /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
+		FC9E980F2A9CC93A0056A17E /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
 		FCA5A6FA2A9E40BD00D8D346 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		FCA5A6FC2A9E472D00D8D346 /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
 		FCA6B82F2A9D96B000381014 /* StatisticTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableViewHeader.swift; sourceTree = "<group>"; };
@@ -146,7 +155,7 @@
 		FCA6B8342A9DC09800381014 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
 		FCA6B8362A9DC8BB00381014 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		FCCBF5B62A9821D600C89C0C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		FCCBF5B82A982AC400C89C0C /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
+		FCCBF5B82A982AC400C89C0C /* PurchaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseModel.swift; sourceTree = "<group>"; };
 		FCCBF5BA2A982DC400C89C0C /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		FCCBF5BC2A982F3400C89C0C /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		FCCBF5C02A98377A00C89C0C /* AuthProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProtocol.swift; sourceTree = "<group>"; };
@@ -177,6 +186,12 @@
 		FCDBD9742A971EE2003CFB06 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		FCDBD9762A971F3A003CFB06 /* MotorCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorCycle.swift; sourceTree = "<group>"; };
 		FCDBD9782A97208E003CFB06 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		FCDD04FB2A9EDE8B00F47F0F /* TopUpProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUpProtocol.swift; sourceTree = "<group>"; };
+		FCDD04FD2A9EDEAC00F47F0F /* TopUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUpPresenter.swift; sourceTree = "<group>"; };
+		FCDD04FF2A9EDEC400F47F0F /* TopUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUpInteractor.swift; sourceTree = "<group>"; };
+		FCDD05012A9EDEDF00F47F0F /* TopUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUpRouter.swift; sourceTree = "<group>"; };
+		FCDD05032A9EDEF000F47F0F /* TopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUpViewController.swift; sourceTree = "<group>"; };
+		FCDD05052A9EE02E00F47F0F /* TopUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUpModel.swift; sourceTree = "<group>"; };
 		FCEAC76C2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleCollectionViewCell.swift; sourceTree = "<group>"; };
 		FCEAC7732A9737C400A31AF1 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		FCEAC7752A973F8E00A31AF1 /* HomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUITests.swift; sourceTree = "<group>"; };
@@ -245,7 +260,7 @@
 			children = (
 				FC073CB12A98467200E8F9E9 /* CustomTextView.swift */,
 				FC1638A62A99B58B00E7C238 /* CustomButton.swift */,
-				FC9E980F2A9CC93A0056A17E /* BarChart.swift */,
+				FC9E980F2A9CC93A0056A17E /* BarChartView.swift */,
 				FC16991D2A9D887300AC6F6C /* CustomNavigationController.swift */,
 				FC1638AB2A9B56B900E7C238 /* CustomAlertViewController.swift */,
 			);
@@ -262,8 +277,6 @@
 				FC1638B62A9C588900E7C238 /* ProfileViewController.swift */,
 				FC1638BA2A9C5C5700E7C238 /* ProfileHeaderView.swift */,
 				FC2194782A9C7EA0002B5F8F /* ProfileTableViewCell.swift */,
-				FC9E980D2A9C92100056A17E /* Setting.swift */,
-				FC1638B82A9C5B3800E7C238 /* Profile.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -367,9 +380,23 @@
 			path = TestNawaTechUITests;
 			sourceTree = "<group>";
 		};
+		FCDD04FA2A9EDE6B00F47F0F /* Top up */ = {
+			isa = PBXGroup;
+			children = (
+				FCDD04FB2A9EDE8B00F47F0F /* TopUpProtocol.swift */,
+				FCDD04FD2A9EDEAC00F47F0F /* TopUpPresenter.swift */,
+				FCDD04FF2A9EDEC400F47F0F /* TopUpInteractor.swift */,
+				FC2745E82A9EE36D006B63DD /* TopUpHistory.swift */,
+				FCDD05012A9EDEDF00F47F0F /* TopUpRouter.swift */,
+				FCDD05032A9EDEF000F47F0F /* TopUpViewController.swift */,
+			);
+			path = "Top up";
+			sourceTree = "<group>";
+		};
 		FCEAC76E2A972C0200A31AF1 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FCDD04FA2A9EDE6B00F47F0F /* Top up */,
 				FC1699112A9D75BF00AC6F6C /* History */,
 				FC1638AD2A9C57DB00E7C238 /* Profile */,
 				FCCBF5BF2A98375500C89C0C /* Auth */,
@@ -387,7 +414,6 @@
 				FCDBD9722A971E26003CFB06 /* HomePresenter.swift */,
 				FCDBD9742A971EE2003CFB06 /* HomeInteractor.swift */,
 				FCDBD9782A97208E003CFB06 /* HomeRouter.swift */,
-				FCDBD9762A971F3A003CFB06 /* MotorCycle.swift */,
 				FCEAC76C2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift */,
 			);
 			path = Home;
@@ -413,6 +439,7 @@
 				FCCBF5B62A9821D600C89C0C /* String+Extension.swift */,
 				FCCBF5BA2A982DC400C89C0C /* Date+Extension.swift */,
 				FCCBF5BC2A982F3400C89C0C /* UIViewController+Extension.swift */,
+				FC2745EA2A9F1210006B63DD /* UIImage+Extension.swift */,
 				FC08C1BF2A9CE5D000A60B9C /* UIView+Extension.swift */,
 				FCA6B8312A9DBDC000381014 /* Int+Extension.swift */,
 				FCA6B8342A9DC09800381014 /* CGFloat+Extension.swift */,
@@ -425,7 +452,11 @@
 			isa = PBXGroup;
 			children = (
 				FCDBD9642A970FD1003CFB06 /* CustomError.swift */,
-				FCCBF5B82A982AC400C89C0C /* Purchase.swift */,
+				FCCBF5B82A982AC400C89C0C /* PurchaseModel.swift */,
+				FCDD05052A9EE02E00F47F0F /* TopUpModel.swift */,
+				FC9E980D2A9C92100056A17E /* Setting.swift */,
+				FC1638B82A9C5B3800E7C238 /* UserProfileModel.swift */,
+				FCDBD9762A971F3A003CFB06 /* MotorCycle.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -670,9 +701,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC1638B52A9C587400E7C238 /* ProfileRouter.swift in Sources */,
-				FC1638B92A9C5B3800E7C238 /* Profile.swift in Sources */,
+				FCDD04FE2A9EDEAC00F47F0F /* TopUpPresenter.swift in Sources */,
+				FC1638B92A9C5B3800E7C238 /* UserProfileModel.swift in Sources */,
 				FCCBF5BB2A982DC400C89C0C /* Date+Extension.swift in Sources */,
 				FCDBD95B2A970DE0003CFB06 /* HomeViewController.swift in Sources */,
+				FC2745EB2A9F1210006B63DD /* UIImage+Extension.swift in Sources */,
 				FC1699142A9D75F800AC6F6C /* HistoryProtocol.swift in Sources */,
 				FCA6B8322A9DBDC000381014 /* Int+Extension.swift in Sources */,
 				FCEAC77F2A9741E700A31AF1 /* MockDataProvider.swift in Sources */,
@@ -680,9 +713,11 @@
 				FCEAC7892A97547B00A31AF1 /* MotorcycleDetailProtocol.swift in Sources */,
 				FCEAC78B2A9754C400A31AF1 /* MotorcycleDetailViewController.swift in Sources */,
 				FCCBF5C32A9837B100C89C0C /* AuthRouter.swift in Sources */,
-				FC9E98102A9CC93A0056A17E /* BarChart.swift in Sources */,
+				FC9E98102A9CC93A0056A17E /* BarChartView.swift in Sources */,
 				FC16991A2A9D765400AC6F6C /* HistoryRouter.swift in Sources */,
+				FCDD05022A9EDEDF00F47F0F /* TopUpRouter.swift in Sources */,
 				FCEAC76D2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift in Sources */,
+				FCDD05062A9EE02E00F47F0F /* TopUpModel.swift in Sources */,
 				FC08C1C02A9CE5D000A60B9C /* UIView+Extension.swift in Sources */,
 				FCA6B8372A9DC8BB00381014 /* HistoryTableViewCell.swift in Sources */,
 				FCEAC7912A97583600A31AF1 /* MotorcycleInteractor.swift in Sources */,
@@ -705,13 +740,17 @@
 				FC08C1BE2A9CE46800A60B9C /* FirebaseStorageManager.swift in Sources */,
 				FCEAC78F2A97582000A31AF1 /* MotorcycleDetailPresenter.swift in Sources */,
 				FCCBF5B72A9821D600C89C0C /* String+Extension.swift in Sources */,
+				FCDD04FC2A9EDE8B00F47F0F /* TopUpProtocol.swift in Sources */,
 				FCCBF5BD2A982F3400C89C0C /* UIViewController+Extension.swift in Sources */,
 				FCDBD9732A971E26003CFB06 /* HomePresenter.swift in Sources */,
 				FCDBD95F2A970F66003CFB06 /* NetworkManager.swift in Sources */,
 				FC1638AF2A9C57F000E7C238 /* ProfileProtocol.swift in Sources */,
+				FCDD05042A9EDEF000F47F0F /* TopUpViewController.swift in Sources */,
+				FC2745E92A9EE36D006B63DD /* TopUpHistory.swift in Sources */,
 				FCEAC7742A9737C400A31AF1 /* UIColor+Extension.swift in Sources */,
 				FCDBD9652A970FD1003CFB06 /* CustomError.swift in Sources */,
 				FC1699162A9D761B00AC6F6C /* HistoryPresenter.swift in Sources */,
+				FCDD05002A9EDEC400F47F0F /* TopUpInteractor.swift in Sources */,
 				FCDBD9282A970DC5003CFB06 /* AppDelegate.swift in Sources */,
 				FCCBF5C92A9837FF00C89C0C /* AuthViewController.swift in Sources */,
 				FCCBF5C72A9837E700C89C0C /* AuthInteractor.swift in Sources */,
@@ -721,7 +760,7 @@
 				FCCBF5C52A9837C800C89C0C /* AuthPresenter.swift in Sources */,
 				FC16991C2A9D766900AC6F6C /* HistoryViewController.swift in Sources */,
 				FC1699102A9D6ADA00AC6F6C /* UserDefaultHelper.swift in Sources */,
-				FCCBF5B92A982AC400C89C0C /* Purchase.swift in Sources */,
+				FCCBF5B92A982AC400C89C0C /* PurchaseModel.swift in Sources */,
 				FCDBD95D2A970E00003CFB06 /* HomeProtocol.swift in Sources */,
 				FC1638A72A99B58B00E7C238 /* CustomButton.swift in Sources */,
 				FCCBF5C12A98377A00C89C0C /* AuthProtocol.swift in Sources */,
@@ -745,7 +784,6 @@
 			files = (
 				FCEAC77C2A97410500A31AF1 /* HomeProtocol.swift in Sources */,
 				FCEAC7782A973FBB00A31AF1 /* MockDataProvider.swift in Sources */,
-				FCEAC7792A973FE100A31AF1 /* MotorCycle.swift in Sources */,
 				FCEAC7852A9746DB00A31AF1 /* URLManager.swift in Sources */,
 				FCEAC7822A9746CD00A31AF1 /* HomePresenter.swift in Sources */,
 				FCEAC7762A973F8E00A31AF1 /* HomeUITests.swift in Sources */,

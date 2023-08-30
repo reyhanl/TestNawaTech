@@ -17,11 +17,11 @@ class HistoryPresenter: HistoryViewToPresenterProtocol{
         interactor?.fetchHistory()
     }
     
-    func getChartData(purchases: [Purchase]) {
+    func getChartData(purchases: [PurchaseModel]) {
         interactor?.getChartData(purchases: purchases)
     }
     
-    func presentTableViewOptions(vc: UIViewController, purchase: Purchase) {
+    func presentTableViewOptions(vc: UIViewController, purchase: PurchaseModel) {
         var title: String = ""
         var message: String = ""
         

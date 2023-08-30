@@ -23,7 +23,7 @@ class StatisticTableViewHeader: UITableViewHeaderFooterView{
         return label
     }()
         
-    var purchases: [Purchase] = []
+    var purchases: [PurchaseModel] = []
     var currency: String = "Rp"
     
     override func awakeFromNib() {

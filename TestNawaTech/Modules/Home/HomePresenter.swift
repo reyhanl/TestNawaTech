@@ -21,7 +21,7 @@ class HomePresenter: HomeViewToPresenterProtocol{
         interactor?.fetchData()
     }
     
-    func goToMotorcycleDetailPage(_ view: UIViewController, motorcycle: Motorcycle) {
+    func goToMotorcycleDetailPage(_ view: UIViewController, motorcycle: MotorcycleModel) {
         router?.goToMotorcycleDetailPage(view, motorcycle: motorcycle)
     }
 }

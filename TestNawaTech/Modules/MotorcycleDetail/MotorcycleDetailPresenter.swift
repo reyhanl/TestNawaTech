@@ -21,7 +21,7 @@ class MotorcycleDetailPresenter: MotorcycleDetailViewToPresenterProtocol{
         interactor?.fetchData()
     }
     
-    func purchase(motorcycle: Motorcycle) {
+    func purchase(motorcycle: MotorcycleModel) {
         interactor?.purchase(motorcycle: motorcycle)
     }
 }

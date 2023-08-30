@@ -104,7 +104,7 @@ class HistoryTableViewCell: UITableViewCell{
         ])
     }
     
-    func setupData(purchase: Purchase){
+    func setupData(purchase: PurchaseModel){
         titleLabel.text = purchase.motorCycle?.name
         statusLabel.text = purchase.enumStatus?.text
         switch purchase.enumStatus {

@@ -13,7 +13,7 @@ class ProfilePresenter: ProfileViewToPresenterProtocol{
     var interactor: ProfilePresenterToInteractorProtocol?
     var router: ProfilePresenterToRouterProtocol?
     
-    func viewDidLoad() {
+    func viewWillAppear() {
         interactor?.fetchProfile()
     }
     

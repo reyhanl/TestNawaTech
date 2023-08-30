@@ -12,13 +12,22 @@ class ProfileInteractor: ProfilePresenterToInteractorProtocol{
     
     var presenter: ProfileInteractorToPresenterProtocol?
     
+    init(presenter: ProfileInteractorToPresenterProtocol? = nil) {
+        self.presenter = presenter
+        addProfileListener()
+    }
+    
+    deinit{
+        removeProfileListener()
+    }
+    
     func fetchProfile() {
-        if let profile: Profile = UserDefaultHelper.shared.getProfile(){
+        if let profile: UserProfileModel = UserDefaultHelper.shared.getProfile(){
             presenter?.result(result: .success(.successfullyFetchedProfile(profile)))
             return
         }
         guard let id = Auth.auth().currentUser?.uid else{return}
-        NetworkManager.shared.fetchDocument(reference: .user(id)) { [weak self] (result: Result<Profile, Error>) in
+        NetworkManager.shared.fetchDocument(reference: .user(id)) { [weak self] (result: Result<UserProfileModel, Error>) in
             guard let self = self else{
                 return
             }
@@ -32,7 +41,9 @@ class ProfileInteractor: ProfilePresenterToInteractorProtocol{
     }
     
     func uploadProfilePicture(user id: String, image: UIImage) {
-        guard let data = image.pngData() else{
+        
+        let size = image.calculateSizeInKB()
+        guard let data = size > 500 ? image.jpegData(compressionQuality: 0.5):image.jpegData(compressionQuality: 1) else{
             presenter?.result(result: .failure(CustomError.failedToUploadToStorage))
             return
         }
@@ -40,10 +51,7 @@ class ProfileInteractor: ProfilePresenterToInteractorProtocol{
             guard let self = self else{return}
             switch result {
             case .success(let url):
-                if let profile = UserDefaultHelper.shared.getProfile(){
-                    profile.profilePictureUrl = url.absoluteString
-                    updateUserDataOnFirestore(profile: profile)
-                }
+                self.updateImageUrlOnUserProfile(user: id,url: url)
             case .failure(let error):
                 self.presenter?.result(result: .failure(CustomError.failedToUploadToStorage))
                 self.presenter?.result(result: .failure(error))
@@ -51,17 +59,13 @@ class ProfileInteractor: ProfilePresenterToInteractorProtocol{
         }
     }
     
-    func updateUserDataOnFirestore(profile: Profile){
-        NetworkManager.shared.setDocument(model: profile, document: .user(profile.id ?? "")) { [weak self] result in
-            guard let self = self else{return}
-            switch result {
-            case .success(let profile):
-                if let url = URL(string: profile.profilePictureUrl ?? ""){
-                    self.presenter?.result(result: .success(.successfullyUploadProfilePicture(url)))
-                }
-            case .failure(let failure):
-                self.presenter?.result(result: .failure(failure))
+    func updateImageUrlOnUserProfile(user id: String, url: URL){
+        NetworkManager.shared.updateDocumentField(key: UserProfileModel.CodingKeys.profilePictureUrl.rawValue, value: url.absoluteString, document: .user(id)) { [weak self] error in
+            if let error = error{
+                self?.presenter?.result(result: .failure(error))
+                return
             }
+            NetworkManager.shared.fetchProfile(completion: nil)
         }
     }
     
@@ -71,5 +75,18 @@ class ProfileInteractor: ProfilePresenterToInteractorProtocol{
         }catch{
             presenter?.result(result: .failure(CustomError.failedToSignOut))
         }
+    }
+    
+    func addProfileListener(){
+        NotificationCenter.default.addObserver(self, selector: #selector(userUpdatedTheirProfile), name: .userDataHasBeenUpdated, object: nil)
+    }
+    
+    func removeProfileListener(){
+        NotificationCenter.default.removeObserver(self, name: .userDataHasBeenUpdated, object: nil)
+    }
+    
+    @objc func userUpdatedTheirProfile(notification: Notification){
+        guard let profile = notification.object as? UserProfileModel else{return}
+        presenter?.result(result: .success(.successfullyFetchedProfile(profile)))
     }
 }

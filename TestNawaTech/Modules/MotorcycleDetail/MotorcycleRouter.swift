@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class MotorcycleDetailRouter: MotorcycleDetailPresenterToRouterProtocol{
-    static func makeComponent(motorcycle: Motorcycle) -> MotorcycleDetailViewController {
+    static func makeComponent(motorcycle: MotorcycleModel) -> MotorcycleDetailViewController {
         var presenter: MotorcycleDetailViewToPresenterProtocol & MotorcycleDetailInteractorToPresenterProtocol = MotorcycleDetailPresenter()
         let view = MotorcycleDetailViewController()
         var interactor: MotorcycleDetailPresenterToInteractorProtocol = MotorcycleDetailInteractor()

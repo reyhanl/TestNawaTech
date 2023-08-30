@@ -55,7 +55,7 @@ class ProfileHeaderView: UITableViewHeaderFooterView{
         return imageView
     }()
         
-    var profile: Profile?
+    var profile: UserProfileModel?
     var delegate: ProfileHeaderProtocol?
     
     override func awakeFromNib() {
@@ -157,7 +157,7 @@ class ProfileHeaderView: UITableViewHeaderFooterView{
         containerView.isUserInteractionEnabled = true
     }
     
-    func setupData(profile: Profile){
+    func setupData(profile: UserProfileModel){
         self.profile = profile
         nameLabel.text = profile.name
         balanceLabel.text = "IDR " + (profile.balance?.giveAutoFinanceAbbreviations() ?? "0")

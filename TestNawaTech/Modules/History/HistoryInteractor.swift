@@ -19,7 +19,7 @@ class HistoryInteractor: HistoryPresenterToInteractorProtocol{
             return
         }
         let predicate = NSPredicate(format: "buyerId == %@", id)
-        NetworkManager.shared.fetchCollection(reference: .purchases, where: predicate) { [weak self] (result: Result<[Purchase], Error>) in
+        NetworkManager.shared.fetchCollection(reference: .purchases, where: predicate) { [weak self] (result: Result<[PurchaseModel], Error>) in
             guard let self = self else{return}
             switch result{
             case .success(let purchases):
@@ -30,7 +30,7 @@ class HistoryInteractor: HistoryPresenterToInteractorProtocol{
         }
     }
     
-    func fetchMotorcycles(purchases: [Purchase]){
+    func fetchMotorcycles(purchases: [PurchaseModel]){
         let group = DispatchGroup()
         for purchase in purchases{
             group.enter()
@@ -45,13 +45,13 @@ class HistoryInteractor: HistoryPresenterToInteractorProtocol{
         }
     }
     
-    func fetchMotorcycle(purchase: Purchase, completion: @escaping(Motorcycle?) -> Void){
+    func fetchMotorcycle(purchase: PurchaseModel, completion: @escaping(MotorcycleModel?) -> Void){
         guard let id = purchase.motorcycleId else{
             completion(nil)
             return
         }
         let predicate = NSPredicate(format: "id == %@", id)
-        NetworkManager.shared.fetchCollection(reference: .motorcycles, where: predicate) { (result: Result<[Motorcycle], Error>) in
+        NetworkManager.shared.fetchCollection(reference: .motorcycles, where: predicate) { (result: Result<[MotorcycleModel], Error>) in
             switch result{
             case .success(let motorcycles):
                 print(motorcycles)
@@ -67,7 +67,7 @@ class HistoryInteractor: HistoryPresenterToInteractorProtocol{
         }
     }
     
-    func getChartData(purchases: [Purchase]){
+    func getChartData(purchases: [PurchaseModel]){
         let currentMonth = Date().get(.month, calendar: .current)
         let from = currentMonth < 6 ? 1:currentMonth - 5
         var monthNames: [String] = []
@@ -82,9 +82,9 @@ class HistoryInteractor: HistoryPresenterToInteractorProtocol{
         presenter?.result(result: .success(.successfullyFetchedChartData((monthNames, numbers))))
     }
     
-    func cancelOrder(purchase: Purchase) {
+    func cancelOrder(purchase: PurchaseModel) {
         purchase.status = PurchaseStatus.cancelled.rawValue
-        NetworkManager.shared.setDocument(model: purchase, document: .purchase(purchase.transactionId ?? "")) { [weak self] (result: Result<Purchase, Error>) in
+        NetworkManager.shared.setDocument(model: purchase, document: .purchase(purchase.transactionId ?? "")) { [weak self] (result: Result<PurchaseModel, Error>) in
             switch result{
             case .success(let purchase):
                 self?.presenter?.result(result: .success(.successfullyCancelOrder(purchase)))
@@ -94,7 +94,7 @@ class HistoryInteractor: HistoryPresenterToInteractorProtocol{
         }
     }
     
-    func getThisMonthPurchases(purchases: [Purchase], currentMonth: Int) -> [Purchase]{
+    func getThisMonthPurchases(purchases: [PurchaseModel], currentMonth: Int) -> [PurchaseModel]{
         return purchases.filter({ purchase in
             guard purchase.enumStatus == .finished else{return false}
             guard let date = purchase.date?.getDate(format: Date.defaultDateFormat) else{return false}
