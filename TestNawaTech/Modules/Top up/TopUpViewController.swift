@@ -20,7 +20,6 @@ class TopUpViewController: UIViewController{
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.accessibilityIdentifier = "MotorcycleCatalogCollectionView"
         return collectionView
     }()
     

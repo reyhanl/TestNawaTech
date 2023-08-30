@@ -87,10 +87,26 @@ class HistoryInteractor: HistoryPresenterToInteractorProtocol{
         NetworkManager.shared.setDocument(model: purchase, document: .purchase(purchase.transactionId ?? "")) { [weak self] (result: Result<PurchaseModel, Error>) in
             switch result{
             case .success(let purchase):
-                self?.presenter?.result(result: .success(.successfullyCancelOrder(purchase)))
+                self?.refundUserBalance(purchase: purchase)
             case .failure(let error):
                 self?.presenter?.result(result: .failure(error))
             }
+        }
+    }
+    
+    func refundUserBalance(purchase: PurchaseModel){
+        guard let user = UserDefaultHelper.shared.getProfile(), let userId = user.id, var balance = user.balance, let amount = purchase.total else{
+            presenter?.result(result: .failure(CustomError.refundProblem))
+            return
+        }
+        balance += amount
+        NetworkManager.shared.updateDocumentField(key: UserProfileModel.CodingKeys.balance.rawValue, value: balance, document: .user(userId)) { [weak self] error in
+            if let error = error{
+                self?.presenter?.result(result: .failure(CustomError.refundProblem))
+                return
+            }
+            NetworkManager.shared.fetchProfile(completion: nil)
+            self?.presenter?.result(result: .success(.successfullyCancelOrder(purchase)))
         }
     }
     

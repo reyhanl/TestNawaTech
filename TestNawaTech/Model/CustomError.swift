@@ -21,6 +21,7 @@ enum CustomError: Error{
     case failedToSignOut
     case failedToUploadToStorage
     case notEnoughBalance
+    case refundProblem
 }
 
 extension CustomError: LocalizedError {
@@ -34,6 +35,8 @@ extension CustomError: LocalizedError {
             return NSLocalizedString("You do not have enough balance", comment: "User does not have enough balance")
         case .failedToUploadToStorage:
             return NSLocalizedString("Failed to upload", comment: "Failed to upload to the server")
+        case .refundProblem:
+            return NSLocalizedString("Something went wrong with when we try to refund your balance, please contact us for a  refund", comment: "Failed to upload to the server")
         default:
             return NSLocalizedString("Something went wrong", comment: "Something unexpected occured")
 
