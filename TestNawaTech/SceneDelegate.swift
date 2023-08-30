@@ -33,6 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }else{
             redirectUser(scene: scene)
             addAuthStateListener(scene: scene)
+            addUserDataListener()
         }
         guard let _ = (scene as? UIWindowScene) else { return }
     }
@@ -66,6 +67,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // Save changes in the application's managed object context when the application transitions to the background.
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+    }
+    
+    func addUserDataListener(){
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.AuthStateDidChange, object: Auth.auth(), queue: nil) { notification in
+            guard let profile = notification.object as? Profile else{return}
+            UserDefaultHelper.shared.storeProfile(profile)
+        }
+
     }
     
     func addAuthStateListener(scene: UIScene){

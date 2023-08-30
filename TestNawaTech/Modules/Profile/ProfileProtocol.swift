@@ -20,6 +20,7 @@ protocol ProfileViewToPresenterProtocol{
     func uploadProfilePicture(user id: String, image: UIImage)
     func goToStatisticVC(from vc: UIViewController)
     func presentImagePicker(from vc: UIViewController)
+    func topUp(vc: UIViewController)
 }
 
 protocol ProfilePresenterToInteractorProtocol{
@@ -39,6 +40,7 @@ protocol ProfilePresenterToRouterProtocol{
     static func makeComponent() -> ProfileViewController
     func goToStatisticVC(from vc: UIViewController)
     func presentImagePicker(from vc: UIViewController)
+    func goToTopUpVC(vc: UIViewController)
 }
 
 enum ProfileSuccessType{

@@ -196,7 +196,13 @@ class MotorcycleDetailViewController: UIViewController{
         titleLabel.text = motorcycle.name
         descriptionTextView.attributedText = motorcycle.description?.htmlToAttributedString
         view.layoutIfNeeded()
-        heightOfTextView?.constant = descriptionTextView.contentSize.height
+        let size = CGSize(width: view.frame.width, height: 2000)
+        let boundingBox = descriptionTextView.attributedText.boundingRect(
+            with: size,
+            options: [.usesLineFragmentOrigin, .usesFontLeading, .usesDeviceMetrics],
+            context: nil
+        )
+        heightOfTextView?.constant = boundingBox.height
         view.layoutIfNeeded()
         priceLabel.text = "IDR \(motorcycle.price?.giveAutoFinanceAbbreviations() ?? "")"
         title = motorcycle.name

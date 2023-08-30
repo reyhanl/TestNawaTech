@@ -36,4 +36,10 @@ class ProfileRouter: ProfilePresenterToRouterProtocol{
         imagePicker.delegate = vc
         vc.present(imagePicker, animated: true)
     }
+    
+    
+    func goToTopUpVC(vc: UIViewController) {
+        vc.navigationController?.pushViewController(UIViewController(), animated: true)
+    }
+    
 }

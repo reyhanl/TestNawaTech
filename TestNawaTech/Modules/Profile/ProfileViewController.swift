@@ -21,7 +21,7 @@ class ProfileViewController: UIViewController{
     
     var presenter: ProfileViewToPresenterProtocol?
     var settings: [Setting] = [
-        .statistic, .signOut
+        .topUp, .statistic, .signOut
     ]
     var profile: Profile?
     
@@ -113,6 +113,8 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate{
             presenter?.signOut()
         case .statistic:
             presenter?.goToStatisticVC(from: self)
+        case .topUp:
+            presenter?.topUp(vc: self)
         }
     }
 }

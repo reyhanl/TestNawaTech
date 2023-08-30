@@ -12,7 +12,7 @@ class HomeViewController: UIViewController{
     
     lazy var collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+        layout.sectionInset = collectionViewInset
         layout.itemSize = CGSize(width: 60, height: 60)
         layout.scrollDirection = .vertical
 
@@ -30,6 +30,7 @@ class HomeViewController: UIViewController{
         return refreshControl
     }()
     
+    let collectionViewInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
     var presenter: HomeViewToPresenterProtocol?
     var motorcycles: [Motorcycle] = []
     
@@ -109,7 +110,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width / 2 - 60, height: 200)
+        let horizontalInset = collectionViewInset.left + collectionViewInset.right
+        return .init(width: view.frame.width / 2 - horizontalInset, height: 200)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

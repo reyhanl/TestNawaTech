@@ -173,6 +173,7 @@ class NetworkManager: NetworkManagerProtocol{
             switch result{
             case .success(let profile):
                 completion(.success(profile))
+                NotificationCenter.default.post(name: .userDataHasBeenUpdated, object: profile)
             case .failure(let error):
                 completion(.failure(CustomError.somethingWentWrong))
             }

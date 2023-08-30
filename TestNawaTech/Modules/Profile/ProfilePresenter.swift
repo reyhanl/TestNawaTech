@@ -32,6 +32,10 @@ class ProfilePresenter: ProfileViewToPresenterProtocol{
     func presentImagePicker(from vc: UIViewController){
         router?.presentImagePicker(from: vc)
     }
+    
+    func topUp(vc: UIViewController) {
+        router?.goToTopUpVC(vc: vc)
+    }
 }
 
 extension ProfilePresenter: ProfileInteractorToPresenterProtocol{

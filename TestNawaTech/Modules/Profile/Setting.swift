@@ -10,6 +10,7 @@ import Foundation
 enum Setting{
     case signOut
     case statistic
+    case topUp
     
     var name: String{
         switch self{
@@ -17,6 +18,8 @@ enum Setting{
             return "Sign out"
         case .statistic:
             return "Order history"
+        case .topUp:
+            return "Top up"
         }
     }
     
@@ -26,6 +29,8 @@ enum Setting{
             return "door.left.hand.open"
         case .statistic:
             return "chart.bar"
+        case .topUp:
+            return "creditcard"
         }
     }
 }

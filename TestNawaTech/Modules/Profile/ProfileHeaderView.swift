@@ -33,6 +33,27 @@ class ProfileHeaderView: UITableViewHeaderFooterView{
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    lazy var balanceStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.alignment = .center
+        stackView.distribution = .fill
+        stackView.spacing = 2
+        stackView.axis = .horizontal
+        return stackView
+    }()
+    lazy var balanceLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 12)
+        label.textColor = .secondaryForegroundColor
+        return label
+    }()
+    lazy var balanceImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "balance")
+        return imageView
+    }()
         
     var profile: Profile?
     var delegate: ProfileHeaderProtocol?
@@ -48,6 +69,9 @@ class ProfileHeaderView: UITableViewHeaderFooterView{
         addImageView()
         addEditImageView()
         addNameLabel()
+        addBalanceStackView()
+        addBalanceImageView()
+        addBalanceLabel()
         addGestureRecognizer()
     }
     
@@ -100,8 +124,32 @@ class ProfileHeaderView: UITableViewHeaderFooterView{
             NSLayoutConstraint(item: nameLabel, attribute: .top, relatedBy: .equal, toItem: imageView, attribute: .bottom, multiplier: 1, constant: 10),
             NSLayoutConstraint(item: nameLabel, attribute: .centerX, relatedBy: .equal, toItem: imageView, attribute: .centerX, multiplier: 1, constant: 0),
             NSLayoutConstraint(item: nameLabel, attribute: .leading, relatedBy: .equal, toItem: containerView, attribute: .leading, multiplier: 1, constant: 10),
-            NSLayoutConstraint(item: nameLabel, attribute: .trailing, relatedBy: .equal, toItem: containerView, attribute: .trailing, multiplier: 1, constant: -10),
-            NSLayoutConstraint(item: nameLabel, attribute: .bottom, relatedBy: .equal, toItem: containerView, attribute: .bottom, multiplier: 1, constant: -10)
+            NSLayoutConstraint(item: nameLabel, attribute: .trailing, relatedBy: .equal, toItem: containerView, attribute: .trailing, multiplier: 1, constant: -10)
+        ])
+    }
+    
+    private func addBalanceStackView(){
+        containerView.addSubview(balanceStackView)
+        
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: balanceStackView, attribute: .top, relatedBy: .equal, toItem: nameLabel, attribute: .bottom, multiplier: 1, constant: 10),
+            NSLayoutConstraint(item: balanceStackView, attribute: .centerX, relatedBy: .equal, toItem: imageView, attribute: .centerX, multiplier: 1, constant: 0),
+//            NSLayoutConstraint(item: balanceStackView, attribute: .leading, relatedBy: .equal, toItem: containerView, attribute: .leading, multiplier: 1, constant: 10),
+//            NSLayoutConstraint(item: balanceStackView, attribute: .trailing, relatedBy: .equal, toItem: containerView, attribute: .trailing, multiplier: 1, constant: -10),
+            NSLayoutConstraint(item: balanceStackView, attribute: .bottom, relatedBy: .equal, toItem: containerView, attribute: .bottom, multiplier: 1, constant: -10),
+            NSLayoutConstraint(item: balanceStackView, attribute: .height, relatedBy: .equal, toItem: .none, attribute: .notAnAttribute, multiplier: 1, constant: 12)
+        ])
+    }
+    
+    private func addBalanceLabel(){
+        balanceStackView.addArrangedSubview(balanceLabel)
+    }
+    
+    private func addBalanceImageView(){
+        balanceStackView.addArrangedSubview(balanceImageView)
+        
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint(item: balanceImageView, attribute: .width, relatedBy: .equal, toItem: .none, attribute: .notAnAttribute, multiplier: 1, constant: 12)
         ])
     }
     
@@ -112,13 +160,20 @@ class ProfileHeaderView: UITableViewHeaderFooterView{
     func setupData(profile: Profile){
         self.profile = profile
         nameLabel.text = profile.name
+        balanceLabel.text = "IDR " + (profile.balance?.giveAutoFinanceAbbreviations() ?? "0")
         setImage()
     }
     
     func setImage(){
         guard let imageUrlString = profile?.profilePictureUrl,
               let imageUrl = URL(string: imageUrlString)
-        else{return}
+        else{
+            let image = UIImage(systemName: "person.fill")
+            image?.withTintColor(.primaryForegroundColor)
+            imageView.image = image
+            imageView.tintColor = .primaryForegroundColor
+            return
+        }
         imageView.kf.setImage(with: imageUrl)
     }
     
