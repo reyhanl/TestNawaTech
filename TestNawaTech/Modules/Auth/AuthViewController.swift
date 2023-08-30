@@ -143,7 +143,7 @@ class AuthViewController: UIViewController{
         button.setTitle("Sign up", for: .normal)
     }
     
-    func addContainer(){
+    private func addContainer(){
         view.addSubview(containerView)
         
         let height = NSLayoutConstraint(item: containerView, attribute: .height, relatedBy: .equal, toItem: view, attribute: .height, multiplier: 0.6, constant: 0)
@@ -156,7 +156,7 @@ class AuthViewController: UIViewController{
         ])
     }
     
-    func addStackView(){
+    private func addStackView(){
         containerView.addSubview(textFieldStackView)
         NSLayoutConstraint.activate([
             NSLayoutConstraint(item: textFieldStackView, attribute: .top, relatedBy: .greaterThanOrEqual, toItem: containerView, attribute: .top, multiplier: 1, constant: 10),
@@ -168,37 +168,37 @@ class AuthViewController: UIViewController{
         ])
     }
     
-    func addEmailTextField(){
+    private func addEmailTextField(){
         textFieldStackView.addArrangedSubview(emailTextField)
         emailTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.8).isActive = true
         emailTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
-    func addPasswordTextField(){
+    private func addPasswordTextField(){
         textFieldStackView.addArrangedSubview(passwordTextField)
         passwordTextField.widthAnchor.constraint(equalTo: emailTextField.widthAnchor, multiplier: 1).isActive = true
         passwordTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
-    func addConfirmationPasswordTextField(){
+    private func addConfirmationPasswordTextField(){
         textFieldStackView.addArrangedSubview(confirmationPasswordTextField)
         confirmationPasswordTextField.widthAnchor.constraint(equalTo: emailTextField.widthAnchor, multiplier: 1).isActive = true
         confirmationPasswordTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
-    func addRegisterButton(){
+    private func addRegisterButton(){
         textFieldStackView.addArrangedSubview(button)
         button.widthAnchor.constraint(equalTo: emailTextField.widthAnchor, multiplier: 1).isActive = true
         button.heightAnchor.constraint(equalTo: emailTextField.heightAnchor, multiplier: 1).isActive = true
     }
     
-    func addAlreadyButton(){
+    private func addAlreadyButton(){
         textFieldStackView.addArrangedSubview(alreadyHaveAnAccountButton)
         button.widthAnchor.constraint(equalTo: emailTextField.widthAnchor, multiplier: 1).isActive = true
         alreadyHaveAnAccountButton.heightAnchor.constraint(equalTo: emailTextField.heightAnchor, multiplier: 1).isActive = true
     }
     
-    func updateButton(){
+    private func updateButton(){
         guard auth == .signUp else{return}
         let enabled = emailTextField.status == .valid && passwordTextField.status == .valid && confirmationPasswordTextField.status  == .valid
         button.isEnabled = enabled

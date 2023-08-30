@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class MotorcycleCollectionViewCell: UICollectionViewCell{
+class PhotoAndTextCollectionViewCell: UICollectionViewCell{
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()

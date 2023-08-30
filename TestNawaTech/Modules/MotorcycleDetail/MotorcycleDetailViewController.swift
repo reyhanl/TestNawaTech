@@ -101,7 +101,7 @@ class MotorcycleDetailViewController: UIViewController{
         self.motorcycle = nil
     }
     
-    func addScrollView(){
+    private func addScrollView(){
         view.addSubview(scrollView)
         
         NSLayoutConstraint.activate([
@@ -111,7 +111,7 @@ class MotorcycleDetailViewController: UIViewController{
         ])
     }
     
-    func addContainerView(){
+    private func addContainerView(){
         scrollView.addSubview(containerView)
         
         NSLayoutConstraint.activate([
@@ -124,7 +124,7 @@ class MotorcycleDetailViewController: UIViewController{
         ])
     }
     
-    func addImageView(){
+    private func addImageView(){
         containerView.addSubview(imageView)
         
         NSLayoutConstraint.activate([
@@ -135,7 +135,7 @@ class MotorcycleDetailViewController: UIViewController{
         ])
     }
     
-    func addTitleLabel(){
+    private func addTitleLabel(){
         containerView.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
@@ -146,7 +146,7 @@ class MotorcycleDetailViewController: UIViewController{
         titleLabel.numberOfLines = 0
     }
     
-    func addDescriptionTextView(){
+    private func addDescriptionTextView(){
         containerView.addSubview(descriptionTextView)
         
         let heightOfTextView = NSLayoutConstraint(item: descriptionTextView, attribute: .height, relatedBy: .equal, toItem: .none, attribute: .notAnAttribute, multiplier: 1, constant: 100)
@@ -164,7 +164,7 @@ class MotorcycleDetailViewController: UIViewController{
         descriptionTextView.textColor = .white
     }
     
-    func addButtonContainer(){
+    private func addButtonContainer(){
         view.addSubview(buttonContainer)
         
         let bottomPadding = view.safeAreaInsets.bottom
@@ -176,7 +176,7 @@ class MotorcycleDetailViewController: UIViewController{
         ])
     }
     
-    func addButtonStackView(){
+    private func addButtonStackView(){
         buttonContainer.addSubview(buttonStackView)
         NSLayoutConstraint.activate([
             NSLayoutConstraint(item: buttonStackView, attribute: .top, relatedBy: .equal, toItem: buttonContainer, attribute: .top, multiplier: 1, constant: 10),
@@ -185,11 +185,11 @@ class MotorcycleDetailViewController: UIViewController{
         ])
     }
     
-    func addPriceLabel(){
+    private func addPriceLabel(){
         buttonStackView.addArrangedSubview(priceLabel)
     }
     
-    func addPurchaseButton(){
+    private func addPurchaseButton(){
         buttonStackView.addArrangedSubview(purchaseButton)
     }
     

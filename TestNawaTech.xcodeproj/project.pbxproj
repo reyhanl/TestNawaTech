@@ -32,7 +32,7 @@
 		FC2194792A9C7EA0002B5F8F /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2194782A9C7EA0002B5F8F /* ProfileTableViewCell.swift */; };
 		FC2745E92A9EE36D006B63DD /* TopUpHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2745E82A9EE36D006B63DD /* TopUpHistory.swift */; };
 		FC2745EB2A9F1210006B63DD /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2745EA2A9F1210006B63DD /* UIImage+Extension.swift */; };
-		FC9E980E2A9C92100056A17E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9E980D2A9C92100056A17E /* Setting.swift */; };
+		FC9E980E2A9C92100056A17E /* SettingEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9E980D2A9C92100056A17E /* SettingEnum.swift */; };
 		FC9E98102A9CC93A0056A17E /* BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9E980F2A9CC93A0056A17E /* BarChartView.swift */; };
 		FCA5A6FB2A9E40BD00D8D346 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA5A6FA2A9E40BD00D8D346 /* Double+Extension.swift */; };
 		FCA5A6FD2A9E472D00D8D346 /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA5A6FC2A9E472D00D8D346 /* NSNotificationName.swift */; };
@@ -61,12 +61,12 @@
 		FCDBD95D2A970E00003CFB06 /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD95C2A970E00003CFB06 /* HomeProtocol.swift */; };
 		FCDBD95F2A970F66003CFB06 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD95E2A970F66003CFB06 /* NetworkManager.swift */; };
 		FCDBD9612A970F8B003CFB06 /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9602A970F8B003CFB06 /* URLManager.swift */; };
-		FCDBD9652A970FD1003CFB06 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9642A970FD1003CFB06 /* CustomError.swift */; };
+		FCDBD9652A970FD1003CFB06 /* CustomErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9642A970FD1003CFB06 /* CustomErrorEnum.swift */; };
 		FCDBD96F2A9718D1003CFB06 /* FirebaseCollection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD96E2A9718D1003CFB06 /* FirebaseCollection+Extension.swift */; };
 		FCDBD9712A971DFC003CFB06 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCDBD9702A971DFC003CFB06 /* GoogleService-Info.plist */; };
 		FCDBD9732A971E26003CFB06 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9722A971E26003CFB06 /* HomePresenter.swift */; };
 		FCDBD9752A971EE2003CFB06 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9742A971EE2003CFB06 /* HomeInteractor.swift */; };
-		FCDBD9772A971F3A003CFB06 /* MotorCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9762A971F3A003CFB06 /* MotorCycle.swift */; };
+		FCDBD9772A971F3A003CFB06 /* MotorcycleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9762A971F3A003CFB06 /* MotorcycleModel.swift */; };
 		FCDBD9792A97208E003CFB06 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9782A97208E003CFB06 /* HomeRouter.swift */; };
 		FCDD04FC2A9EDE8B00F47F0F /* TopUpProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDD04FB2A9EDE8B00F47F0F /* TopUpProtocol.swift */; };
 		FCDD04FE2A9EDEAC00F47F0F /* TopUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDD04FD2A9EDEAC00F47F0F /* TopUpPresenter.swift */; };
@@ -74,7 +74,7 @@
 		FCDD05022A9EDEDF00F47F0F /* TopUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDD05012A9EDEDF00F47F0F /* TopUpRouter.swift */; };
 		FCDD05042A9EDEF000F47F0F /* TopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDD05032A9EDEF000F47F0F /* TopUpViewController.swift */; };
 		FCDD05062A9EE02E00F47F0F /* TopUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDD05052A9EE02E00F47F0F /* TopUpModel.swift */; };
-		FCEAC76D2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC76C2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift */; };
+		FCEAC76D2A9726FC00A31AF1 /* PhotoAndTextCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC76C2A9726FC00A31AF1 /* PhotoAndTextCollectionViewCell.swift */; };
 		FCEAC7742A9737C400A31AF1 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC7732A9737C400A31AF1 /* UIColor+Extension.swift */; };
 		FCEAC7762A973F8E00A31AF1 /* HomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC7752A973F8E00A31AF1 /* HomeUITests.swift */; };
 		FCEAC7782A973FBB00A31AF1 /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC7772A973FBB00A31AF1 /* MockDataProvider.swift */; };
@@ -86,7 +86,6 @@
 		FCEAC7812A9746CA00A31AF1 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9742A971EE2003CFB06 /* HomeInteractor.swift */; };
 		FCEAC7822A9746CD00A31AF1 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9722A971E26003CFB06 /* HomePresenter.swift */; };
 		FCEAC7832A9746CE00A31AF1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD95A2A970DE0003CFB06 /* HomeViewController.swift */; };
-		FCEAC7842A9746D000A31AF1 /* MotorcycleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC76C2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift */; };
 		FCEAC7852A9746DB00A31AF1 /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD9602A970F8B003CFB06 /* URLManager.swift */; };
 		FCEAC7862A9746DD00A31AF1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDBD95E2A970F66003CFB06 /* NetworkManager.swift */; };
 		FCEAC7872A97471100A31AF1 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEAC7732A9737C400A31AF1 /* UIColor+Extension.swift */; };
@@ -146,7 +145,7 @@
 		FC2194782A9C7EA0002B5F8F /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		FC2745E82A9EE36D006B63DD /* TopUpHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUpHistory.swift; sourceTree = "<group>"; };
 		FC2745EA2A9F1210006B63DD /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		FC9E980D2A9C92100056A17E /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		FC9E980D2A9C92100056A17E /* SettingEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingEnum.swift; sourceTree = "<group>"; };
 		FC9E980F2A9CC93A0056A17E /* BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartView.swift; sourceTree = "<group>"; };
 		FCA5A6FA2A9E40BD00D8D346 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		FCA5A6FC2A9E472D00D8D346 /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
@@ -179,12 +178,12 @@
 		FCDBD95C2A970E00003CFB06 /* HomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
 		FCDBD95E2A970F66003CFB06 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FCDBD9602A970F8B003CFB06 /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
-		FCDBD9642A970FD1003CFB06 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		FCDBD9642A970FD1003CFB06 /* CustomErrorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomErrorEnum.swift; sourceTree = "<group>"; };
 		FCDBD96E2A9718D1003CFB06 /* FirebaseCollection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseCollection+Extension.swift"; sourceTree = "<group>"; };
 		FCDBD9702A971DFC003CFB06 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FCDBD9722A971E26003CFB06 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		FCDBD9742A971EE2003CFB06 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
-		FCDBD9762A971F3A003CFB06 /* MotorCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorCycle.swift; sourceTree = "<group>"; };
+		FCDBD9762A971F3A003CFB06 /* MotorcycleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleModel.swift; sourceTree = "<group>"; };
 		FCDBD9782A97208E003CFB06 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		FCDD04FB2A9EDE8B00F47F0F /* TopUpProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUpProtocol.swift; sourceTree = "<group>"; };
 		FCDD04FD2A9EDEAC00F47F0F /* TopUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUpPresenter.swift; sourceTree = "<group>"; };
@@ -192,7 +191,7 @@
 		FCDD05012A9EDEDF00F47F0F /* TopUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUpRouter.swift; sourceTree = "<group>"; };
 		FCDD05032A9EDEF000F47F0F /* TopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUpViewController.swift; sourceTree = "<group>"; };
 		FCDD05052A9EE02E00F47F0F /* TopUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopUpModel.swift; sourceTree = "<group>"; };
-		FCEAC76C2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleCollectionViewCell.swift; sourceTree = "<group>"; };
+		FCEAC76C2A9726FC00A31AF1 /* PhotoAndTextCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAndTextCollectionViewCell.swift; sourceTree = "<group>"; };
 		FCEAC7732A9737C400A31AF1 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		FCEAC7752A973F8E00A31AF1 /* HomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUITests.swift; sourceTree = "<group>"; };
 		FCEAC7772A973FBB00A31AF1 /* MockDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataProvider.swift; sourceTree = "<group>"; };
@@ -261,8 +260,11 @@
 				FC073CB12A98467200E8F9E9 /* CustomTextView.swift */,
 				FC1638A62A99B58B00E7C238 /* CustomButton.swift */,
 				FC9E980F2A9CC93A0056A17E /* BarChartView.swift */,
-				FC16991D2A9D887300AC6F6C /* CustomNavigationController.swift */,
-				FC1638AB2A9B56B900E7C238 /* CustomAlertViewController.swift */,
+				FCEAC76C2A9726FC00A31AF1 /* PhotoAndTextCollectionViewCell.swift */,
+				FCA6B82F2A9D96B000381014 /* StatisticTableViewHeader.swift */,
+				FCA6B8362A9DC8BB00381014 /* HistoryTableViewCell.swift */,
+				FC2194782A9C7EA0002B5F8F /* ProfileTableViewCell.swift */,
+				FC1638BA2A9C5C5700E7C238 /* ProfileHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -275,8 +277,6 @@
 				FC1638B22A9C584C00E7C238 /* ProfileInteractor.swift */,
 				FC1638B42A9C587400E7C238 /* ProfileRouter.swift */,
 				FC1638B62A9C588900E7C238 /* ProfileViewController.swift */,
-				FC1638BA2A9C5C5700E7C238 /* ProfileHeaderView.swift */,
-				FC2194782A9C7EA0002B5F8F /* ProfileTableViewCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -289,8 +289,6 @@
 				FC1699172A9D763400AC6F6C /* HistoryInteractor.swift */,
 				FC1699192A9D765400AC6F6C /* HistoryRouter.swift */,
 				FC16991B2A9D766900AC6F6C /* HistoryViewController.swift */,
-				FCA6B82F2A9D96B000381014 /* StatisticTableViewHeader.swift */,
-				FCA6B8362A9DC8BB00381014 /* HistoryTableViewCell.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -305,6 +303,15 @@
 				FCEAC78A2A9754C400A31AF1 /* MotorcycleDetailViewController.swift */,
 			);
 			path = MotorcycleDetail;
+			sourceTree = "<group>";
+		};
+		FCC0C13A2A9F71AE004BE40D /* CustomController */ = {
+			isa = PBXGroup;
+			children = (
+				FC16991D2A9D887300AC6F6C /* CustomNavigationController.swift */,
+				FC1638AB2A9B56B900E7C238 /* CustomAlertViewController.swift */,
+			);
+			path = CustomController;
 			sourceTree = "<group>";
 		};
 		FCCBF5BF2A98375500C89C0C /* Auth */ = {
@@ -344,6 +351,7 @@
 		FCDBD9262A970DC5003CFB06 /* TestNawaTech */ = {
 			isa = PBXGroup;
 			children = (
+				FCC0C13A2A9F71AE004BE40D /* CustomController */,
 				FC073CB02A98465C00E8F9E9 /* Views */,
 				FCEAC7722A972C4200A31AF1 /* Model */,
 				FCEAC7712A972C3400A31AF1 /* Extension */,
@@ -414,7 +422,6 @@
 				FCDBD9722A971E26003CFB06 /* HomePresenter.swift */,
 				FCDBD9742A971EE2003CFB06 /* HomeInteractor.swift */,
 				FCDBD9782A97208E003CFB06 /* HomeRouter.swift */,
-				FCEAC76C2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -451,12 +458,12 @@
 		FCEAC7722A972C4200A31AF1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FCDBD9642A970FD1003CFB06 /* CustomError.swift */,
+				FCDBD9642A970FD1003CFB06 /* CustomErrorEnum.swift */,
 				FCCBF5B82A982AC400C89C0C /* PurchaseModel.swift */,
 				FCDD05052A9EE02E00F47F0F /* TopUpModel.swift */,
-				FC9E980D2A9C92100056A17E /* Setting.swift */,
+				FC9E980D2A9C92100056A17E /* SettingEnum.swift */,
 				FC1638B82A9C5B3800E7C238 /* UserProfileModel.swift */,
-				FCDBD9762A971F3A003CFB06 /* MotorCycle.swift */,
+				FCDBD9762A971F3A003CFB06 /* MotorcycleModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -716,13 +723,13 @@
 				FC9E98102A9CC93A0056A17E /* BarChartView.swift in Sources */,
 				FC16991A2A9D765400AC6F6C /* HistoryRouter.swift in Sources */,
 				FCDD05022A9EDEDF00F47F0F /* TopUpRouter.swift in Sources */,
-				FCEAC76D2A9726FC00A31AF1 /* MotorcycleCollectionViewCell.swift in Sources */,
+				FCEAC76D2A9726FC00A31AF1 /* PhotoAndTextCollectionViewCell.swift in Sources */,
 				FCDD05062A9EE02E00F47F0F /* TopUpModel.swift in Sources */,
 				FC08C1C02A9CE5D000A60B9C /* UIView+Extension.swift in Sources */,
 				FCA6B8372A9DC8BB00381014 /* HistoryTableViewCell.swift in Sources */,
 				FCEAC7912A97583600A31AF1 /* MotorcycleInteractor.swift in Sources */,
 				FC1638BB2A9C5C5700E7C238 /* ProfileHeaderView.swift in Sources */,
-				FC9E980E2A9C92100056A17E /* Setting.swift in Sources */,
+				FC9E980E2A9C92100056A17E /* SettingEnum.swift in Sources */,
 				FCDBD9612A970F8B003CFB06 /* URLManager.swift in Sources */,
 				FCDBD9752A971EE2003CFB06 /* HomeInteractor.swift in Sources */,
 				FCA5A6FD2A9E472D00D8D346 /* NSNotificationName.swift in Sources */,
@@ -748,13 +755,13 @@
 				FCDD05042A9EDEF000F47F0F /* TopUpViewController.swift in Sources */,
 				FC2745E92A9EE36D006B63DD /* TopUpHistory.swift in Sources */,
 				FCEAC7742A9737C400A31AF1 /* UIColor+Extension.swift in Sources */,
-				FCDBD9652A970FD1003CFB06 /* CustomError.swift in Sources */,
+				FCDBD9652A970FD1003CFB06 /* CustomErrorEnum.swift in Sources */,
 				FC1699162A9D761B00AC6F6C /* HistoryPresenter.swift in Sources */,
 				FCDD05002A9EDEC400F47F0F /* TopUpInteractor.swift in Sources */,
 				FCDBD9282A970DC5003CFB06 /* AppDelegate.swift in Sources */,
 				FCCBF5C92A9837FF00C89C0C /* AuthViewController.swift in Sources */,
 				FCCBF5C72A9837E700C89C0C /* AuthInteractor.swift in Sources */,
-				FCDBD9772A971F3A003CFB06 /* MotorCycle.swift in Sources */,
+				FCDBD9772A971F3A003CFB06 /* MotorcycleModel.swift in Sources */,
 				FC1638AC2A9B56B900E7C238 /* CustomAlertViewController.swift in Sources */,
 				FCEAC77D2A97414D00A31AF1 /* HomePresenterMock.swift in Sources */,
 				FCCBF5C52A9837C800C89C0C /* AuthPresenter.swift in Sources */,
@@ -793,7 +800,6 @@
 				FCEAC7872A97471100A31AF1 /* UIColor+Extension.swift in Sources */,
 				FCEAC7812A9746CA00A31AF1 /* HomeInteractor.swift in Sources */,
 				FCEAC7862A9746DD00A31AF1 /* NetworkManager.swift in Sources */,
-				FCEAC7842A9746D000A31AF1 /* MotorcycleCollectionViewCell.swift in Sources */,
 				FCDBD94C2A970DC7003CFB06 /* TestNawaTechUITests.swift in Sources */,
 				FCDBD94E2A970DC7003CFB06 /* TestNawaTechUITestsLaunchTests.swift in Sources */,
 			);
