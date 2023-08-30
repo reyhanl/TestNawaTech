@@ -48,6 +48,7 @@ class AuthViewController: UIViewController{
         textField.delegate = self
         textField.validation = [.minimumNumberOfLetter(6)]
         textField.addTarget(target: self, selector: #selector(textDidChange(_:)), for: .editingChanged)
+        textField.stackView.tag = 2
         return textField
     }()
     
@@ -224,9 +225,16 @@ class AuthViewController: UIViewController{
     }
     
     @objc func textDidChange(_ sender: UITextField){
-        if sender === passwordTextField, let text = passwordTextField.text{
+        //Detect if the textField that user is editing is Passwordtextfield
+        ///purpose of this code is to make sure ConfirmationTextField validation status to be valid if the user retype their password
+        if auth == .signUp, let tag = sender.superview?.tag, tag == 2, let text = passwordTextField.text{
             let pattern = "^" + NSRegularExpression.escapedPattern(for: text) + "$"
             confirmationPasswordTextField.validation = [.minimumNumberOfLetter(6), .custom(pattern)]
+            if confirmationPasswordTextField.text != "" && confirmationPasswordTextField.text != passwordTextField.text{
+                confirmationPasswordTextField.status = .invalid
+            }else if confirmationPasswordTextField.text != "" && confirmationPasswordTextField.text == passwordTextField.text && passwordTextField.status == .valid{
+                confirmationPasswordTextField.status = .valid
+            }
         }
         updateButton()
     }

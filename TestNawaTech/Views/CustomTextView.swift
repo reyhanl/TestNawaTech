@@ -149,10 +149,6 @@ class CustomTextField: UIView{
         isSecureTextEntry.toggle()
     }
     
-    func validate(){
-        
-    }
-    
     @objc func textDidChange(_ sender: UITextField){
         checkTextFieldStatus()
     }
