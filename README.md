@@ -37,6 +37,8 @@ This app is created in **XCode version 15.0 beta (15A5160n)**. It might not be p
 
 4. run the project
 
+> If you find your chart in the purchase history page to be flat as I expected it to be, please let me know so I can confirm your order. As the previous sentence might suggest, the chart will only count a completed transaction.
+
 
 ## Notes
 As I mentioned in the overview, when user purchase something, all of the balance deduction and addition still happen on the iOS app. There are things that can be improved, I can use native library like StoreKit to simulate payment when user do top up, and even use Push Notification capability when user's purchase of a motorcycle get rejected/approved by the "admin/seller" but I currently am not in a posession of a paid Apple developer account.
