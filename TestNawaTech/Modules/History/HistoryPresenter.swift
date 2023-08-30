@@ -26,6 +26,9 @@ class HistoryPresenter: HistoryViewToPresenterProtocol{
         var message: String = ""
         
         let okAction = UIAlertAction(title: "Oke", style: .default)
+        let finishOrderAction = UIAlertAction(title: "Finish order", style: .default) { [weak self] _ in
+            self?.interactor?.confirmOrder(purchase: purchase)
+        }
         let cancelOrderAction = UIAlertAction(title: "Cancel this order", style: .destructive, handler: { [weak self] _ in
             self?.interactor?.cancelOrder(purchase: purchase)
         })
@@ -33,9 +36,13 @@ class HistoryPresenter: HistoryViewToPresenterProtocol{
         switch purchase.enumStatus {
         case .waitingForConfirmation:
             title = "Order is sent to seller"
-            message = "Please wait a little bit longer, the seller will notify you soon"
+            message = """
+            Please wait a little bit longer, the seller will notify you soon.
+            (for testing, you can finished your order yourself)
+            """
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
             alertController.addAction(okAction)
+            alertController.addAction(finishOrderAction)
             alertController.addAction(cancelOrderAction)
             vc.present(alertController, animated: true)
         case .cancelled:

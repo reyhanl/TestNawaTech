@@ -73,5 +73,6 @@ class StatisticTableViewHeader: UITableViewHeaderFooterView{
         print(data)
         containerView.dataPoints = data.0
         containerView.values = data.1
+        containerView.setNeedsDisplay()
     }
 }

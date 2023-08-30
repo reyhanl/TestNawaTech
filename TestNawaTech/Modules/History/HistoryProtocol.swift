@@ -25,6 +25,7 @@ protocol HistoryPresenterToInteractorProtocol{
     func fetchHistory()
     func getChartData(purchases: [PurchaseModel])
     func cancelOrder(purchase: PurchaseModel)
+    func confirmOrder(purchase: PurchaseModel)
 }
 
 
@@ -41,4 +42,5 @@ enum HistorySuccessType{
     case successfullyFetchedHistory([PurchaseModel])
     case successfullyFetchedChartData(([String], [CGFloat]))
     case successfullyCancelOrder(PurchaseModel)
+    case successfullyConfirmOrder(PurchaseModel)
 }

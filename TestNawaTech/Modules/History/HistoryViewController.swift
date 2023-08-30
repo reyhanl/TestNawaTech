@@ -74,7 +74,7 @@ extension HistoryViewController: HistoryPresenterToViewProtocol{
         case .successfullyFetchedChartData(let chartData):
             self.chartData = chartData
             tableView.reloadData()
-        case .successfullyCancelOrder(let purchase):
+        case .successfullyCancelOrder(let purchase), .successfullyConfirmOrder(let purchase):
             guard let index = purchases.firstIndex(where: {$0.transactionId == purchase.transactionId}) else{return}
             self.purchases.replaceSubrange(index...index, with: [purchase])
             presenter?.getChartData(purchases: purchases)

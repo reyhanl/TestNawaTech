@@ -82,6 +82,18 @@ class HistoryInteractor: HistoryPresenterToInteractorProtocol{
         presenter?.result(result: .success(.successfullyFetchedChartData((monthNames, numbers))))
     }
     
+    func confirmOrder(purchase: PurchaseModel) {
+        purchase.status = PurchaseStatus.finished.rawValue
+        NetworkManager.shared.setDocument(model: purchase, document: .purchase(purchase.transactionId ?? "")) { [weak self] (result: Result<PurchaseModel, Error>) in
+            switch result{
+            case .success(let purchase):
+                self?.presenter?.result(result: .success(.successfullyConfirmOrder(purchase)))
+            case .failure(let error):
+                self?.presenter?.result(result: .failure(error))
+            }
+        }
+    }
+    
     func cancelOrder(purchase: PurchaseModel) {
         purchase.status = PurchaseStatus.cancelled.rawValue
         NetworkManager.shared.setDocument(model: purchase, document: .purchase(purchase.transactionId ?? "")) { [weak self] (result: Result<PurchaseModel, Error>) in
