@@ -39,7 +39,7 @@ enum Setting{
         case .signOut:
             return .red
         default:
-            return .white
+            return .primaryForegroundColor
         }
     }
 }
