@@ -41,6 +41,7 @@ class TopUpViewController: UIViewController{
     }
     
     func setupUI(){
+        view.backgroundColor = .systemBackground
         addCollectionView()
     }
     

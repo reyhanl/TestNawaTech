@@ -83,6 +83,7 @@ class MotorcycleDetailViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.largeTitleDisplayMode = .never
+        view.backgroundColor = .systemBackground
         addScrollView()
         addContainerView()
         addImageView()

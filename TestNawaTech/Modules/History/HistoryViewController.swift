@@ -38,6 +38,7 @@ class HistoryViewController: UIViewController{
     
     func setupUI(){
         title = "My spending"
+        view.backgroundColor = .systemBackground
         addTableView()
     }
     

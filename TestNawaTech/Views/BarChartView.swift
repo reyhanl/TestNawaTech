@@ -13,6 +13,15 @@ class BarChartView: UIView {
     var values: [CGFloat] = []
     var financeAbr: FinanceAbbreviation = .thousand
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .systemBackground
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
     override func draw(_ rect: CGRect) {
         guard !dataPoints.isEmpty, values.count == dataPoints.count else {
             return
