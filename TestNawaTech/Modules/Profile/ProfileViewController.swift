@@ -36,6 +36,11 @@ class ProfileViewController: UIViewController{
         presenter?.viewWillAppear()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        hideBubbleAlert(duration: 0.2)
+    }
+    
     deinit{
         
     }
