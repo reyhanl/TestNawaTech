@@ -37,7 +37,7 @@ This app is created in **XCode version 15.0 beta (15A5160n)**. It might not be p
 
 4. run the project
 
-> If you find your chart in the purchase history page to be flat as I expected it to be, please let me know so I can confirm your order. As the previous sentence might suggest, the chart will only count a completed transaction.
+> If you find your chart in the purchase history page to be flat as I expected it to be, please let me know so I can confirm your order. As the previous sentence might suggest, the chart will only count a completed transaction or you can confirm/finish the order yourself by clicking the cell then finish (I add it for testing purpose).
 
 
 ## Notes
