@@ -91,7 +91,7 @@ extension ProfileViewController: ProfilePresenterToViewProtocol{
     }
     
     func handleError(error: Error){
-        presentBubbleAlert(text: String(describing: error), with: 0.2, floating: 1)
+        presentBubbleAlert(text: error.localizedDescription, with: 0.2, floating: 1)
     }
 }
 
