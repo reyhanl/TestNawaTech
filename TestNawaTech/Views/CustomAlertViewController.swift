@@ -31,6 +31,7 @@ class CustomAlertViewController: UIViewController{
         label.numberOfLines = 0
         label.font = .boldSystemFont(ofSize: 18)
         label.textColor = .primaryForegroundColor
+        label.textAlignment = .center
         return label
     }()
     
@@ -40,6 +41,7 @@ class CustomAlertViewController: UIViewController{
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 14)
         label.textColor = .primaryForegroundColor
+        label.textAlignment = .center
         return label
     }()
     
